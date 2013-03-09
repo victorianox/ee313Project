@@ -1,0 +1,326 @@
+
+** Library name: projectPart2
+** Cell name: mc
+** View name: schematic
+.subckt mc bl bl_b wl vdd vss inh_bulk_n inh_bulk_p
+m5 bit bit_b vss inh_bulk_n nmos L=2 W=6
+m4 bit_b bit vss inh_bulk_n nmos L=2 W=6
+m1 bl_b wl bit_b inh_bulk_n nmos L=2 W=4
+m0 bl wl bit inh_bulk_n nmos L=2 W=4
+m2 bit_b bit vdd inh_bulk_p pmos L=2 W=4
+m3 bit bit_b vdd inh_bulk_p pmos L=2 W=4
+c2 bl 0 88e-18
+c1 bl_b 0 88e-18
+c0 wl 0 140e-18
+.ends mc
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_0 a y
+m1 y a vdd! vdd! pmos L=2 W=8
+m2 y a 0 0 nmos L=2 W=4
+.ends inv_pcell_0
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_1 a y
+m1 y a vdd! vdd! pmos L=2 W=12
+m2 y a 0 0 nmos L=2 W=24
+.ends inv_pcell_1
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: write
+** View name: schematic
+.subckt write bl bl_b blpc_b wrdata wren inh_bulk_n inh_bulk_p
+m5 bl blpc_b vdd! inh_bulk_p pmos L=2 W=80
+m1 bl blpc_b bl_b inh_bulk_p pmos L=2 W=80
+m0 bl_b blpc_b vdd! inh_bulk_p pmos L=2 W=80
+m4 net23 wren bl_b inh_bulk_n nmos L=2 W=90
+m3 net26 wren bl inh_bulk_n nmos L=2 W=90
+xu0 wrdata net18 inv_pcell_0
+xu2 wrdata net23 inv_pcell_1
+xu1 net18 net26 inv_pcell_1
+.ends write
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_2 a y
+m1 y a vdd! vdd! pmos L=2 W=24
+m2 y a 0 0 nmos L=2 W=8
+.ends inv_pcell_2
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: nand
+** View name: schematic
+.subckt nand_pcell_3 a b y
+m2 y b vdd! vdd! pmos L=2 W=12
+m0 y a vdd! vdd! pmos L=2 W=12
+m3 mid_a b 0 0 nmos L=2 W=8
+m1 y a mid_a 0 nmos L=2 W=8
+.ends nand_pcell_3
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: array_blocked_wordline_blpc_b_4
+** View name: schematic
+.subckt array_blocked_wordline_blpc_b_4 bl0 bl63 bl_b0 bl_b63 block0 block1 block2 block3 blpc_b wl0 wl1 wl255 wrdata0 wrdata63 wren0 inh_bulk_n inh_bulk_p
+xi77 bl63 bl_b63 net0100 vdd! gnd inh_bulk_n inh_bulk_p mc m=1
+xi76 bl63 bl_b63 net094 vdd! gnd inh_bulk_n inh_bulk_p mc m=254
+xi75 bl63 bl_b63 net0110 vdd! gnd inh_bulk_n inh_bulk_p mc m=1
+xmcbr net0207 net0206 net0110 vdd! gnd inh_bulk_n inh_bulk_p mc m=63
+xi69 net0207 net0206 net094 vdd! gnd inh_bulk_n inh_bulk_p mc m=16.002e3
+xmctr net0207 net0206 net0100 vdd! gnd inh_bulk_n inh_bulk_p mc m=63
+xi60 net0163 net0162 net0201 vdd! gnd inh_bulk_n inh_bulk_p mc m=64
+xi62 net0163 net0162 net0147 vdd! gnd inh_bulk_n inh_bulk_p mc m=64
+xi61 net0163 net0162 net0143 vdd! gnd inh_bulk_n inh_bulk_p mc m=16.256e3
+xi51 net0180 net0136 net0103 vdd! gnd inh_bulk_n inh_bulk_p mc m=64
+xmcbm net0234 net0233 block255_wl255 vdd! gnd inh_bulk_n inh_bulk_p mc m=63
+xmcbl bl0 bl_b0 block255_wl255 vdd! gnd inh_bulk_n inh_bulk_p mc m=1
+xmcml bl0 bl_b0 net0250 vdd! gnd inh_bulk_n inh_bulk_p mc m=254
+xmcmm net0234 net0233 net0250 vdd! gnd inh_bulk_n inh_bulk_p mc m=16.002e3
+xi52 net0180 net0136 net0145 vdd! gnd inh_bulk_n inh_bulk_p mc m=16.256e3
+xi53 net0180 net0136 net0105 vdd! gnd inh_bulk_n inh_bulk_p mc m=64
+xmctm net0234 net0233 block0_wl0 vdd! gnd inh_bulk_n inh_bulk_p mc m=63
+xmctl bl0 bl_b0 block0_wl0 vdd! gnd inh_bulk_n inh_bulk_p mc m=1
+xi74 bl63 bl_b63 blpc_b wrdata63 wren0 inh_bulk_n inh_bulk_p write m=1
+xi67 net0207 net0206 blpc_b net0159 wren0 inh_bulk_n inh_bulk_p write m=64
+xi54 net0180 net0136 blpc_b net090 wren0 inh_bulk_n inh_bulk_p write m=64
+xi59 net0163 net0162 blpc_b net0106 wren0 inh_bulk_n inh_bulk_p write m=64
+xwritem net0234 net0233 blpc_b net0116 wren0 inh_bulk_n inh_bulk_p write m=63
+xwritel bl0 bl_b0 blpc_b wrdata0 wren0 inh_bulk_n inh_bulk_p write m=1
+xu32 net0214 net0100 inv_pcell_2
+xu31 net0217 net0110 inv_pcell_2
+xu30 net0220 net094 inv_pcell_2
+xu25 net0171 net0201 inv_pcell_2
+xu7 net0118 net0250 inv_pcell_2
+xu5 net0311 block255_wl255 inv_pcell_2
+xu18 net0123 net0145 inv_pcell_2
+xu19 net0120 net0105 inv_pcell_2
+xu20 net0117 net0103 inv_pcell_2
+xu1 net0320 block0_wl0 inv_pcell_2
+xu24 net0174 net0147 inv_pcell_2
+xu26 net0168 net0143 inv_pcell_2
+xu29 block3 wl0 net0214 nand_pcell_3
+xu28 block3 wl255 net0217 nand_pcell_3
+xu27 block3 wl1 net0220 nand_pcell_3
+xu22 block2 wl255 net0171 nand_pcell_3
+xu17 block1 wl0 net0117 nand_pcell_3
+xu4 block0 wl255 net0311 nand_pcell_3
+xu6 block0 wl1 net0118 nand_pcell_3
+xu21 block2 wl0 net0174 nand_pcell_3
+xu0 block0 wl0 net0320 nand_pcell_3
+xu23 block2 wl1 net0168 nand_pcell_3
+xu16 block1 wl255 net0120 nand_pcell_3
+xu15 block1 wl1 net0123 nand_pcell_3
+.ends array_blocked_wordline_blpc_b_4
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: nand
+** View name: schematic
+.subckt nand_pcell_4 a b y
+m2 y b vdd! vdd! pmos L=2 W=pd416s3pw M=1
+m0 y a vdd! vdd! pmos L=2 W=pd416s3pw M=1
+m3 mid_a b 0 0 nmos L=2 W=pd416s3nw M=1
+m1 y a mid_a 0 nmos L=2 W=pd416s3nw M=1
+.ends nand_pcell_4
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_5 a y
+m1 y a vdd! vdd! pmos L=2 W=pd416s5pw M=1
+m2 y a 0 0 nmos L=2 W=pd416s5nw M=1
+.ends inv_pcell_5
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_6 a y
+m1 y a vdd! vdd! pmos L=2 W=pd416s6pw M=1
+m2 y a 0 0 nmos L=2 W=pd416s6nw M=1
+.ends inv_pcell_6
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_7 a y
+m1 y a vdd! vdd! pmos L=2 W=pd416s4pw M=1
+m2 y a 0 0 nmos L=2 W=pd416s4nw M=1
+.ends inv_pcell_7
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: predecode_416
+** View name: schematic
+.subckt predecode_416 inv1 inv1_255 predec predec_255
+xi16 0 inv1 net55 nand_pcell_4
+xi15 vdd! inv1 net77 nand_pcell_4
+xi17 vdd! inv1_255 net057 nand_pcell_4
+xi18 0 inv1_255 net63 nand_pcell_4
+xu15 net032 net046 inv_pcell_5
+xu14 net69 net049 inv_pcell_5
+xu13 net036 net052 inv_pcell_5
+xu12 net73 net043 inv_pcell_5
+xu11 net043 net024 inv_pcell_6
+xu10 net052 predec_255 inv_pcell_6
+xu9 net049 net028 inv_pcell_6
+xu8 net046 predec inv_pcell_6
+xu0 net77 net032 inv_pcell_7
+xu1 net55 net69 inv_pcell_7
+xu2 net057 net036 inv_pcell_7
+xu3 net63 net73 inv_pcell_7
+.ends predecode_416
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: nand
+** View name: schematic
+.subckt nand_pcell_8 a b y
+m2 y b vdd! vdd! pmos L=2 W=dss7pw M=1
+m0 y a vdd! vdd! pmos L=2 W=dss7pw M=1
+m3 mid_a b 0 0 nmos L=2 W=dss7nw M=1
+m1 y a mid_a 0 nmos L=2 W=dss7nw M=1
+.ends nand_pcell_8
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_9 a y
+m1 y a vdd! vdd! pmos L=2 W=dss8pw M=1
+m2 y a 0 0 nmos L=2 W=dss8nw M=1
+.ends inv_pcell_9
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: decode_stage
+** View name: schematic
+.subckt decode_stage wl0 wl255 predec predec_255
+xu3 0 predec_255 net8 nand_pcell_8
+xu2 vdd! predec_255 net11 nand_pcell_8
+xu1 0 predec net14 nand_pcell_8
+xu0 vdd! predec net17 nand_pcell_8
+xu8 net8 net22 inv_pcell_9
+xu7 net11 wl255 inv_pcell_9
+xu6 net14 net26 inv_pcell_9
+xu5 net17 wl0 inv_pcell_9
+.ends decode_stage
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_10 a y
+m1 y a vdd! vdd! pmos L=2 W=pd24s2pw M=1
+m2 y a 0 0 nmos L=2 W=pd24s2nw M=1
+.ends inv_pcell_10
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: nand3
+** View name: schematic
+.subckt nand3 a b c y
+m10 net9 c 0 0 nmos L=nl W=nw M=nm
+m9 net5 b net9 0 nmos L=nl W=nw M=nm
+m1 y a net5 0 nmos L=nl W=nw M=nm
+m7 y c vdd! vdd! pmos L=pl W=pw M=pm
+m6 y b vdd! vdd! pmos L=pl W=pw M=pm
+m0 y a vdd! vdd! pmos L=pl W=pw M=pm
+.ends nand3
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: predecode_24
+** View name: schematic
+.subckt predecode_24 address0 address255 ck inv1 inv1_255
+xu3 net14 net6 inv_pcell_10
+xu2 nand1_1 inv1_255 inv_pcell_10
+xu1 net22 net10 inv_pcell_10
+xu0 nand1 inv1 inv_pcell_10
+xi36 ck vdd! address0 nand1 nand3 nl=2 nw=pd24s1nw nm=1 pl=2 pw=pd24s1pw pm=1
+xi37 ck 0 address0 net22 nand3 nl=2 nw=pd24s1nw nm=1 pl=2 pw=pd24s1pw pm=1
+xi38 ck vdd! address255 nand1_1 nand3 nl=2 nw=pd24s1nw nm=1 pl=2 pw=pd24s1pw pm=1
+xi39 ck 0 address255 net14 nand3 nl=2 nw=pd24s1nw nm=1 pl=2 pw=pd24s1pw pm=1
+.ends predecode_24
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: decoder
+** View name: schematic
+.subckt decoder wl0 wl255 a0 a255 ck
+xpredecoder416 inv1 inv1_255 predec predec_255 predecode_416
+xdecoder_stage wl0 wl255 predec predec_255 decode_stage
+c1 predec_255 0 22.53e-15
+c0 predec 0 22.53e-15
+xpredecoder24 a0 a255 ck inv1 inv1_255 predecode_24
+.ends decoder
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_11 a y
+m1 y a vdd! vdd! pmos L=2 W=24
+m2 y a 0 0 nmos L=2 W=12
+.ends inv_pcell_11
+** End of subcircuit definition.
+
+** Library name: ee313
+** Cell name: inv
+** View name: schematic
+.subckt inv_pcell_12 a y
+m1 y a vdd! vdd! pmos L=2 W=100
+m2 y a 0 0 nmos L=2 W=50
+.ends inv_pcell_12
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: sense
+** View name: schematic
+.subckt sense bl bl_b out out_b sae sapc_b sel_b inh_bulk_n inh_bulk_p
+m4 sbl_b sbl vdd! inh_bulk_p pmos L=2 W=4
+m3 vdd! sbl_b sbl inh_bulk_p pmos L=2 W=4
+meq sbl sapc_b sbl_b inh_bulk_p pmos L=2 W=8
+mpc2 vdd! sapc_b sbl_b inh_bulk_p pmos L=2 W=8
+mpc sbl sapc_b vdd! inh_bulk_p pmos L=2 W=8
+miso_b sbl_b sae cmbl_b inh_bulk_p pmos L=2 W=12
+miso sbl sae cmbl inh_bulk_p pmos L=2 W=12
+mmx4_b cmbl_b vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx4 cmbl vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx3_b cmbl_b vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx3 cmbl vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx2_b cmbl_b vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx2 cmbl vdd! vdd! inh_bulk_p pmos L=2 W=24
+mmx_b cmbl_b sel_b bl_b inh_bulk_p pmos L=2 W=24
+mmx cmbl sel_b bl inh_bulk_p pmos L=2 W=24
+mtail tail sae 0 inh_bulk_n nmos L=2 W=8
+m1 tail sbl_b sbl inh_bulk_n nmos L=2 W=6
+m2 sbl_b sbl tail inh_bulk_n nmos L=2 W=6
+c1 sapc_b 0 560e-18
+c0 sae 0 560e-18
+xu1 sbl_b out inv_pcell_11
+xu0 sbl out_b inv_pcell_11
+xu3 out net70 inv_pcell_12
+xu2 out_b net71 inv_pcell_12
+.ends sense
+** End of subcircuit definition.
+
+** Library name: projectPart2
+** Cell name: testrig_blocked_wordline_blpc_b_4
+** View name: schematic
+xarray bl0 bl63 bl_b0 bl_b63 block0 0 0 block3 blpc_b wl0 0 wl255 wrdata0 wrdata255 wren 0 vdd! array_blocked_wordline_blpc_b_4
+xdecoder wl0 wl255 a0 a255 ck decoder
+xsense63 bl63 bl_b63 out63 out_b63 sae sapc_b sel_b63 0 vdd! sense
+xsense0 bl0 bl_b0 out0 out_b0 sae sapc_b sel_b0 0 vdd! sense

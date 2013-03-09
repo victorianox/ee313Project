@@ -1,0 +1,48 @@
+### Custom WaveView session file (version F-2011.09-SP2 build 0205) ###
+### saved at 19:40:29 on Fri Mar  8 2013 ###
+wdf 0 "/afs/ir.stanford.edu/users/n/i/nighting/ee313/project/part2/ee313Project/blocked_wordline_4/part2_blocked_wordline_4.tr0" load=used 
+scalar list
+waveview_begin 1  stack  offset=0 name_b=113 mntr_b=113 geo=1024:90:700:400 "name=waveview 1" 
+  panel_begin linear pidx=0 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=v(ck)" attr=0:0:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=v(blpc_b)" attr=1:1:1:2 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=v(sapc_b)" attr=2:2:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=1 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=v(a0)" attr=1:3:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=v(a255)" attr=2:2:1:2 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=2 spath=true 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=v(sel_b0)" attr=1:5:1:3 autoset=true disp=show 
+    line src=wdf lidx=4 fidx=0 "delim=." sigtype=1 "name=v(sel_b63)" attr=2:0:1:4 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=v(sae)" attr=3:7:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=3 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=v(wl0)" attr=3:8:1:1 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=v(wl255)" attr=4:0:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=4 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=v(bl0)" attr=4:1:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=v(bl_b0)" attr=5:1:1:2 autoset=true disp=show 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=v(out0)" attr=6:2:1:3 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=v(out_b0)" attr=7:4:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=5 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=v(bl63)" attr=5:5:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=v(bl_b63)" attr=6:2:1:2 autoset=true disp=show 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=v(out63)" attr=7:2:1:3 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=v(out_b63)" attr=0:8:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=6 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=xarray.xmctl.v(bit)" attr=5:0:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=xarray.xmctl.v(bit_b)" attr=6:4:1:2 autoset=true disp=show 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=xarray.xmcbl.v(bit)" attr=7:2:1:3 autoset=true disp=show 
+    line src=wdf lidx=0 fidx=0 "delim=." sigtype=1 "name=xarray.xmcbl.v(bit_b)" attr=0:3:1:0 autoset=true disp=show 
+  panel_end
+  panel_begin linear pidx=7 spath=true 
+    line src=wdf lidx=1 fidx=0 "delim=." sigtype=1 "name=xarray.xmctr.v(bit)" attr=5:4:1:1 autoset=true disp=show 
+    line src=wdf lidx=2 fidx=0 "delim=." sigtype=1 "name=xarray.xmctr.v(bit_b)" attr=6:3:1:2 autoset=true disp=show 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=xarray.xmcbr.v(bit)" attr=7:2:1:3 autoset=true disp=show 
+    line src=wdf lidx=3 fidx=0 "delim=." sigtype=1 "name=xarray.xmcbr.v(bit_b)" attr=0:2:1:3 autoset=true disp=show 
+  panel_end
+waveview_end
