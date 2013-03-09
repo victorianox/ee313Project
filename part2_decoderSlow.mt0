@@ -1,0 +1,8 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
+.TITLE 'part 2'
+ wl0_rise         wl0_width        wl0_fall         wl1_rise          
+ wl1_fall         bl0_split        bl1_split        bl_pc_overlap     
+ bl63_pc_overlap  temper           alter#            
+  2.635e-10        5.130e-10        2.764e-10        2.635e-10        
+  2.765e-10          0.1096           0.1237         2.764e-10        
+  2.765e-10         27.0000        1                 
