@@ -13,7 +13,7 @@ Part 2
 *********************************
 
 *Stimulus
-.include '~/ee313/project/part2/stimulus.sp'
+.include './stimulus.sp'
 
 *Defined parameters for stimulus
 .param tcyc = 1ns *1Ghz clock

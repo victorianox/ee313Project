@@ -1,0 +1,119 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.testrig.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+*Set up all transistor sizes for decoder
+.param pd24s1pw =	 7		*7
+.param pd24s1nw =	 5		*5
+.param pd24s2pw =	 20		*27
+.param pd24s2nw =  7			*9
+.param pd416s3pw = 12		*22
+.param pd416s3nw = 6		*11
+.param pd416s4pw = 35		*81
+.param pd416s4nw = 11		*28
+.param pd416s5pw = 96		*297
+.param pd416s5nw = 32		*99
+.param pd416s6pw = 265		*1081
+.param pd416s6nw = 88		*360
+.param dss7pw = 10      *192
+.param dss7nw = 4			*89
+.param dss8pw = 35  	*680
+.param dss8nw = 12  	*227
+
+***************************************************************
+*INITIAL CONDITIONS
+***************************************************************
+
+*Top left stores 1 (WL0BL0)
+.ic v(xarray.xmctl.bit) = 'Supply'
+.ic v(xarray.xmctl.bit_b) = 0
+*Bottom right stores 1 (WL255BL63)
+.ic v(xarray.xmcbr.bit) = 'Supply'
+.ic v(xarray.xmcbr.bit_b) = 0
+*Top right stores 0 (WL0BL63)
+.ic v(xarray.xmctr.bit) = 0
+.ic v(xarray.xmctr.bit_b) = 'Supply'
+*Bottom left stores 0  (WL255BL0)
+.ic v(xarray.xmcbl.bit) = 0
+.ic v(xarray.xmcbl.bit_b) = 'Supply'
+
+***************************************************************
+*SOURCES AND STIMULI
+***************************************************************
+
+*clock and address stuff
+.include './stimulus.sp'
+
+*Ideal sources for sense amp and bitline precharge
+*          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
+Vblpc_b blpc_b Gnd pulse 'Supply'     100ps       0ns    50ps   50ps     450ps         1ns
+Vsapc_b sapc_b Gnd pulse 'Supply'     0       0ns    50ps   50ps     450ps         1ns
+
+*Don't write any data
+Vwren wren Gnd dc=0
+Vwrdata0 wrdata0 Gnd dc=0
+Vwrdata255 wrdata255 Gnd dc=0
+
+*Always read 0 and 63
+Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.5ns    50ps   50ps     450ps         1ns
+Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.5ns    50ps   50ps     450ps         1ns
+
+*SAE signal
+Vsae sae Gnd         pulse 0    'Supply'    725ps    50ps   50ps     450ps         1ns
+
+*********************************
+* MEASURE JUNK
+*********************************
+
+.meas wl0_rise 
++ TRIG v(ck) 	val=supply/2	RISE=1 
++ TARG v(WL0) val=supply/2 	RISE =1
+
+.meas wl0_width
++TRIG v(WL0) val=supply/2 RISE=1
++TARG v(WL0) val=supply/2 FALL=1
+
+.meas wl0_fall 
++ TRIG v(ck) 	val=supply/2	FALL=1 
++ TARG v(WL0) val=supply/2 	FALL=1
+
+.meas wl1_rise 
++ TRIG v(ck) 	val=supply/2	RISE=2 
++ TARG v(WL255) val=supply/2 	RISE =1
+
+.meas wl1_fall
++ TRIG v(ck) 	val=supply/2	FALL=2 
++ TARG v(WL255) val=supply/2 	FALL=1
+
+.meas tran bl0_split MAX V(bl0,bl_b0) from=0.5ns to=1.5ns
+.meas tran bl1_split MAX v(bl_b63,bl63) from=0.5ns to=1.5ns
+
+.meas bl_pc_overlap
++ TRIG v(ck) val=supply/2 FALL=1
++ TARG v(wl0) val=supply/2 FALL=1
+
+.meas bl63_pc_overlap
++ TRIG v(ck) val=supply/2 FALL=2
++ TARG v(wl255) val=supply/2 FALL=1
+
+***************************************************************
+*ANALYSIS
+***************************************************************
+
+*actually run the simulation
+.trans 0.3ps 5ns
+
+.end

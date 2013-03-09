@@ -1,0 +1,28 @@
+
+
+Planned optimizations:
+
+Robustness
+
+Improve read/write margins with dynamic cell voltage
+
+Low Power
+
+1 Resize decoder for lower power, higher delay (Andrew)
+
+Justification: bitline split operation completes with time to spare. Delay wordline rise to eliminate spare time, transistors smaller, save power.
+
+2 Lower Vdd? (Reed?)
+
+Another way to trade off delay for power. NEED to theoretically compare this to transistor resizing. Which one saves more power for the delay?
+
+3 Move clock (Reed)
+
+Justification:
+
+4 Block wordlines (Victoria)
+
+Justification: Decrease driving capacitance, save power, makes sense
+
+
+
