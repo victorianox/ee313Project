@@ -2,15 +2,15 @@
  Input File: part2_decoder.hsp
  lic:
  lic: FLEXlm: v10.8
- lic: USER:   ajdupree             HOSTNAME: corn09.stanford.edu
- lic: HOSTID: 001b213a6441         PID:      7466
+ lic: USER:   ajdupree             HOSTNAME: myth11
+ lic: HOSTID: 001ec92fa1ac         PID:      19178
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0.stanford.edu
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 16-nov-2013/2012.06
- lic: 2(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
+ lic: 1(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
  lic:
- init: begin read circuit files,  cpu clock=  1.00E-01
+ init: begin read circuit files,  cpu clock=  6.00E-02
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
                          2011.09-SP2/hspice/parts/ad
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
@@ -46,30 +46,30 @@
        option dcic     =     0.00
        option parhie   = local
        option list
- init: end read circuit files,  cpu clock=  1.00E-01 memory=    431 kb
- init: begin check errors,  cpu clock=  1.00E-01
- init: end check errors,  cpu clock=  1.60E-01 memory=   1398 kb
- init: begin setup matrix, pivot=     0 cpu clock=  1.60E-01
-       establish matrix -- done,  cpu clock=  1.60E-01 memory=   1428 kb
-       re-order matrix -- done,  cpu clock=  1.80E-01 memory=   1428 kb
- init: end setup matrix,  cpu clock=  1.80E-01 memory=   1762 kb
- dcop: begin dcop,  cpu clock=  1.80E-01
+ init: end read circuit files,  cpu clock=  6.00E-02 memory=    431 kb
+ init: begin check errors,  cpu clock=  6.00E-02
+ init: end check errors,  cpu clock=  1.00E-01 memory=   1398 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.00E-01
+       establish matrix -- done,  cpu clock=  1.00E-01 memory=   1428 kb
+       re-order matrix -- done,  cpu clock=  1.00E-01 memory=   1428 kb
+ init: end setup matrix,  cpu clock=  1.00E-01 memory=   1762 kb
+ dcop: begin dcop,  cpu clock=  1.20E-01
  dcop: begin pseudo transient
  dcop: ...succeeded
  dcop: end pseudo transient
- dcop: end dcop,  cpu clock=  1.42E+00 memory=   1771 kb  tot_iter=     871
+ dcop: end dcop,  cpu clock=  1.04E+00 memory=   1771 kb  tot_iter=     591
  output: part2_decoder.mt0
- sweep: tran tran0    begin, stop_t=  5.00E-09 #sweeps=**** cpu clock=  1.42E+00
- tran: time= 5.0000E-10 tot_iter=     668 conv_iter=     116 cpu clock= 1.74E+00
- tran: time= 1.0000E-09 tot_iter=    2345 conv_iter=     390 cpu clock= 2.52E+00
- tran: time= 1.5000E-09 tot_iter=    4065 conv_iter=     652 cpu clock= 3.30E+00
- tran: time= 2.0000E-09 tot_iter=    5745 conv_iter=     923 cpu clock= 4.08E+00
- tran: time= 2.5000E-09 tot_iter=    7755 conv_iter=    1215 cpu clock= 5.00E+00
- tran: time= 3.0000E-09 tot_iter=    9254 conv_iter=    1453 cpu clock= 5.70E+00
- tran: time= 3.5000E-09 tot_iter=   11260 conv_iter=    1743 cpu clock= 6.60E+00
- tran: time= 4.0000E-09 tot_iter=   13029 conv_iter=    2021 cpu clock= 7.40E+00
- tran: time= 4.5000E-09 tot_iter=   14957 conv_iter=    2304 cpu clock= 8.26E+00
- tran: time= 5.0000E-09 tot_iter=   16613 conv_iter=    2567 cpu clock= 9.02E+00
- sweep: tran tran0    end,  cpu clock=  9.02E+00 memory=   1773 kb
+ sweep: tran tran0    begin, stop_t=  5.00E-09 #sweeps=**** cpu clock=  1.04E+00
+ tran: time= 5.0000E-10 tot_iter=    1396 conv_iter=     209 cpu clock= 1.56E+00
+ tran: time= 1.0000E-09 tot_iter=    2795 conv_iter=     444 cpu clock= 2.14E+00
+ tran: time= 1.5000E-09 tot_iter=    4512 conv_iter=     703 cpu clock= 2.84E+00
+ tran: time= 2.0000E-09 tot_iter=    5803 conv_iter=     934 cpu clock= 3.40E+00
+ tran: time= 2.5000E-09 tot_iter=    7584 conv_iter=    1203 cpu clock= 4.14E+00
+ tran: time= 3.0000E-09 tot_iter=    8757 conv_iter=    1414 cpu clock= 4.64E+00
+ tran: time= 3.5000E-09 tot_iter=   10589 conv_iter=    1688 cpu clock= 5.38E+00
+ tran: time= 4.0000E-09 tot_iter=   12195 conv_iter=    1956 cpu clock= 6.04E+00
+ tran: time= 4.5000E-09 tot_iter=   13956 conv_iter=    2226 cpu clock= 6.76E+00
+ tran: time= 5.0000E-09 tot_iter=   15365 conv_iter=    2470 cpu clock= 7.36E+00
+ sweep: tran tran0    end,  cpu clock=  7.36E+00 memory=   1773 kb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)

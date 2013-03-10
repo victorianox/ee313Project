@@ -59,8 +59,8 @@ Part 2
 
 *Ideal sources for sense amp and bitline precharge
 *          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
-Vblpc_b blpc_b Gnd pulse 'Supply'     100ps       0ns    50ps   50ps     450ps         1ns
-Vsapc_b sapc_b Gnd pulse 'Supply'     0       0ns    50ps   50ps     450ps         1ns
+Vsapc_b sapc_b Gnd pulse 'Supply'     0       .25ns    50ps   50ps     450ps         1ns
+Vblpc_b blpc_b Gnd pulse 'Supply'     0 	  	250ps    50ps   50ps     450ps         1ns
 
 *Don't write any data
 Vwren wren Gnd dc=0
@@ -72,7 +72,7 @@ Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.5ns    50ps   50ps     450ps     
 Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.5ns    50ps   50ps     450ps         1ns
 
 *SAE signal
-Vsae sae Gnd         pulse 0    'Supply'    725ps    50ps   50ps     450ps         1ns
+Vsae sae Gnd         pulse 0    'Supply'    975ps    50ps   50ps     450ps         1ns
 
 *********************************
 * MEASURE JUNK
