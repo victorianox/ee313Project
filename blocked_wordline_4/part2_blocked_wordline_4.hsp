@@ -77,6 +77,10 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 .param dss7nw = 89
 .param dss8pw = 680
 .param dss8nw = 227
+.param bds9pw = 12
+.param bds9nw = 8
+.param bds10pw = 24
+.param bds10nw = 8
 
 *actually run the simulation
 .trans 0.3ps 10ns

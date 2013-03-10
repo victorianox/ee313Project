@@ -54,7 +54,7 @@ Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps     
 Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
 
 *SAE signal
-Vsae sae Gnd         pulse 0    'Supply'    1.1ns    50ps   50ps     450ps         1ns
+Vsae sae Gnd         pulse 0    'Supply'    1.25ns    50ps   50ps     450ps         1ns
 
 *Blocked Wordline Control Signals 
 Vblock0 block0 Gnd   pulse 0     'Supply'    0.5ns    50ps   50ps     2ns         4ns

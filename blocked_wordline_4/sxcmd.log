@@ -1,5 +1,5 @@
 ### CustomExplorer log file, revision F-2011.09-SP2 (build 0205) ###
-### created at 19:40:00 on Fri Mar  8 2013 (Linux AMD64) ###
+### created at 08:35:14 on Sun Mar 10 2013 (Linux AMD64) ###
 wv_start_log
 # (0) running in waveview only mode
 # (0) SW_SX_PERL_LIB defined
@@ -8,27 +8,204 @@ wv_start_log
 wv_move_window CustomWaveView 0 0
 wv_resize_window CustomWaveView 800 400
 wv_move_window CustomWaveView 68 108
-wv_move_window CustomWaveView 199 177
+wv_move_window CustomWaveView 187 109
 wv_resize_window CustomWaveView 957 715
 wv_select_menu_item {File} {Load Session ...}
-wv_move_dialog FileDialog 379 181
+wv_move_dialog FileDialog 501 266
+wv_select_dialog FileDialog
+wv_set_text FileDialog.FileName {}
+wv_select_list_item FileDialog.FileList Part2_blocked_wordline_extended.sx
+wv_dclick_list_item FileDialog.FileList Part2_blocked_wordline_extended.sx
+wv_select_wv_item WV1.PANEL1:1.LEGEND
+wv_select_panel WV1.PANEL1:1.LEGEND
+wv_waveview_context_menu WV1.PANEL1:1.LEGEND
+wv_select_context_menu_item {Ungroup}
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_select_panel WV1.PANEL3:1.LEGEND
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_drag_item_to WV1 49 191
+wv_drag_enter WV1
+wv_drag_to WV1 49 194
+wv_drag_to WV1 51 210
+wv_drag_to WV1 53 232
+wv_drag_to WV1 55 267
+wv_drag_to WV1 54 289
+wv_drop_on WV1
+wv_drag_item_to WV1 49 194
+wv_select_wv_item WV1.PANEL2:1.LEGEND
+wv_select_panel WV1.PANEL2:1.LEGEND
+wv_select_wv_item WV1.PANEL2:1.LEGEND
+wv_drag_item_to WV1 49 136
+wv_drag_enter WV1
+wv_drag_to WV1 49 142
+wv_drag_to WV1 47 170
+wv_drag_to WV1 45 188
+wv_drag_to WV1 42 230
+wv_drag_to WV1 41 253
+wv_drop_on WV1
+wv_drag_item_to WV1 49 142
+wv_waveview_context_menu WV1.PANEL3:1.LINE1
+wv_waveview_context_menu WV1.PANEL3:1.LINE5
+wv_select_context_menu_item {Ungroup}
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_select_panel WV1.PANEL3:1.LEGEND
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_drag_item_to WV1 45 165
+wv_drag_enter WV1
+wv_drag_to WV1 45 170
+wv_drag_to WV1 45 178
+wv_drag_to WV1 43 196
+wv_drag_to WV1 45 193
+wv_drag_to WV1 45 176
+wv_drop_on WV1
+wv_drag_item_to WV1 45 170
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_select_panel WV1.PANEL4:1.LEGEND
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_drag_item_to WV1 47 215
+wv_drag_enter WV1
+wv_drag_to WV1 47 210
+wv_drag_to WV1 48 195
+wv_drag_to WV1 50 176
+wv_drop_on WV1
+wv_drag_item_to WV1 47 210
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_select_panel WV1.PANEL4:1.LEGEND
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_drag_item_to WV1 49 240
+wv_drag_enter WV1
+wv_drag_to WV1 49 229
+wv_drag_to WV1 50 209
+wv_drag_to WV1 50 190
+wv_drop_on WV1
+wv_drag_item_to WV1 49 229
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_select_panel WV1.PANEL4:1.LEGEND
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_drag_item_to WV1 50 249
+wv_drag_enter WV1
+wv_drag_to WV1 50 244
+wv_drag_to WV1 52 228
+wv_drag_to WV1 53 207
+wv_drop_on WV1
+wv_drag_item_to WV1 50 244
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_select_panel WV1.PANEL4:1.LEGEND
+wv_select_wv_item WV1.PANEL4:1.LEGEND
+wv_drag_item_to WV1 49 268
+wv_drag_enter WV1
+wv_drag_to WV1 49 265
+wv_drag_to WV1 53 251
+wv_drag_to WV1 55 224
+wv_drag_to WV1 55 185
+wv_drag_to WV1 55 161
+wv_drag_to WV1 57 118
+wv_drag_to WV1 58 97
+wv_drop_on WV1
+wv_drag_item_to WV1 49 265
+wv_waveview_context_menu WV1.PANEL3:1.LINE4
+wv_select_context_menu_item {Signal  'v(sapc_b)'} {Change Color} {Default}
+wv_waveview_context_menu WV1.PANEL3:1.LINE4
+wv_select_context_menu_item {Signal  'v(sapc_b)'} {Change Color} {}
+wv_select_panel WV1.PANEL4:1 1.48008e-09 0.64208
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_select_panel WV1.PANEL3:1.LEGEND
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_select_panel WV1.PANEL3:1.LEGEND
+wv_select_wv_item WV1.PANEL3:1.LEGEND
+wv_select_panel WV1.PANEL3:1.LEGEND
+wv_waveview_context_menu WV1.PANEL3:1.LINE4
+wv_select_context_menu_item {Clear WaveView}
+wv_select_menu_item {File} {Load Session ...}
+wv_move_dialog FileDialog 1 28
 wv_select_dialog FileDialog
 wv_set_text FileDialog.FileName {}
 wv_select_list_item FileDialog.FileList Part2_blocked_wordline_extended.sx
 wv_press_button FileDialog.Ok
-wv_select_wv_item WV1.LEGEND.WIDTH
-wv_drag_item_to WV1 81 275
-wv_move_wv_item WV1.PANEL1:1.LEGEND.WIDTH 113
-wv_select_menu_item {File} {Save Session ...}
-wv_move_dialog FileDialog 379 191
-wv_select_dialog FileDialog
-wv_set_text FileDialog.FileName {}
-wv_select_list_item FileDialog.FileList Part2_blocked_wordline_extended.sx
-wv_press_button FileDialog.Ok
-wv_move_dialog Confirmation 452 257
+wv_move_dialog LoadingSessionFile 1 28
+wv_select_dialog LoadingSessionFile
+wv_select_list_item LoadingSessionFile.WDFFileList {<original file>}
+wv_press_button LoadingSessionFile.Ok
+#[22] signal 'v(wl0)' not found
+#[23] signal 'v(wl255)' not found
+wv_release_wv_item WV1 8 458
+wv_select_wv_item WV1.PANEL6:1.LEGEND
+wv_select_panel WV1.PANEL6:1.LEGEND
+wv_press_key Delete
+wv_move_dialog Confirmation 574 342
 wv_select_dialog Confirmation
 wv_press_button Confirmation.Ok
-#session saved in: '/afs/ir.stanford.edu/users/n/i/nighting/ee313/project/part2/ee313Project/blocked_wordline_4/Part2_blocked_wordline_extended.sx'
+wv_select_wv_item WV1.PANEL6:1.LEGEND
+wv_select_panel WV1.PANEL6:1.LEGEND
+wv_press_key Delete
+wv_move_dialog Confirmation 574 342
+wv_select_dialog Confirmation
+wv_press_button Confirmation.Ok
+wv_expand_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel}
+wv_expand_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel/xdecoder}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel/xblock_decoder}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel/xarray}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel/xa255_gen}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel/xa0_gen}
+wv_select_hierview_item {FILE1:D0:part2_blocked_wordline_4.tr0} {toplevel}
+wv_select_sigview_item v(b0wl0)
+wv_dclick_sigview_item v(b0wl0)
+wv_select_sigview_item v(b0wl255)
+wv_dclick_sigview_item v(b0wl255)
+wv_select_wv_item WV1.PANEL7:1.LEGEND
+wv_select_panel WV1.PANEL7:1.LEGEND
+wv_select_wv_item WV1.PANEL7:1.LEGEND
+wv_drag_item_to WV1 47 538
+wv_drag_enter WV1
+wv_drag_to WV1 47 532
+wv_drag_to WV1 47 508
+wv_drag_to WV1 47 480
+wv_drop_on WV1
+wv_drag_item_to WV1 47 532
+wv_select_wv_item WV1.PANEL6:1.LEGEND
+wv_select_panel WV1.PANEL6:1.LEGEND
+wv_select_sigview_item v(b3wl0)
+wv_dclick_sigview_item v(b3wl0)
+wv_select_sigview_item v(b3wl0)
+wv_select_sigview_item v(b3wl255)
+wv_dclick_sigview_item v(b3wl255)
+wv_select_wv_item WV1.PANEL8:1.LEGEND
+wv_select_panel WV1.PANEL8:1.LEGEND
+wv_select_wv_item WV1.PANEL8:1.LEGEND
+wv_drag_item_to WV1 36 534
+wv_drag_enter WV1
+wv_drag_to WV1 36 530
+wv_drag_to WV1 37 512
+wv_drag_to WV1 42 485
+wv_drop_on WV1
+wv_drag_item_to WV1 36 530
+wv_select_wv_item WV1.PANEL7:1.LEGEND
+wv_drag_item_to WV1 48 546
+wv_drag_enter WV1
+wv_drag_to WV1 48 543
+wv_drag_to WV1 48 506
+wv_drag_to WV1 48 479
+wv_drop_on WV1
+wv_drag_item_to WV1 48 543
+wv_hierview_context_menu {FILE0:D0:part2_blocked_wordline_4.tr0}
+wv_select_context_menu_item {Close This File}
+wv_move_dialog Confirmation 575 370
+wv_select_dialog Confirmation
+wv_press_button Confirmation.Ok
+wv_select_menu_item {File} {Save Session ...}
+wv_move_dialog FileDialog 501 276
+wv_select_dialog FileDialog
+wv_set_text FileDialog.FileName {}
+wv_select_list_item FileDialog.FileList Part2_blocked_wordline_extended.sx
+wv_set_check FileDialog.UseRelativePath 1
+wv_press_button FileDialog.Ok
+wv_move_dialog Confirmation 574 342
+wv_select_dialog Confirmation
+wv_press_button Confirmation.Ok
+#session saved in: '/afs/ir.stanford.edu/users/n/i/nighting/ee313/project/part2/blocked_wordline_4/Part2_blocked_wordline_extended.sx'
 wv_select_menu_item {File} {Exit}
+wv_move_dialog Confirmation 575 370
 wv_select_dialog Confirmation
 # wv_press_button Confirmation.Ok

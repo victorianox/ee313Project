@@ -2,15 +2,15 @@
  Input File: part2_blocked_wordline_4.hsp
  lic:
  lic: FLEXlm: v10.8
- lic: USER:   nighting             HOSTNAME: corn06.stanford.edu
- lic: HOSTID: 001b213a661d         PID:      3310
+ lic: USER:   nighting             HOSTNAME: corn08.stanford.edu
+ lic: HOSTID: 001b213a6aed         PID:      13937
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0.stanford.edu
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 16-nov-2013/2012.06
- lic: 1(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
+ lic: 2(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
  lic:
- init: begin read circuit files,  cpu clock=  8.00E-02
+ init: begin read circuit files,  cpu clock=  6.00E-02
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
                          2011.09-SP2/hspice/parts/ad
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
@@ -48,28 +48,25 @@
        option list
  init: end read circuit files,  cpu clock=  8.00E-02 memory=    432 kb
  init: begin check errors,  cpu clock=  8.00E-02
- init: end check errors,  cpu clock=  1.80E-01 memory=   1970 kb
- init: begin setup matrix, pivot=     0 cpu clock=  1.80E-01
-       establish matrix -- done,  cpu clock=  1.80E-01 memory=   2017 kb
-       re-order matrix -- done,  cpu clock=  2.00E-01 memory=   2017 kb
- init: end setup matrix,  cpu clock=  2.00E-01 memory=   2548 kb
- dcop: begin dcop,  cpu clock=  2.00E-01
- dcop: begin pseudo transient
- dcop: ...succeeded
- dcop: end pseudo transient
- dcop: end dcop,  cpu clock=  1.74E+00 memory=   2563 kb  tot_iter=     707
+ init: end check errors,  cpu clock=  1.60E-01 memory=   1969 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.60E-01
+       establish matrix -- done,  cpu clock=  1.60E-01 memory=   2014 kb
+       re-order matrix -- done,  cpu clock=  1.60E-01 memory=   2014 kb
+ init: end setup matrix,  cpu clock=  1.60E-01 memory=   2515 kb
+ dcop: begin dcop,  cpu clock=  1.80E-01
+ dcop: end dcop,  cpu clock=  9.60E-01 memory=   2515 kb  tot_iter=     388
  output: part2_blocked_wordline_4.tr0
- sweep: tran tran0    begin, stop_t=  1.00E-08 #sweeps=**** cpu clock=  1.74E+00
- tran: time= 1.0000E-09 tot_iter=    2057 conv_iter=     339 cpu clock= 3.24E+00
- tran: time= 2.0000E-09 tot_iter=    6877 conv_iter=    1058 cpu clock= 6.56E+00
- tran: time= 3.0000E-09 tot_iter=   12028 conv_iter=    1826 cpu clock= 1.01E+01
- tran: time= 4.0000E-09 tot_iter=   16459 conv_iter=    2497 cpu clock= 1.32E+01
- tran: time= 5.0000E-09 tot_iter=   21624 conv_iter=    3266 cpu clock= 1.67E+01
- tran: time= 6.0000E-09 tot_iter=   25396 conv_iter=    3860 cpu clock= 1.94E+01
- tran: time= 7.0000E-09 tot_iter=   29511 conv_iter=    4493 cpu clock= 2.22E+01
- tran: time= 8.0212E-09 tot_iter=   34240 conv_iter=    5203 cpu clock= 2.55E+01
- tran: time= 9.0000E-09 tot_iter=   38312 conv_iter=    5838 cpu clock= 2.84E+01
- tran: time= 1.0000E-08 tot_iter=   41744 conv_iter=    6390 cpu clock= 3.08E+01
- sweep: tran tran0    end,  cpu clock=  3.08E+01 memory=   2568 kb
+ sweep: tran tran0    begin, stop_t=  1.00E-08 #sweeps=**** cpu clock=  9.60E-01
+ tran: time= 1.0000E-09 tot_iter=    1563 conv_iter=     306 cpu clock= 2.10E+00
+ tran: time= 2.0000E-09 tot_iter=    4885 conv_iter=     839 cpu clock= 4.34E+00
+ tran: time= 3.0000E-09 tot_iter=    8030 conv_iter=    1360 cpu clock= 6.50E+00
+ tran: time= 4.0000E-09 tot_iter=   11171 conv_iter=    1872 cpu clock= 8.62E+00
+ tran: time= 5.0000E-09 tot_iter=   14438 conv_iter=    2406 cpu clock= 1.08E+01
+ tran: time= 6.0000E-09 tot_iter=   17492 conv_iter=    2908 cpu clock= 1.29E+01
+ tran: time= 7.0000E-09 tot_iter=   20451 conv_iter=    3397 cpu clock= 1.49E+01
+ tran: time= 8.0190E-09 tot_iter=   23744 conv_iter=    3934 cpu clock= 1.72E+01
+ tran: time= 9.0000E-09 tot_iter=   26810 conv_iter=    4442 cpu clock= 1.93E+01
+ tran: time= 1.0000E-08 tot_iter=   29818 conv_iter=    4937 cpu clock= 2.13E+01
+ sweep: tran tran0    end,  cpu clock=  2.13E+01 memory=   2533 kb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)
