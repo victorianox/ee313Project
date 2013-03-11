@@ -12,5 +12,5 @@ ProcessCreationTime_Readable   Wed Dec 31 16:00:00 1969 PST
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /afs/ir.stanford.edu/users/a/j/ajdupree/ee313/proj2/projectPart2/testrig_blocked_wordline_4/schematic/sch.oa.cdslck
-TimeEditLocked                 Sun Mar 10 21:17:47 2013 PDT
+FilePathUsedToEditLock         /afs/ir.stanford.edu/users/a/j/ajdupree/ee313/proj2/projectPart2/block_decoder/schematic/sch.oa.cdslck
+TimeEditLocked                 Sun Mar 10 21:13:26 2013 PDT

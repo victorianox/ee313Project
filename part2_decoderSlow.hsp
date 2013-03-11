@@ -6,7 +6,7 @@ Part 2
 .include '/usr/class/ee313/ee313_spice_header.h'
 
 *Specific include
-.include '~/ee313/netlist/projectPart2.testrig.ckt'
+.include '~/ee313/netlist/projectPart2.testrig_blocked_wordline_4.ckt'
 ***************************************************************
 *PARAMETERS
 ***************************************************************
@@ -40,7 +40,7 @@ Part 2
 *Top left stores 1 (WL0BL0)
 .ic v(xarray.xmctl.bit) = 'Supply'
 .ic v(xarray.xmctl.bit_b) = 0
-*Bottom right stores 1 (WL255BL63)
+*Bottom right stores 1 (WL255BL63
 .ic v(xarray.xmcbr.bit) = 'Supply'
 .ic v(xarray.xmcbr.bit_b) = 0
 *Top right stores 0 (WL0BL63)

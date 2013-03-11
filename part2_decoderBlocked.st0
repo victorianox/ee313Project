@@ -1,16 +1,16 @@
 ***** HSPICE -- F-2011.09-SP2 32-BIT (Feb 27 2012) linux ******
- Input File: part2_decoder.hsp
+ Input File: part2_decoderBlocked.hsp
  lic:
  lic: FLEXlm: v10.8
- lic: USER:   ajdupree             HOSTNAME: myth11
- lic: HOSTID: 001ec92fa1ac         PID:      10695
+ lic: USER:   ajdupree             HOSTNAME: corn04.stanford.edu
+ lic: HOSTID: 001b213a653d         PID:      22058
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0.stanford.edu
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 16-nov-2013/2012.06
- lic: 2(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
+ lic: 1(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
  lic:
- init: begin read circuit files,  cpu clock=  6.00E-02
+ init: begin read circuit files,  cpu clock=  1.00E-01
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
                          2011.09-SP2/hspice/parts/ad
        option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
@@ -46,28 +46,27 @@
        option dcic     =     0.00
        option parhie   = local
        option list
- init: end read circuit files,  cpu clock=  6.00E-02 memory=    439 kb
- init: begin check errors,  cpu clock=  6.00E-02
- **warning**  No DC path to ground from node        0:                block0
- init: end check errors,  cpu clock=  1.40E-01 memory=   1976 kb
- init: begin setup matrix, pivot=     0 cpu clock=  1.40E-01
-       establish matrix -- done,  cpu clock=  1.40E-01 memory=   2020 kb
-       re-order matrix -- done,  cpu clock=  1.40E-01 memory=   2020 kb
- init: end setup matrix,  cpu clock=  1.40E-01 memory=   2521 kb
- dcop: begin dcop,  cpu clock=  1.40E-01
- dcop: end dcop,  cpu clock=  1.08E+00 memory=   2521 kb  tot_iter=     392
- output: part2_decoder.mt0
- sweep: tran tran0    begin, stop_t=  5.00E-09 #sweeps=**** cpu clock=  1.08E+00
- tran: time= 5.0000E-10 tot_iter=     849 conv_iter=     165 cpu clock= 1.60E+00
- tran: time= 1.0000E-09 tot_iter=    1908 conv_iter=     371 cpu clock= 2.26E+00
- tran: time= 1.5000E-09 tot_iter=    3335 conv_iter=     600 cpu clock= 3.12E+00
- tran: time= 2.0000E-09 tot_iter=    4470 conv_iter=     814 cpu clock= 3.84E+00
- tran: time= 2.5000E-09 tot_iter=    5887 conv_iter=    1040 cpu clock= 4.70E+00
- tran: time= 3.0000E-09 tot_iter=    7114 conv_iter=    1269 cpu clock= 5.46E+00
- tran: time= 3.5000E-09 tot_iter=    8745 conv_iter=    1527 cpu clock= 6.44E+00
- tran: time= 4.0000E-09 tot_iter=   10049 conv_iter=    1769 cpu clock= 7.26E+00
- tran: time= 4.5000E-09 tot_iter=   11647 conv_iter=    2023 cpu clock= 8.22E+00
- tran: time= 5.0000E-09 tot_iter=   12850 conv_iter=    2249 cpu clock= 8.98E+00
- sweep: tran tran0    end,  cpu clock=  8.98E+00 memory=   2538 kb
+ init: end read circuit files,  cpu clock=  1.00E-01 memory=    439 kb
+ init: begin check errors,  cpu clock=  1.00E-01
+ init: end check errors,  cpu clock=  1.80E-01 memory=   1976 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.80E-01
+       establish matrix -- done,  cpu clock=  1.80E-01 memory=   2020 kb
+       re-order matrix -- done,  cpu clock=  1.80E-01 memory=   2020 kb
+ init: end setup matrix,  cpu clock=  1.80E-01 memory=   2521 kb
+ dcop: begin dcop,  cpu clock=  2.00E-01
+ dcop: end dcop,  cpu clock=  1.02E+00 memory=   2521 kb  tot_iter=     390
+ output: part2_decoderBlocked.mt0
+ sweep: tran tran0    begin, stop_t=  5.00E-09 #sweeps=**** cpu clock=  1.02E+00
+ tran: time= 5.0000E-10 tot_iter=     707 conv_iter=     126 cpu clock= 1.52E+00
+ tran: time= 1.0000E-09 tot_iter=    1572 conv_iter=     300 cpu clock= 2.12E+00
+ tran: time= 1.5000E-09 tot_iter=    3324 conv_iter=     569 cpu clock= 3.28E+00
+ tran: time= 2.0000E-09 tot_iter=    4293 conv_iter=     746 cpu clock= 3.94E+00
+ tran: time= 2.5000E-09 tot_iter=    6393 conv_iter=    1054 cpu clock= 5.32E+00
+ tran: time= 3.0000E-09 tot_iter=    7479 conv_iter=    1249 cpu clock= 6.04E+00
+ tran: time= 3.5000E-09 tot_iter=    9423 conv_iter=    1542 cpu clock= 7.32E+00
+ tran: time= 4.0000E-09 tot_iter=   10336 conv_iter=    1714 cpu clock= 7.94E+00
+ tran: time= 4.5000E-09 tot_iter=   12118 conv_iter=    1981 cpu clock= 9.12E+00
+ tran: time= 5.0000E-09 tot_iter=   13124 conv_iter=    2164 cpu clock= 9.80E+00
+ sweep: tran tran0    end,  cpu clock=  9.80E+00 memory=   2538 kb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)
