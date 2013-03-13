@@ -1,0 +1,2 @@
+leakage power=2.1861u
+power for one predec toggle=133.5672u 

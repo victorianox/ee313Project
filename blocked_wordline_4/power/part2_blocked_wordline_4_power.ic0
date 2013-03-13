@@ -1,0 +1,81 @@
+* "simulator" "HSPICE" 
+* "version" "F-2011.09-SP2 32-BIT"
+* "format" "HSP"
+* "rundate" "20:17:54 03/10/2013 "
+* "netlist" "part2_blocked_wordline_4_power.hsp "
+* "runtitle" "part 2"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ a0 =  18.9202u       
++ a255 =  18.9202u       
++ ck =  18.9202u       
++ net1 = 999.9875m       
++ net2 =  21.2713u       
++ net5 = 999.9885m       
++ predec =   1.0000        
++ vdd =   1.0000        
++ vdd! =   1.0000        
++ xi0.net11 = 999.9757m       
++ xi0.net14 = 999.9703m       
++ xi0.net17 =  59.8886u       
++ xi0.net22 =  21.2701u       
++ xi0.net26 =  21.2812u       
++ xi0.net8 = 999.9927m       
++ xi1.net023 = 999.9695m       
++ xi1.net026 = 999.9695m       
++ xi1.net029 = 999.9695m       
++ xi1.net053 = 999.9953m       
++ xi1.net055 = 999.9953m       
++ xi1.net057 = 999.9953m       
++ xi1.net059 = 999.9770m       
++ xi1.net9 =  43.6411u       
++ xclk_gen.src =   0.            
++ xa0_gen.src =   0.            
++ xa255_gen.src =   0.            
++ xi0.xu3.mid_a =  55.3674m       
++ xi0.xu2.mid_a = 776.1770m       
++ xi0.xu1.mid_a =  12.4775u       
++ xi0.xu0.mid_a =  31.5336u       
++ xi1.xu13.mid_a =  55.3550m       
++ xi1.xu12.mid_a =  55.3550m       
++ xi1.xu11.mid_a =  55.3550m       
++ xi1.xu10.mid_a = 776.1550m       
++ xi1.xu8.mid_a =  12.0430u       
++ xi1.xu3.mid_a =  23.3551u       
++ xi1.xu4.mid_a =  12.0430u       
++ xi1.xu7.mid_a =  12.0430u       
++ xclk_gen.xgen.net_2 =  18.9202u       
++ xclk_gen.xgen.net_3 =  18.9202u       
++ xclk_gen.xgen.net_4 =   1.0000        
++ xa0_gen.xgen.net_2 =  18.9202u       
++ xa0_gen.xgen.net_3 =  18.9202u       
++ xa0_gen.xgen.net_4 =   1.0000        
++ xa255_gen.xgen.net_2 =  18.9202u       
++ xa255_gen.xgen.net_3 =  18.9202u       
++ xa255_gen.xgen.net_4 =   1.0000        
++ xclk_gen.xgen.x_0.net_1 = 999.9744m       
++ xclk_gen.xgen.x_0.net_3 = 999.9744m       
++ xclk_gen.xgen.x_0.net_4 =  21.2646u       
++ xa0_gen.xgen.x_0.net_1 = 999.9744m       
++ xa0_gen.xgen.x_0.net_3 = 999.9744m       
++ xa0_gen.xgen.x_0.net_4 =  21.2646u       
++ xa255_gen.xgen.x_0.net_1 = 999.9744m       
++ xa255_gen.xgen.x_0.net_3 = 999.9744m       
++ xa255_gen.xgen.x_0.net_4 =  21.2646u       
++ xclk_gen.xgen.x_0.x_0.vdd_stimulus =   1.0000        
++ xclk_gen.xgen.x_0.x_1.vdd_stimulus =   1.0000        
++ xclk_gen.xgen.x_0.x_2.vdd_stimulus =   1.0000        
++ xclk_gen.xgen.x_0.x_3.vdd_stimulus =   1.0000        
++ xa0_gen.xgen.x_0.x_0.vdd_stimulus =   1.0000        
++ xa0_gen.xgen.x_0.x_1.vdd_stimulus =   1.0000        
++ xa0_gen.xgen.x_0.x_2.vdd_stimulus =   1.0000        
++ xa0_gen.xgen.x_0.x_3.vdd_stimulus =   1.0000        
++ xa255_gen.xgen.x_0.x_0.vdd_stimulus =   1.0000        
++ xa255_gen.xgen.x_0.x_1.vdd_stimulus =   1.0000        
++ xa255_gen.xgen.x_0.x_2.vdd_stimulus =   1.0000        
++ xa255_gen.xgen.x_0.x_3.vdd_stimulus =   1.0000        
+***   END: Saved Operating Point ***                     

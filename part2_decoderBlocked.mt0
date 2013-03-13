@@ -3,6 +3,6 @@ $DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
  wl0_rise         wl0_width        wl0_fall         wl1_rise          
  wl1_fall         bl0_split        bl1_split        bl_pc_overlap     
  bl63_pc_overlap  clk-out0         temper           alter#            
-  2.320e-10        4.803e-10        2.121e-10        2.321e-10        
-  2.122e-10          0.4051         7.405e-03        1.005e-09        
-  1.005e-09        7.423e-10         27.0000        1                 
+  2.320e-10        4.804e-10        2.121e-10        2.322e-10        
+  2.121e-10          0.4269        -8.333e-05        1.005e-09        
+  1.005e-09        4.304e-10         27.0000        1                 

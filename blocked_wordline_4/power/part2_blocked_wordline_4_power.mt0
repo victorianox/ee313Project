@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
+.TITLE 'part 2'
+ supply_power     temper           alter#            
+ -1.336e-04         27.0000        1                 

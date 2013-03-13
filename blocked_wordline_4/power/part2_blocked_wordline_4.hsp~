@@ -1,0 +1,75 @@
+Part 2
+
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.testrig_block_decoder_power.ckt'
+
+*********************************
+*********************************
+* PROJECT SPECIFIED SETUPS
+*********************************
+*********************************
+
+*Stimulus
+.include '~/ee313/project/part2/stimulus.sp'
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+
+*Ideal sources for sense amp and bitline precharge
+*          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
+*Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.25ns    50ps   50ps     450ps         1ns
+*Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns    50ps   50ps     450ps         1ns
+
+*********************************
+*********************************
+* Our Setup
+*********************************
+*********************************
+
+*Don't write any data
+*Vwren wren Gnd dc=0
+*Vwrdata0 wrdata0 Gnd dc=0
+*Vwrdata255 wrdata255 Gnd dc=0
+
+*Always read 0 and 63
+*Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+*Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+
+*SAE signal
+*Vsae sae Gnd         pulse 0    'Supply'    1.25ns    50ps   50ps     450ps         1ns
+
+*Blocked Wordline Control Signals 
+*Vblock0 block0 Gnd   pulse 0     'Supply'    0.5ns    50ps   50ps     2ns         4ns
+*Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns         4ns
+
+*Set up all transitor sizes for decoder
+.param pd24s1pw = 7
+.param pd24s1nw = 5
+.param pd24s2pw = 27
+.param pd24s2nw = 9
+.param pd416s3pw = 22
+.param pd416s3nw = 11
+.param pd416s4pw = 81
+.param pd416s4nw = 28
+.param pd416s5pw = 297
+.param pd416s5nw = 99
+.param pd416s6pw = 1081
+.param pd416s6nw = 360
+.param dss7pw = 192
+.param dss7nw = 89
+.param dss8pw = 680
+.param dss8nw = 227
+.param bds9pw = 12
+.param bds9nw = 8
+.param bds10pw = 24
+.param bds10nw = 8
+
+*actually run the simulation
+.trans 0.3ps 10ns
+
+.end

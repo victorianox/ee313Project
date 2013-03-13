@@ -1,0 +1,146 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.testrig_blocked_wordline_4.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+*Set up all transitor sizes for decoder
+.param pd24s1pw = 7
+.param pd24s1nw = 5
+.param pd24s2pw = 13
+.param pd24s2nw = 5
+.param pd416s3pw = 9
+.param pd416s3nw = 5
+.param pd416s4pw = 12
+.param pd416s4nw = 5
+.param pd416s5pw = 12
+.param pd416s5nw = 5
+.param pd416s6pw = 30
+.param pd416s6nw = 10
+.param dss7pw = 9
+.param dss7nw = 5
+.param dss8pw = 18
+.param dss8nw = 7
+.param bds9pw = 27
+.param bds9nw = 13
+.param bds10pw = 18
+.param bds10nw = 7
+
+***************************************************************
+*INITIAL CONDITIONS
+***************************************************************
+
+*Top left stores 1 (WL0BL0)
+.ic v(xarray.xmctl.bit) = 'Supply'
+.ic v(xarray.xmctl.bit_b) = 0
+*Bottom right stores 1 (WL255BL63)
+.ic v(xarray.xmcbr.bit) = 'Supply'
+.ic v(xarray.xmcbr.bit_b) = 0
+*Top right stores 0 (WL0BL63)
+.ic v(xarray.xmctr.bit) = 0
+.ic v(xarray.xmctr.bit_b) = 'Supply'
+*Bottom left stores 0  (WL255BL0)
+.ic v(xarray.xmcbl.bit) = 0
+.ic v(xarray.xmcbl.bit_b) = 'Supply'
+
+***************************************************************
+*SOURCES AND STIMULI
+***************************************************************
+
+*clock and address stuff
+.include './stimulus.sp'
+
+*Ideal sources for sense amp and bitline precharge
+*          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
+Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.185ns    50ps   50ps     450ps         1ns
+Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns    50ps   50ps     450ps         1ns
+
+*Don't write any data
+Vwren wren Gnd dc=0
+Vwrdata0 wrdata0 Gnd dc=0
+Vwrdata255 wrdata255 Gnd dc=0
+
+*Add in vdd_wr
+Vdd_wr vdd_wr Gnd dc=0.8
+
+*Always read 0 and 63
+Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+
+*SAE signal
+Vsae sae Gnd         pulse 0    'Supply'    0.9ns    50ps   50ps     450ps         1ns
+
+*Blocked Wordline Control Signals 
+Vblock0 block0 Gnd   pulse 0     'Supply'    0.5ns    50ps   50ps     2ns         4ns
+Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns         4ns
+
+*********************************
+* MEASURE JUNK
+*********************************
+
+.meas wl0_rise 
++ TRIG v(ck) 	val=supply/2	RISE=1 
++ TARG v(b0wl0) val=supply/2 	RISE =1
+
+.meas wl0_width
++TRIG v(b0wl0) val=supply/2 RISE=1
++TARG v(b0wl0) val=supply/2 FALL=1
+
+.meas wl0_fall 
++ TRIG v(ck) 	val=supply/2	FALL=1 
++ TARG v(b0wl0) val=supply/2 	FALL=1
+
+.meas wl1_rise 
++ TRIG v(ck) 	val=supply/2	RISE=2
++ TARG v(b0wl255) val=supply/2 	RISE =1
+
+.meas wl1_fall
++ TRIG v(ck) 	val=supply/2	FALL=2 
++ TARG v(b0wl255) val=supply/2 	FALL=1
+
+.meas tran bl0_split MAX V(bl0,bl_b0) from=0.5ns to=1.5ns
+.meas tran bl1_split MAX v(bl_b63,bl63) from=0.5ns to=1.5ns
+
+.meas bl_pc_overlap
++ TRIG v(blpc_b) val=supply/2 FALL=1
++ TARG v(b0wl0) val=supply/2 FALL=1
+
+.meas bl63_pc_overlap
++ TRIG v(blpc_b) val=supply/2 FALL=2
++ TARG v(b0wl255) val=supply/2 FALL=1
+
+.meas clk-out0
++ TRIG v(ck) val=supply/2 RISE=1
++ TARG v(out0) val=supply/2 RISE=1
+
+.meas precharge
++ TRIG v(blpc_b) val=supply/2 FALL=2
++ TARG v(bl_b0) val=.95*supply RISE=2
+
+.meas sae-out0
++ TRIG v(sae) val=supply/2 RISE=1
++ TARG v(out0) val=supply/2 RISE=1
+
+.meas out0-width
++ TRIG v(out0) val=supply/2 RISE=1
++ TARG v(out0) val=supply/2 FALL=1
+
+***************************************************************
+*ANALYSIS
+***************************************************************
+
+*actually run the simulation
+.trans 0.3ps 5ns
+
+.end

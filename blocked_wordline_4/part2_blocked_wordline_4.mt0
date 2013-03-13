@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
+.TITLE 'part 2'
+ wl0_bl0_delay    wl0_dummybl_delay ck_bl0_delay     ck_sae_delay      
+ temper           alter#            
+  3.304e-10        2.959e-10        4.835e-10        5.069e-10        
+   27.0000        1                 
