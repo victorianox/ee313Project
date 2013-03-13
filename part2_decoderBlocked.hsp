@@ -15,7 +15,7 @@ Part 2
 .param tcyc = 1ns *1Ghz clock
 .param trf = 50ps *50ps rise/fall time
 
-*Set up all transitor sizes for decoder
+NORMAL
 .param pd24s1pw = 7
 .param pd24s1nw = 5
 .param pd24s2pw = 21
@@ -37,6 +37,29 @@ Part 2
 .param bds10pw = 249
 .param bds10nw = 83
 
+.param blpcWidth = 40
+
+*	SLOWED
+*	.param pd24s1pw = 7
+*	.param pd24s1nw = 5
+*	.param pd24s2pw = 13
+*	.param pd24s2nw = 5
+*	.param pd416s3pw = 9
+*	.param pd416s3nw = 5
+*	.param pd416s4pw = 12
+*	.param pd416s4nw = 5
+*	.param pd416s5pw = 12
+*	.param pd416s5nw = 5
+*	.param pd416s6pw = 30
+*	.param pd416s6nw = 10
+*	.param dss7pw = 9
+*	.param dss7nw = 5
+*	.param dss8pw = 18
+*	.param dss8nw = 7
+*	.param bds9pw = 27
+*	.param bds9nw = 13
+*	.param bds10pw = 18
+*	.param bds10nw = 7
 ***************************************************************
 *INITIAL CONDITIONS
 ***************************************************************
@@ -53,6 +76,9 @@ Part 2
 *Bottom left stores 0  (WL255BL0)
 .ic v(xarray.xmcbl.bit) = 0
 .ic v(xarray.xmcbl.bit_b) = 'Supply'
+
+.ic v(bl0) = supply
+.ic v(bl_b0) = supply
 
 ***************************************************************
 *SOURCES AND STIMULI
@@ -85,6 +111,14 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 *********************************
 * MEASURE JUNK
 *********************************
+
+.probe idsat_bl 	= par('i(xarray.xwritel.m5)')
+.probe idsat_blb = par('i(xarray.xwritel.m4)')
+
+.meas curr_bl INTEG i(xarray.xwritel.vmon_bl) from=1ns to=1.5ns
+.meas curr_blb INTEG i(xarray.xwritel.vmon_blb) from=1ns to=1.5ns
+.meas curr_blpc INTEG i(xarray.xwritel.vmon_blpc) from=1ns to=1.5ns
+.meas curr_pcTotal param='-1 * curr_blpc * 64 /(.000000001)'
 
 .meas wl0_rise 
 + TRIG v(ck) 	val=supply/2	RISE=1 
@@ -120,6 +154,18 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 .meas clk-out0
 + TRIG v(ck) val=supply/2 RISE=1
 + TARG v(out0) val=supply/2 RISE=1
+
+.meas precharge
++ TRIG v(blpc_b) val=supply/2 FALL=2
++ TARG v(bl_b0) val=.95*supply RISE=1
+
+.meas sae-out0
++ TRIG v(sae) val=supply/2 RISE=1
++ TARG v(out0) val=supply/2 RISE=1
+
+.meas out0-width
++ TRIG v(out0) val=supply/2 RISE=1
++ TARG v(out0) val=supply/2 FALL=1
 
 
 ***************************************************************

@@ -1,8 +1,12 @@
 $DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
 .TITLE 'part 2'
+ curr_bl          curr_blb         curr_blpc        curr_pctotal      
  wl0_rise         wl0_width        wl0_fall         wl1_rise          
  wl1_fall         bl0_split        bl1_split        bl_pc_overlap     
- bl63_pc_overlap  clk-out0         temper           alter#            
-  2.320e-10        4.804e-10        2.121e-10        2.322e-10        
-  2.121e-10          0.4269        -8.333e-05        1.005e-09        
-  1.005e-09        4.304e-10         27.0000        1                 
+ bl63_pc_overlap  clk-out0         precharge        sae-out0          
+ out0-width       temper           alter#            
+ -8.571e-16        5.176e-15       -3.797e-15        2.430e-04        
+  2.262e-10        4.800e-10        2.060e-10        2.260e-10        
+  2.060e-10        9.093e-02        5.369e-03        9.993e-10        
+  9.993e-10        4.508e-10        3.834e-11        9.392e-11        
+  3.704e-10         27.0000        1                 
