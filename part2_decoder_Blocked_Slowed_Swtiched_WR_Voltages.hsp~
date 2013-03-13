@@ -67,12 +67,13 @@ Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.185ns    50ps   50ps     450ps  
 Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns    50ps   50ps     450ps         1ns
 
 *Don't write any data
-Vwren wren Gnd dc=0
+*Vwren wren Gnd dc=0
+Vwren wren Gnd pulse 'Supply' 0 0ps 50ps 50ps 3ns 6ns
 Vwrdata0 wrdata0 Gnd dc=0
 Vwrdata255 wrdata255 Gnd dc=0
 
 *Add in vdd_wr
-Vdd_wr vdd_wr Gnd dc=0.8
+Vvdd_wr vdd_wr Gnd dc='Supply-0.2'
 
 *Always read 0 and 63
 Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
@@ -141,6 +142,6 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 ***************************************************************
 
 *actually run the simulation
-.trans 0.3ps 5ns
+.trans 0.3ps 10ns
 
 .end
