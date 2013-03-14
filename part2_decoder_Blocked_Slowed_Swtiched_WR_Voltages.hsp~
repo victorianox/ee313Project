@@ -68,7 +68,7 @@ Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns    50ps   50ps     450ps    
 
 *Don't write any data
 *Vwren wren Gnd dc=0
-Vwren wren Gnd pulse 'Supply' 0 0ps 50ps 50ps 3ns 6ns
+Vwren wren Gnd pulse 'Supply' 0 0ps 50ps 50ps 3.5ns 7ns
 Vwrdata0 wrdata0 Gnd dc=0
 Vwrdata255 wrdata255 Gnd dc=0
 
