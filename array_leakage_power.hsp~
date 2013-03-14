@@ -1,0 +1,17 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.testrig_array_leakage_power.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+

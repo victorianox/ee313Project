@@ -1,0 +1,67 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.testrig_array_leakage_power.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+.param blpcwidth=80
+
+*Setup wordline voltage mux widths
+.param wrenpwvdd=48
+.param wrenpwwl=48
+.param vdd_wr_value='Supply-0.2'
+
+***************************************************************
+*INITIAL CONDITIONS
+***************************************************************
+
+*Top left stores 1 (WL0BL0)
+.ic v(xarray.xmctl.bit) = 'Supply'
+.ic v(xarray.xmctl.bit_b) = 0
+*Bottom right stores 1 (WL255BL63)
+.ic v(xarray.xmcbr.bit) = 'Supply'
+.ic v(xarray.xmcbr.bit_b) = 0
+*Top right stores 0 (WL0BL63)
+.ic v(xarray.xmctr.bit) = 0
+.ic v(xarray.xmctr.bit_b) = 'Supply'
+*Bottom left stores 0  (WL255BL0)
+.ic v(xarray.xmcbl.bit) = 0
+.ic v(xarray.xmcbl.bit_b) = 'Supply'
+
+***************************************************************
+*SOURCES AND STIMULI
+***************************************************************
+
+*clock and address stuff
+.include './stimulus.sp'
+
+Vvcell  Vcell  Gnd dc='Supply-0.1'
+
+.meas TRAN write_core_power
++ AVG i (V_supply) FROM='2*tcyc' TO='3*tcyc'
+
+.meas TRAN vcell_power
++ AVG i (Vvcell) FROM='2*tcyc' TO='3*tcyc'
+
+.MEASURE mem_core_power param='write_core_power+vcell_power'
+
+
+***************************************************************
+*ANALYSIS
+***************************************************************
+
+*actually run the simulation
+.trans 0.3ps 18ns
+
+.end

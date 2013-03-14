@@ -3,8 +3,10 @@ $DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
  wl0_rise         wl0_width        wl0_fall         wl1_rise          
  wl1_fall         bl0_split        bl1_split        bl_pc_overlap     
  bl63_pc_overlap  clk-out0         precharge        sae-out0          
- out0-width       temper           alter#            
-  7.130e-10       -5.152e-10       -3.024e-10        7.130e-10        
- -3.023e-10          0.1437        -1.280e-04        5.559e-10        
-  5.561e-10        4.543e-10        4.043e-09        9.741e-11        
-  3.669e-10         27.0000        1                 
+ out0-width       idsat_avg        write_core_power vcell_power       
+ mem_core_power   temper           alter#            
+  7.130e-10        4.497e-10       -3.024e-10        7.128e-10        
+ -3.023e-10          0.1439        -1.383e-04        5.559e-10        
+  5.561e-10        4.543e-10        4.043e-09        9.744e-11        
+  3.668e-10        5.326e-09       -1.215e-03       -4.063e-04        
+ -1.621e-03         27.0000        1                 
