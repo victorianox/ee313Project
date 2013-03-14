@@ -39,6 +39,10 @@ Part 2
 
 .param blpcwidth=80
 
+*Setup wordline voltage mux widths
+.param wrenpwvdd=48
+.param wrenpwwl=48
+
 ***************************************************************
 *INITIAL CONDITIONS
 ***************************************************************
@@ -66,17 +70,17 @@ Part 2
 *Ideal sources for sense amp and bitline precharge
 *          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
 Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.185ns    50ps   50ps     450ps         1ns
-Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns    50ps   50ps     450ps         1ns
+Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns      50ps   50ps     450ps         1ns
 
 *Don't write any data
 *Vwren wren Gnd dc=0
-Vwren wren Gnd pulse 'Supply' 0 0ps 50ps 50ps 3.5ns 7ns
+Vwren wren Gnd pulse 0 'Supply' 8ns 50ps 50ps 4ns 12ns
 Vwrdata0 wrdata0 Gnd dc=0
-Vwrdata255 wrdata255 Gnd dc=0
+Vwrdata255 wrdata255 Gnd dc='Supply'
 
 *Add in vdd_wr and Vcell
 Vvdd_wr vdd_wr Gnd dc='Supply-0.2'
-Vvcell   Vcell Gnd dc='Supply-0.1'
+Vvcell  Vcell  Gnd dc='Supply-0.1'
 
 *Always read 0 and 63
 Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
@@ -145,6 +149,6 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 ***************************************************************
 
 *actually run the simulation
-.trans 0.3ps 10ns
+.trans 0.3ps 18ns
 
 .end
