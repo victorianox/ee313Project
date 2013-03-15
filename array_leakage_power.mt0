@@ -2,5 +2,5 @@ $DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
 .TITLE 'part 2'
  write_core_power vcell_power      mem_core_power   temper            
  alter#            
- -1.000e-06       -4.079e-04       -4.089e-04         27.0000         
+ -7.000e-07       -2.046e-04       -2.053e-04         27.0000         
  1                 

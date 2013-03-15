@@ -1,0 +1,7 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09-SP2 32-BIT'
+.TITLE 'part 2'
+ switch_power     sapc_b_power     sae_power         
+ sense_amp_power_switch sense_amp_power_clock temper            
+ alter#            
+ -1.671e-05        1.417e-06        2.199e-06        1.184e-03        
+  2.106e-04         27.0000        1                 

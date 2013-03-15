@@ -1,0 +1,70 @@
+* "simulator" "HSPICE" 
+* "version" "F-2011.09-SP2 32-BIT"
+* "format" "HSP"
+* "rundate" "13:24:35 03/15/2013 "
+* "netlist" "sense_amp_power_tb.hsp "
+* "runtitle" "part 2"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ a0 =  15.9531u       
++ a255 =  15.9531u       
++ bl0 =   1.0000        
++ bl_b0 =   0.            
++ ck =  15.9531u       
++ out = 568.8348n       
++ out_b =   1.1469u       
++ sae =   0.            
++ sapc_b = 910.0000m       
++ sel_b0 = 910.0000m       
++ sel_b63 = 910.0000m       
++ vdd = 910.0000m       
++ vdd! = 910.0000m       
++ xi0.cmbl = 947.8346m       
++ xi0.cmbl_b = 831.8336m       
++ xi0.net70 =  -1.6120p       
++ xi0.net71 =  -3.2500p       
++ xi0.sbl = 947.8049m       
++ xi0.sbl_b = 831.8207m       
++ xi0.tail = 720.2259m       
++ xclk_gen.src =   0.            
++ xa0_gen.src =   0.            
++ xa255_gen.src =   0.            
++ xi0.xu1.vdd_load =-147.9261m       
++ xi0.xu0.vdd_load = -32.6745m       
++ xi0.xu3.vdd_load =  -1.7456p       
++ xi0.xu2.vdd_load =  -3.5194p       
++ xclk_gen.xgen.net_2 =  15.9531u       
++ xclk_gen.xgen.net_3 =  15.9531u       
++ xclk_gen.xgen.net_4 = 910.0000m       
++ xa0_gen.xgen.net_2 =  15.9531u       
++ xa0_gen.xgen.net_3 =  15.9531u       
++ xa0_gen.xgen.net_4 = 910.0000m       
++ xa255_gen.xgen.net_2 =  15.9531u       
++ xa255_gen.xgen.net_3 =  15.9531u       
++ xa255_gen.xgen.net_4 = 910.0000m       
++ xclk_gen.xgen.x_0.net_1 = 909.9805m       
++ xclk_gen.xgen.x_0.net_3 = 909.9805m       
++ xclk_gen.xgen.x_0.net_4 =  17.4216u       
++ xa0_gen.xgen.x_0.net_1 = 909.9805m       
++ xa0_gen.xgen.x_0.net_3 = 909.9805m       
++ xa0_gen.xgen.x_0.net_4 =  17.4216u       
++ xa255_gen.xgen.x_0.net_1 = 909.9805m       
++ xa255_gen.xgen.x_0.net_3 = 909.9805m       
++ xa255_gen.xgen.x_0.net_4 =  17.4216u       
++ xclk_gen.xgen.x_0.x_0.vdd_stimulus = 910.0000m       
++ xclk_gen.xgen.x_0.x_1.vdd_stimulus = 910.0000m       
++ xclk_gen.xgen.x_0.x_2.vdd_stimulus = 910.0000m       
++ xclk_gen.xgen.x_0.x_3.vdd_stimulus = 910.0000m       
++ xa0_gen.xgen.x_0.x_0.vdd_stimulus = 910.0000m       
++ xa0_gen.xgen.x_0.x_1.vdd_stimulus = 910.0000m       
++ xa0_gen.xgen.x_0.x_2.vdd_stimulus = 910.0000m       
++ xa0_gen.xgen.x_0.x_3.vdd_stimulus = 910.0000m       
++ xa255_gen.xgen.x_0.x_0.vdd_stimulus = 910.0000m       
++ xa255_gen.xgen.x_0.x_1.vdd_stimulus = 910.0000m       
++ xa255_gen.xgen.x_0.x_2.vdd_stimulus = 910.0000m       
++ xa255_gen.xgen.x_0.x_3.vdd_stimulus = 910.0000m       
+***   END: Saved Operating Point ***                     

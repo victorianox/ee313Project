@@ -1,0 +1,58 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.sense_power_tb.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+.param supply =0.91v
+
+***************************************************************
+*SOURCES AND STIMULI
+***************************************************************
+
+*clock and address stuff
+.include './stimulus.sp'
+
+*Ideal sources for sense amp and bitline precharge
+*          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
+Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.45ns      50ps   50ps     450ps         1ns
+
+*Always read 0 and 63
+Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    1.1ns    50ps   50ps     450ps         1ns
+Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    1.1ns    50ps   50ps     450ps         1ns
+
+*SAE signal
+Vsae sae Gnd         pulse 0    'Supply'    1.16ns    50ps   50ps     450ps         1ns
+
+*Bitlines
+Vbl0 bl0 Gnd dc=1
+Vbl_b0 bl_b0 Gnd dc=0
+
+
+* Measure Current For One Clock Cycle 
+.meas TRAN switch_power
++ AVG i (v_supply1) FROM=1.34ns TO=2.34ns
+
+.meas TRAN sapc_b_power
++ AVG i(Vsapc_b) FROM='2*tcyc' TO=2.8ns
+
+.meas TRAN sae_power
++ AVG i (Vsae) FROM=1.34n TO=2.34ns
+
+.MEASURE sense_amp_power_switch param='64*0.91*(abs(switch_power)+abs(sapc_b_power)+abs(sae_power))'
+
+.MEASURE sense_amp_power_clock param='64*0.91*(abs(sapc_b_power)+abs(sae_power))'
+*actually run the simulation
+.trans 0.3ps 18ns
+
+.end

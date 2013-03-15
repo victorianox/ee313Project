@@ -10,8 +10,8 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
   Command line options: array_leakage_power.hsp
  lic:  
  lic: FLEXlm: v10.8 
- lic: USER:   veharvey             HOSTNAME: myth10 
- lic: HOSTID: 001ec92f9f5a         PID:      22376 
+ lic: USER:   veharvey             HOSTNAME: myth16 
+ lic: HOSTID: 001ec92f9f2b         PID:      9550 
  lic: Using FLEXlm license file: 
  lic: 27000@cadlic0.stanford.edu 
  lic: Checkout 1 hspice 
@@ -107,13 +107,13 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  circuit parameter definitions
   parameter          =  value 
 
-     0:supply                                                  =   1.0000       
+     0:supply                                                  = 700.0000m      
      0:tcyc                                                    =   1.0000n      
      0:trf                                                     =  50.0000p      
-     0:blpcwidth                                               =  80.0000       
+     0:blpcwidth                                               =  40.0000       
      0:wrenpwvdd                                               =  48.0000       
      0:wrenpwwl                                                =  48.0000       
-     0:vdd_wr_value                                            = 800.0000m      
+     0:vdd_wr_value                                            = 500.0000m      
      0:write_core_power                                        =   0.           
      0:vcell_power                                             =   0.           
      0:mem_core_power                                          =   0.           
@@ -301,12 +301,12 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  **** independent sources
 
      name         node1        node2      dc volt    ac mag    ac phase    type
-  v_supply  vdd               0                    1.0000     0.         0.      dc   
-  v_supply1  vdd!              0                    1.0000     0.         0.      dc   
-  vvcell  vcell             0                  900.0000m    0.         0.      dc   
+  v_supply  vdd               0                  700.0000m    0.         0.      dc   
+  v_supply1  vdd!              0                  700.0000m    0.         0.      dc   
+  vvcell  vcell             0                  600.0000m    0.         0.      dc   
  xclk_gen.vsrc xclk_gen.src               0                    0.         0.         0.      pulse
              initial value     0.     
-             pulsed value.     1.0000 
+             pulsed value.   700.0000m
              delay time...   500.0000p
              risetime.....    50.0000p
              falltime.....    50.0000p
@@ -315,7 +315,7 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
 
  xa0_gen.vsrc xa0_gen.src               0                    0.         0.         0.      pulse
              initial value     0.     
-             pulsed value.     1.0000 
+             pulsed value.   700.0000m
              delay time...   375.0000p
              risetime.....    50.0000p
              falltime.....    50.0000p
@@ -324,31 +324,31 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
 
  xa255_gen.vsrc xa255_gen.src               0                    0.         0.         0.      pulse
              initial value     0.     
-             pulsed value.     1.0000 
+             pulsed value.   700.0000m
              delay time...     1.3750n
              risetime.....    50.0000p
              falltime.....    50.0000p
              width........   950.0000p
              period.......     2.0000n
 
- xclk_gen.xgen.v_monitor xclk_gen.xgen.net_4             0                    1.0000     0.         0.      dc   
+ xclk_gen.xgen.v_monitor xclk_gen.xgen.net_4             0                  700.0000m    0.         0.      dc   
  xclk_gen.xgen.v_sense xclk_gen.xgen.net_3             ck                   0.         0.         0.      dc   
- xa0_gen.xgen.v_monitor xa0_gen.xgen.net_4             0                    1.0000     0.         0.      dc   
+ xa0_gen.xgen.v_monitor xa0_gen.xgen.net_4             0                  700.0000m    0.         0.      dc   
  xa0_gen.xgen.v_sense xa0_gen.xgen.net_3             a0                   0.         0.         0.      dc   
- xa255_gen.xgen.v_monitor xa255_gen.xgen.net_4             0                    1.0000     0.         0.      dc   
+ xa255_gen.xgen.v_monitor xa255_gen.xgen.net_4             0                  700.0000m    0.         0.      dc   
  xa255_gen.xgen.v_sense xa255_gen.xgen.net_3             a255                 0.         0.         0.      dc   
- xclk_gen.xgen.x_0.x_0.vstimulus_supply xclk_gen.xgen.x_0.x_0.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xclk_gen.xgen.x_0.x_1.vstimulus_supply xclk_gen.xgen.x_0.x_1.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xclk_gen.xgen.x_0.x_2.vstimulus_supply xclk_gen.xgen.x_0.x_2.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xclk_gen.xgen.x_0.x_3.vstimulus_supply xclk_gen.xgen.x_0.x_3.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa0_gen.xgen.x_0.x_0.vstimulus_supply xa0_gen.xgen.x_0.x_0.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa0_gen.xgen.x_0.x_1.vstimulus_supply xa0_gen.xgen.x_0.x_1.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa0_gen.xgen.x_0.x_2.vstimulus_supply xa0_gen.xgen.x_0.x_2.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa0_gen.xgen.x_0.x_3.vstimulus_supply xa0_gen.xgen.x_0.x_3.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa255_gen.xgen.x_0.x_0.vstimulus_supply xa255_gen.xgen.x_0.x_0.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa255_gen.xgen.x_0.x_1.vstimulus_supply xa255_gen.xgen.x_0.x_1.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa255_gen.xgen.x_0.x_2.vstimulus_supply xa255_gen.xgen.x_0.x_2.vdd_stimulus      0                    1.0000     0.         0.      dc   
- xa255_gen.xgen.x_0.x_3.vstimulus_supply xa255_gen.xgen.x_0.x_3.vdd_stimulus      0                    1.0000     0.         0.      dc   
+ xclk_gen.xgen.x_0.x_0.vstimulus_supply xclk_gen.xgen.x_0.x_0.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xclk_gen.xgen.x_0.x_1.vstimulus_supply xclk_gen.xgen.x_0.x_1.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xclk_gen.xgen.x_0.x_2.vstimulus_supply xclk_gen.xgen.x_0.x_2.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xclk_gen.xgen.x_0.x_3.vstimulus_supply xclk_gen.xgen.x_0.x_3.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa0_gen.xgen.x_0.x_0.vstimulus_supply xa0_gen.xgen.x_0.x_0.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa0_gen.xgen.x_0.x_1.vstimulus_supply xa0_gen.xgen.x_0.x_1.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa0_gen.xgen.x_0.x_2.vstimulus_supply xa0_gen.xgen.x_0.x_2.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa0_gen.xgen.x_0.x_3.vstimulus_supply xa0_gen.xgen.x_0.x_3.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa255_gen.xgen.x_0.x_0.vstimulus_supply xa255_gen.xgen.x_0.x_0.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa255_gen.xgen.x_0.x_1.vstimulus_supply xa255_gen.xgen.x_0.x_1.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa255_gen.xgen.x_0.x_2.vstimulus_supply xa255_gen.xgen.x_0.x_2.vdd_stimulus      0                  700.0000m    0.         0.      dc   
+ xa255_gen.xgen.x_0.x_3.vstimulus_supply xa255_gen.xgen.x_0.x_3.vdd_stimulus      0                  700.0000m    0.         0.      dc   
 
 
  **** mosfets
@@ -1498,14 +1498,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              0:vdd!     0:0        0:vdd!     0:0     
  bulk                0:vdd!     0:vdd!     0:vdd!     0:0     
  model               0:pmos     0:pmos     0:pmos     0:nmos  
- w eff               1.7500u    1.7500u    1.7500u    1.9700u 
+ w eff             870.0000n  870.0000n  870.0000n    1.9700u 
  l eff              29.0000n   29.0000n   29.0000n   29.0000n 
  rd eff              0.         0.         0.         0.      
  rs eff              0.         0.         0.         0.      
- cdsat             145.3797a  145.3797a  145.3797a  163.4731a 
- cssat             145.3797a  145.3797a  145.3797a  163.4731a 
- capbd               1.8390f    1.8390f    1.8390f    2.0634f 
- capbs               1.4877f    1.4877f    1.4877f    1.6682f 
+ cdsat              73.0062a   73.0062a   73.0062a  163.4731a 
+ cssat              73.0062a   73.0062a   73.0062a  163.4731a 
+ capbd             941.4733a  941.4733a  941.4733a    2.0634f 
+ capbs             765.8253a  765.8253a  765.8253a    1.6682f 
  temp               25.0000    25.0000    25.0000    25.0000  
  aic                                                          
  nf                  1.0000     1.0000     1.0000     1.0000  
@@ -1540,14 +1540,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              0:0        0:vdd!       1:net0206    0:vdd!    
  bulk                0:0        0:vdd!       0:vdd!       0:vdd!    
  model               0:nmos     0:pmos       0:pmos       0:pmos    
- w eff               1.9700u  110.2500u    110.2500u    110.2500u   
+ w eff               1.9700u   54.8100u     54.8100u     54.8100u   
  l eff              29.0000n   29.0000n     29.0000n     29.0000n   
  rd eff              0.         0.           0.           0.        
  rs eff              0.         0.           0.           0.        
- cdsat             163.4731a    9.1589f      9.1589f      9.1589f   
- cssat             163.4731a    9.1589f      9.1589f      9.1589f   
- capbd               2.0634f    1.8390f      1.8390f      1.8390f   
- capbs               1.6682f    1.4877f      1.4877f      1.4877f   
+ cdsat             163.4731a    4.5994f      4.5994f      4.5994f   
+ cssat             163.4731a    4.5994f      4.5994f      4.5994f   
+ capbd               2.0634f  941.4733a    941.4733a    941.4733a   
+ capbs               1.6682f  765.8253a    765.8253a    765.8253a   
  temp               25.0000    25.0000      25.0000      25.0000    
  aic                                                                
  nf                  1.0000     1.0000       1.0000       1.0000    
@@ -1582,14 +1582,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              1:net0206    1:net0207    0:vdd!       1:net0136 
  bulk                0:0          0:0          0:vdd!       0:vdd!    
  model               0:nmos       0:nmos       0:pmos       0:pmos    
- w eff             124.1100u    124.1100u    112.0000u    112.0000u   
+ w eff             124.1100u    124.1100u     55.6800u     55.6800u   
  l eff              29.0000n     29.0000n     29.0000n     29.0000n   
  rd eff              0.           0.           0.           0.        
  rs eff              0.           0.           0.           0.        
- cdsat              10.2988f     10.2988f      9.3043f      9.3043f   
- cssat              10.2988f     10.2988f      9.3043f      9.3043f   
- capbd               2.0634f      2.0634f      1.8390f      1.8390f   
- capbs               1.6682f      1.6682f      1.4877f      1.4877f   
+ cdsat              10.2988f     10.2988f      4.6724f      4.6724f   
+ cssat              10.2988f     10.2988f      4.6724f      4.6724f   
+ capbd               2.0634f      2.0634f    941.4733a    941.4733a   
+ capbs               1.6682f      1.6682f    765.8253a    765.8253a   
  temp               25.0000      25.0000      25.0000      25.0000    
  aic                                                                  
  nf                  1.0000       1.0000       1.0000       1.0000    
@@ -1624,14 +1624,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              0:vdd!       1:net0136    1:net0180    0:vdd!    
  bulk                0:vdd!       0:0          0:0          0:vdd!    
  model               0:pmos       0:nmos       0:nmos       0:pmos    
- w eff             112.0000u    126.0800u    126.0800u    112.0000u   
+ w eff              55.6800u    126.0800u    126.0800u     55.6800u   
  l eff              29.0000n     29.0000n     29.0000n     29.0000n   
  rd eff              0.           0.           0.           0.        
  rs eff              0.           0.           0.           0.        
- cdsat               9.3043f     10.4623f     10.4623f      9.3043f   
- cssat               9.3043f     10.4623f     10.4623f      9.3043f   
- capbd               1.8390f      2.0634f      2.0634f      1.8390f   
- capbs               1.4877f      1.6682f      1.6682f      1.4877f   
+ cdsat               4.6724f     10.4623f     10.4623f      4.6724f   
+ cssat               4.6724f     10.4623f     10.4623f      4.6724f   
+ capbd             941.4733a      2.0634f      2.0634f    941.4733a   
+ capbs             765.8253a      1.6682f      1.6682f    765.8253a   
  temp               25.0000      25.0000      25.0000      25.0000    
  aic                                                                  
  nf                  1.0000       1.0000       1.0000       1.0000    
@@ -1666,14 +1666,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              1:net0162    0:vdd!       1:net0162    1:net0163 
  bulk                0:vdd!       0:vdd!       0:0          0:0       
  model               0:pmos       0:pmos       0:nmos       0:nmos    
- w eff             112.0000u    112.0000u    126.0800u    126.0800u   
+ w eff              55.6800u     55.6800u    126.0800u    126.0800u   
  l eff              29.0000n     29.0000n     29.0000n     29.0000n   
  rd eff              0.           0.           0.           0.        
  rs eff              0.           0.           0.           0.        
- cdsat               9.3043f      9.3043f     10.4623f     10.4623f   
- cssat               9.3043f      9.3043f     10.4623f     10.4623f   
- capbd               1.8390f      1.8390f      2.0634f      2.0634f   
- capbs               1.4877f      1.4877f      1.6682f      1.6682f   
+ cdsat               4.6724f      4.6724f     10.4623f     10.4623f   
+ cssat               4.6724f      4.6724f     10.4623f     10.4623f   
+ capbd             941.4733a    941.4733a      2.0634f      2.0634f   
+ capbs             765.8253a    765.8253a      1.6682f      1.6682f   
  temp               25.0000      25.0000      25.0000      25.0000    
  aic                                                                  
  nf                  1.0000       1.0000       1.0000       1.0000    
@@ -1708,14 +1708,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              0:vdd!       1:net0233    0:vdd!       1:net0233 
  bulk                0:vdd!       0:vdd!       0:vdd!       0:0       
  model               0:pmos       0:pmos       0:pmos       0:nmos    
- w eff             110.2500u    110.2500u    110.2500u    124.1100u   
+ w eff              54.8100u     54.8100u     54.8100u    124.1100u   
  l eff              29.0000n     29.0000n     29.0000n     29.0000n   
  rd eff              0.           0.           0.           0.        
  rs eff              0.           0.           0.           0.        
- cdsat               9.1589f      9.1589f      9.1589f     10.2988f   
- cssat               9.1589f      9.1589f      9.1589f     10.2988f   
- capbd               1.8390f      1.8390f      1.8390f      2.0634f   
- capbs               1.4877f      1.4877f      1.4877f      1.6682f   
+ cdsat               4.5994f      4.5994f      4.5994f     10.2988f   
+ cssat               4.5994f      4.5994f      4.5994f     10.2988f   
+ capbd             941.4733a    941.4733a    941.4733a      2.0634f   
+ capbs             765.8253a    765.8253a    765.8253a      1.6682f   
  temp               25.0000      25.0000      25.0000      25.0000    
  aic                                                                  
  nf                  1.0000       1.0000       1.0000       1.0000    
@@ -1750,14 +1750,14 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  source              1:net0234    0:vdd!     0:0        0:vdd!  
  bulk                0:0          0:vdd!     0:vdd!     0:vdd!  
  model               0:nmos       0:pmos     0:pmos     0:pmos  
- w eff             124.1100u      1.7500u    1.7500u    1.7500u 
+ w eff             124.1100u    870.0000n  870.0000n  870.0000n 
  l eff              29.0000n     29.0000n   29.0000n   29.0000n 
  rd eff              0.           0.         0.         0.      
  rs eff              0.           0.         0.         0.      
- cdsat              10.2988f    145.3797a  145.3797a  145.3797a 
- cssat              10.2988f    145.3797a  145.3797a  145.3797a 
- capbd               2.0634f      1.8390f    1.8390f    1.8390f 
- capbs               1.6682f      1.4877f    1.4877f    1.4877f 
+ cdsat              10.2988f     73.0062a   73.0062a   73.0062a 
+ cssat              10.2988f     73.0062a   73.0062a   73.0062a 
+ capbd               2.0634f    941.4733a  941.4733a  941.4733a 
+ capbs               1.6682f    765.8253a  765.8253a  765.8253a 
  temp               25.0000      25.0000    25.0000    25.0000  
  aic                                                            
  nf                  1.0000       1.0000     1.0000     1.0000  
@@ -2630,8 +2630,8 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
         52:x_1      inv_stim       52:net_1      31:net_2   
         52:x_2      inv_stim       31:net_2      52:net_3   
         52:x_3      inv_stim       52:net_3      52:net_4   
-  **warning** (array_leakage_power.hsp:30) Invalid circuit pathname xarray.xmctl found.
-  **warning** (array_leakage_power.hsp:30) Invalid node pathname on output variable or initialized node bit              ; this statement is ignored.
+  **warning** (array_leakage_power.hsp:31) Invalid circuit pathname xarray.xmctl found.
+  **warning** (array_leakage_power.hsp:31) Invalid node pathname on output variable or initialized node bit              ; this statement is ignored.
   
 
  **warning** the following singular supplies were terminated to 1 meg resistor 
@@ -2787,34 +2787,34 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
        22:m0                  0.               0.              10.9472a         10.9472a          0.               0.           
        22:m2                  0.               0.              10.9472a         10.9472a          0.               0.           
        22:m3                  0.               0.              10.9472a         10.9472a          0.               0.           
-       23:m5                  0.               0.             202.2240a        202.2240a          0.               0.           
-       23:m1                  0.               0.             202.2240a        202.2240a          0.               0.           
-       23:m0                  0.               0.             202.2240a        202.2240a          0.               0.           
+       23:m5                  0.               0.             101.5520a        101.5520a          0.               0.           
+       23:m1                  0.               0.             101.5520a        101.5520a          0.               0.           
+       23:m0                  0.               0.             101.5520a        101.5520a          0.               0.           
        23:m4                  0.               0.             227.3920a        227.3920a          0.               0.           
        23:m3                  0.               0.             227.3920a        227.3920a          0.               0.           
-       24:m5                  0.               0.              12.7401f         12.7401f          0.               0.           
-       24:m1                  0.               0.              12.7401f         12.7401f          0.               0.           
-       24:m0                  0.               0.              12.7401f         12.7401f          0.               0.           
+       24:m5                  0.               0.               6.3978f          6.3978f          0.               0.           
+       24:m1                  0.               0.               6.3978f          6.3978f          0.               0.           
+       24:m0                  0.               0.               6.3978f          6.3978f          0.               0.           
        24:m4                  0.               0.              14.3257f         14.3257f          0.               0.           
        24:m3                  0.               0.              14.3257f         14.3257f          0.               0.           
-       25:m5                  0.               0.              12.9423f         12.9423f          0.               0.           
-       25:m1                  0.               0.              12.9423f         12.9423f          0.               0.           
-       25:m0                  0.               0.              12.9423f         12.9423f          0.               0.           
+       25:m5                  0.               0.               6.4993f          6.4993f          0.               0.           
+       25:m1                  0.               0.               6.4993f          6.4993f          0.               0.           
+       25:m0                  0.               0.               6.4993f          6.4993f          0.               0.           
        25:m4                  0.               0.              14.5531f         14.5531f          0.               0.           
        25:m3                  0.               0.              14.5531f         14.5531f          0.               0.           
-       26:m5                  0.               0.              12.9423f         12.9423f          0.               0.           
-       26:m1                  0.               0.              12.9423f         12.9423f          0.               0.           
-       26:m0                  0.               0.              12.9423f         12.9423f          0.               0.           
+       26:m5                  0.               0.               6.4993f          6.4993f          0.               0.           
+       26:m1                  0.               0.               6.4993f          6.4993f          0.               0.           
+       26:m0                  0.               0.               6.4993f          6.4993f          0.               0.           
        26:m4                  0.               0.              14.5531f         14.5531f          0.               0.           
        26:m3                  0.               0.              14.5531f         14.5531f          0.               0.           
-       27:m5                  0.               0.              12.7401f         12.7401f          0.               0.           
-       27:m1                  0.               0.              12.7401f         12.7401f          0.               0.           
-       27:m0                  0.               0.              12.7401f         12.7401f          0.               0.           
+       27:m5                  0.               0.               6.3978f          6.3978f          0.               0.           
+       27:m1                  0.               0.               6.3978f          6.3978f          0.               0.           
+       27:m0                  0.               0.               6.3978f          6.3978f          0.               0.           
        27:m4                  0.               0.              14.3257f         14.3257f          0.               0.           
        27:m3                  0.               0.              14.3257f         14.3257f          0.               0.           
-       28:m5                  0.               0.             202.2240a        202.2240a          0.               0.           
-       28:m1                  0.               0.             202.2240a        202.2240a          0.               0.           
-       28:m0                  0.               0.             202.2240a        202.2240a          0.               0.           
+       28:m5                  0.               0.             101.5520a        101.5520a          0.               0.           
+       28:m1                  0.               0.             101.5520a        101.5520a          0.               0.           
+       28:m0                  0.               0.             101.5520a        101.5520a          0.               0.           
        28:m4                  0.               0.             227.3920a        227.3920a          0.               0.           
        28:m3                  0.               0.             227.3920a        227.3920a          0.               0.           
        32:m1                  0.               0.              21.0144a         21.0144a          0.               0.           
@@ -2885,75 +2885,75 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  ***** operating point status is all       simulation time is     0.     
      node    =voltage       node    =voltage       node    =voltage
 
- + 0:a0      =  18.9202u  0:a255    =  18.9202u  0:ck      =  18.9202u
- + 0:vcell   = 900.0000m  0:vdd     =   1.0000   0:vdd!    =   1.0000 
- + 1:net0136 = 999.9966m  1:net0162 = 999.9966m  1:net0163 =   1.0000 
- + 1:net0180 =   1.0000   1:net0206 = 999.9966m  1:net0207 =   1.0000 
- + 1:net0233 = 999.9966m  1:net0234 =   1.0000   2:src     =   0.     
- + 3:src     =   0.       4:src     =   0.       5:bit     = 373.1360m
- + 5:bit_b   = 373.1360m  6:bit     = 373.1360m  6:bit_b   = 373.1360m
- + 7:bit     = 373.1360m  7:bit_b   = 373.1360m  8:bit     = 373.1438m
- + 8:bit_b   = 373.1438m  9:bit     = 373.1438m  9:bit_b   = 373.1438m
- +10:bit     = 373.1438m 10:bit_b   = 373.1438m 11:bit     = 373.1438m
- +11:bit_b   = 373.1438m 12:bit     = 373.1438m 12:bit_b   = 373.1438m
- +13:bit     = 373.1438m 13:bit_b   = 373.1438m 14:bit     = 373.1438m
- +14:bit_b   = 373.1438m 15:bit     = 373.1438m 15:bit_b   = 373.1438m
- +16:bit     = 373.1360m 16:bit_b   = 373.1360m 17:bit     = 373.1360m
- +17:bit_b   = 373.1360m 18:bit     = 373.1438m 18:bit_b   = 373.1438m
- +19:bit     = 373.1438m 19:bit_b   = 373.1438m 20:bit     = 373.1438m
- +20:bit_b   = 373.1438m 21:bit     = 373.1438m 21:bit_b   = 373.1438m
- +22:bit     = 373.1360m 22:bit_b   = 373.1360m 23:net18   = 999.9491m
- +23:net23   = 999.6498m 23:net26   =   4.7569u 24:net18   =  10.8221u
- +24:net23   =  45.7362u 24:net26   = 999.9425m 25:net18   =  10.8221u
- +25:net23   =  45.7362u 25:net26   = 999.9425m 26:net18   =  10.8221u
- +26:net23   =  45.7362u 26:net26   = 999.9425m 27:net18   =  10.8221u
- +27:net23   =  45.7362u 27:net26   = 999.9425m 28:net18   = 999.9491m
- +28:net23   = 999.6498m 28:net26   =   4.7569u 29:net_2   =  18.9202u
- +29:net_3   =  18.9202u 29:net_4   =   1.0000  30:net_2   =  18.9202u
- +30:net_3   =  18.9202u 30:net_4   =   1.0000  31:net_2   =  18.9202u
- +31:net_3   =  18.9202u 31:net_4   =   1.0000  50:net_1   = 999.9744m
- +50:net_3   = 999.9744m 50:net_4   =  21.2646u 51:net_1   = 999.9744m
- +51:net_3   = 999.9744m 51:net_4   =  21.2646u 52:net_1   = 999.9744m
- +52:net_3   = 999.9744m 52:net_4   =  21.2646u 53:vdd_stim=   1.0000 
- +54:vdd_stim=   1.0000  55:vdd_stim=   1.0000  56:vdd_stim=   1.0000 
- +57:vdd_stim=   1.0000  58:vdd_stim=   1.0000  59:vdd_stim=   1.0000 
- +60:vdd_stim=   1.0000  61:vdd_stim=   1.0000  62:vdd_stim=   1.0000 
- +63:vdd_stim=   1.0000  64:vdd_stim=   1.0000 
+ + 0:a0      =  11.4731u  0:a255    =  11.4731u  0:ck      =  11.4731u
+ + 0:vcell   = 600.0000m  0:vdd     = 700.0000m  0:vdd!    = 700.0000m
+ + 1:net0136 = 699.9643m  1:net0162 = 699.9643m  1:net0163 = 699.9881m
+ + 1:net0180 = 699.9881m  1:net0206 = 699.9643m  1:net0207 = 699.9881m
+ + 1:net0233 = 699.9643m  1:net0234 = 699.9881m  2:src     =   0.     
+ + 3:src     =   0.       4:src     =   0.       5:bit     = 258.6501m
+ + 5:bit_b   = 258.6501m  6:bit     = 258.6501m  6:bit_b   = 258.6501m
+ + 7:bit     = 258.6501m  7:bit_b   = 258.6501m  8:bit     = 258.6829m
+ + 8:bit_b   = 258.6829m  9:bit     = 258.6829m  9:bit_b   = 258.6829m
+ +10:bit     = 258.6829m 10:bit_b   = 258.6829m 11:bit     = 258.6829m
+ +11:bit_b   = 258.6829m 12:bit     = 258.6829m 12:bit_b   = 258.6829m
+ +13:bit     = 258.6829m 13:bit_b   = 258.6829m 14:bit     = 258.6829m
+ +14:bit_b   = 258.6829m 15:bit     = 258.6829m 15:bit_b   = 258.6829m
+ +16:bit     = 258.6501m 16:bit_b   = 258.6501m 17:bit     = 258.6501m
+ +17:bit_b   = 258.6501m 18:bit     = 258.6829m 18:bit_b   = 258.6829m
+ +19:bit     = 258.6829m 19:bit_b   = 258.6829m 20:bit     = 258.6829m
+ +20:bit_b   = 258.6829m 21:bit     = 258.6829m 21:bit_b   = 258.6829m
+ +22:bit     = 258.6501m 22:bit_b   = 258.6501m 23:net18   = 699.9793m
+ +23:net23   = 699.6967m 23:net26   =   2.1208u 24:net18   =   7.2288u
+ +24:net23   =  30.7415u 24:net26   = 699.9406m 25:net18   =   7.2288u
+ +25:net23   =  30.7415u 25:net26   = 699.9406m 26:net18   =   7.2288u
+ +26:net23   =  30.7415u 26:net26   = 699.9406m 27:net18   =   7.2288u
+ +27:net23   =  30.7415u 27:net26   = 699.9406m 28:net18   = 699.9793m
+ +28:net23   = 699.6967m 28:net26   =   2.1208u 29:net_2   =  11.4731u
+ +29:net_3   =  11.4731u 29:net_4   = 700.0000m 30:net_2   =  11.4731u
+ +30:net_3   =  11.4731u 30:net_4   = 700.0000m 31:net_2   =  11.4731u
+ +31:net_3   =  11.4731u 31:net_4   = 700.0000m 50:net_1   = 699.9875m
+ +50:net_3   = 699.9875m 50:net_4   =  11.9621u 51:net_1   = 699.9875m
+ +51:net_3   = 699.9875m 51:net_4   =  11.9621u 52:net_1   = 699.9875m
+ +52:net_3   = 699.9875m 52:net_4   =  11.9621u 53:vdd_stim= 700.0000m
+ +54:vdd_stim= 700.0000m 55:vdd_stim= 700.0000m 56:vdd_stim= 700.0000m
+ +57:vdd_stim= 700.0000m 58:vdd_stim= 700.0000m 59:vdd_stim= 700.0000m
+ +60:vdd_stim= 700.0000m 61:vdd_stim= 700.0000m 62:vdd_stim= 700.0000m
+ +63:vdd_stim= 700.0000m 64:vdd_stim= 700.0000m
 
 
  **** voltage sources
 
  subckt                                        xclk_gen    xa0_gen   
  element   0:v_supply  0:v_supply  0:vvcell    2:vsrc      3:vsrc    
-  volts       1.0000      1.0000    900.0000m     0.          0.     
-  current    -1.0000u    -3.1704m  -789.8572m  -424.9138p  -424.9138p
-  power       1.0000u     3.1704m   710.8715m     0.          0.     
+  volts     700.0000m   700.0000m   600.0000m     0.          0.     
+  current  -700.0000n  -726.1281u   -83.9978m   -71.6370p   -71.6370p
+  power     490.0000n   508.2897u    50.3987m     0.          0.     
 
  subckt    xa255_gen   xclk_gen.x  xclk_gen.x  xa0_gen.xg  xa0_gen.xg
  element   4:vsrc     29:v_monito 29:v_sense  30:v_monito 30:v_sense 
-  volts       0.          1.0000      0.          1.0000      0.     
-  current  -424.9138p     0.          0.          0.          0.     
+  volts       0.        700.0000m     0.        700.0000m     0.     
+  current   -71.6370p     0.          0.          0.          0.     
   power       0.          0.          0.          0.          0.     
 
  subckt    xa255_gen.  xa255_gen.  xclk_gen.x  xclk_gen.x  xclk_gen.x
  element  31:v_monito 31:v_sense  53:vstimulu 54:vstimulu 55:vstimulu
-  volts       1.0000      0.          1.0000      1.0000      1.0000 
-  current     0.          0.        -16.0503n   -57.2587n  -256.8644n
-  power       0.          0.         16.0503n    57.2587n   256.8644n
+  volts     700.0000m     0.        700.0000m   700.0000m   700.0000m
+  current     0.          0.         -5.3333n   -27.5031n   -85.3527n
+  power       0.          0.          3.7333n    19.2522n    59.7469n
 
  subckt    xclk_gen.x  xa0_gen.xg  xa0_gen.xg  xa0_gen.xg  xa0_gen.xg
  element  56:vstimulu 57:vstimulu 58:vstimulu 59:vstimulu 60:vstimulu
-  volts       1.0000      1.0000      1.0000      1.0000      1.0000 
-  current  -916.1337n   -16.0503n   -57.2587n  -256.8644n  -916.1336n
-  power     916.1337n    16.0503n    57.2587n   256.8644n   916.1336n
+  volts     700.0000m   700.0000m   700.0000m   700.0000m   700.0000m
+  current  -440.0498n    -5.3333n   -27.5031n   -85.3527n  -440.0498n
+  power     308.0349n     3.7333n    19.2522n    59.7469n   308.0349n
 
  subckt    xa255_gen.  xa255_gen.  xa255_gen.  xa255_gen.
  element  61:vstimulu 62:vstimulu 63:vstimulu 64:vstimulu
-  volts       1.0000      1.0000      1.0000      1.0000 
-  current   -16.0503n   -57.2587n  -256.8644n  -916.1336n
-  power      16.0503n    57.2587n   256.8644n   916.1336n
+  volts     700.0000m   700.0000m   700.0000m   700.0000m
+  current    -5.3333n   -27.5031n   -85.3527n  -440.0498n
+  power       3.7333n    19.2522n    59.7469n   308.0349n
 
-     total voltage source power dissipation=  714.0467m       watts
+     total voltage source power dissipation=   50.9086m       watts
 
 
 
@@ -2962,7 +2962,7 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
 
  subckt      xclk_gen    xa0_gen.    xa255_ge
  element  29:e_0      30:e_0      31:e_0     
-  volts      18.9202u    18.9202u    18.9202u
+  volts      11.4731u    11.4731u    11.4731u
   current     0.          0.          0.     
 
 
@@ -2991,567 +2991,567 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  subckt    xi0.xmctr   xi0.xmctr   xi0.xmctr   xi0.xmctr   xi0.xmctr 
  element   5:m5        5:m4        5:m1        5:m0        5:m2      
  model     0:nmos      0:nmos      0:nmos      0:nmos      0:pmos    
- region      Saturati    Saturati      Cutoff      Cutoff    Saturati
-  id          6.0250u     6.0250u    -1.0831n    -1.0831n    -6.0261u
-  ibs       3.651e-25   3.651e-25  -373.1470f  -373.1470f   100.0107f
-  ibd      -373.1520f  -373.1520f   3.500e-25   3.500e-25   626.8749f
-  vgs       373.1360m   373.1360m  -373.1360m  -373.1360m  -526.8640m
-  vds       373.1360m   373.1360m  -373.1360m  -373.1360m  -526.8640m
-  vbs         0.          0.       -373.1360m  -373.1360m   100.0000m
-  vth       345.1394m   345.1394m   345.1394m   345.1394m  -285.0777m
-  vdsat      71.7954m    71.7954m    40.0579m    40.0579m  -226.8464m
-  vod        27.9967m    27.9967m  -718.2754m  -718.2754m  -241.7863m
-  beta        3.4737m     3.4737m     2.2591m     2.2591m   213.6102u
+ region        Cutoff      Cutoff      Cutoff      Cutoff    Saturati
+  id        640.3399n   640.3399n  -864.8504p  -864.8504p  -641.2027n
+  ibs       2.438e-25   2.438e-25  -258.6610f  -258.6610f   100.0107f
+  ibd      -258.6661f  -258.6661f   2.426e-25   2.426e-25   441.3609f
+  vgs       258.6501m   258.6501m  -258.6501m  -258.6501m  -341.3499m
+  vds       258.6501m   258.6501m  -258.6501m  -258.6501m  -341.3499m
+  vbs         0.          0.       -258.6501m  -258.6501m   100.0000m
+  vth       352.9497m   352.9497m   352.9497m   352.9497m  -300.8585m
+  vdsat      45.3042m    45.3042m    40.1087m    40.1087m   -94.7243m
+  vod       -94.2996m   -94.2996m  -611.5998m  -611.5998m   -40.4914m
+  beta        3.4849m     3.4849m     2.2373m     2.2373m   210.1391u
   gam eff   441.0000m   441.0000m   441.0000m   441.0000m   394.0000m
-  gm         88.7030u    88.7030u    27.5902n    27.5902n    38.8733u
-  gds         7.1486u     7.1486u     2.1084n     2.1084n     4.8408u
-  gmb        22.1641u    22.1641u     8.0438n     8.0438n     7.8800u
-  cdtot     209.1533a   209.1533a   165.1462a   165.1462a   143.8865a
-  cgtot     148.7903a   148.7903a    67.7324a    67.7324a   117.2321a
-  cstot     230.1183a   230.1183a   127.3494a   127.3494a   177.2341a
-  cbtot     331.7412a   331.7412a   252.4806a   252.4806a   235.9603a
-  cgs        89.4135a    89.4135a    22.6632a    22.6632a    86.5594a
-  cgd        47.2093a    47.2093a    31.2109a    31.2109a    27.8719a
+  gm         13.3181u    13.3181u    22.0652n    22.0652n    10.8076u
+  gds         1.0661u     1.0661u     1.7221n     1.7221n     1.1315u
+  gmb         3.4004u     3.4004u     6.4649n     6.4649n     2.0689u
+  cdtot     214.4995a   214.4995a   165.1461a   165.1461a   149.1600a
+  cgtot     126.0389a   126.0389a    69.2841a    69.2841a    95.2178a
+  cstot     210.8047a   210.8047a   131.9777a   131.9777a   162.7087a
+  cbtot     337.0153a   337.0153a   255.5571a   255.5571a   241.3925a
+  cgs        58.9084a    58.9084a    24.2151a    24.2151a    58.6838a
+  cgd        48.7264a    48.7264a    31.2107a    31.2107a    29.6807a
 
 
 
  subckt    xi0.xmctr   xi0.xmcmr   xi0.xmcmr   xi0.xmcmr   xi0.xmcmr 
  element   5:m3        6:m5        6:m4        6:m1        6:m0      
  model     0:pmos      0:nmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati      Cutoff      Cutoff
-  id         -6.0261u     1.5304m     1.5304m  -275.1017n  -275.1017n
-  ibs       100.0107f   9.273e-23   9.273e-23   -94.7793p   -94.7793p
-  ibd       626.8749f   -94.7806p   -94.7806p   8.889e-23   8.889e-23
-  vgs      -526.8640m   373.1360m   373.1360m  -373.1360m  -373.1360m
-  vds      -526.8640m   373.1360m   373.1360m  -373.1360m  -373.1360m
-  vbs       100.0000m     0.          0.       -373.1360m  -373.1360m
-  vth      -285.0777m   345.1394m   345.1394m   345.1394m   345.1394m
-  vdsat    -226.8464m    71.7954m    71.7954m    40.0579m    40.0579m
-  vod      -241.7863m    27.9967m    27.9967m  -718.2754m  -718.2754m
-  beta      213.6102u   882.3076m   882.3076m   573.8218m   573.8218m
+ region      Saturati      Cutoff      Cutoff      Cutoff      Cutoff
+  id       -641.2027n   162.6463u   162.6463u  -219.6720n  -219.6720n
+  ibs       100.0107f   6.192e-23   6.192e-23   -65.6999p   -65.6999p
+  ibd       441.3609f   -65.7012p   -65.7012p   6.161e-23   6.161e-23
+  vgs      -341.3499m   258.6501m   258.6501m  -258.6501m  -258.6501m
+  vds      -341.3499m   258.6501m   258.6501m  -258.6501m  -258.6501m
+  vbs       100.0000m     0.          0.       -258.6501m  -258.6501m
+  vth      -300.8585m   352.9497m   352.9497m   352.9497m   352.9497m
+  vdsat     -94.7243m    45.3042m    45.3042m    40.1087m    40.1087m
+  vod       -40.4914m   -94.2996m   -94.2996m  -611.5998m  -611.5998m
+  beta      210.1391u   885.1729m   885.1729m   568.2731m   568.2731m
   gam eff   394.0000m   441.0000m   441.0000m   441.0000m   441.0000m
-  gm         38.8733u    22.5306m    22.5306m     7.0079u     7.0079u
-  gds         4.8408u     1.8157m     1.8157m   535.5389n   535.5389n
-  gmb         7.8800u     5.6297m     5.6297m     2.0431u     2.0431u
-  cdtot     143.8865a    53.1249f    53.1249f    41.9471f    41.9471f
-  cgtot     117.2321a    37.7927f    37.7927f    17.2040f    17.2040f
-  cstot     177.2341a    58.4500f    58.4500f    32.3467f    32.3467f
-  cbtot     235.9603a    84.2623f    84.2623f    64.1301f    64.1301f
-  cgs        86.5594a    22.7110f    22.7110f     5.7565f     5.7565f
-  cgd        27.8719a    11.9912f    11.9912f     7.9276f     7.9276f
+  gm         10.8076u     3.3828m     3.3828m     5.6046u     5.6046u
+  gds         1.1315u   270.7837u   270.7837u   437.4086n   437.4086n
+  gmb         2.0689u   863.6996u   863.6996u     1.6421u     1.6421u
+  cdtot     149.1600a    54.4829f    54.4829f    41.9471f    41.9471f
+  cgtot      95.2178a    32.0139f    32.0139f    17.5982f    17.5982f
+  cstot     162.7087a    53.5444f    53.5444f    33.5223f    33.5223f
+  cbtot     241.3925a    85.6019f    85.6019f    64.9115f    64.9115f
+  cgs        58.6838a    14.9627f    14.9627f     6.1506f     6.1506f
+  cgd        29.6807a    12.3765f    12.3765f     7.9275f     7.9275f
 
 
 
  subckt    xi0.xmcmr   xi0.xmcmr   xi0.xmcbr   xi0.xmcbr   xi0.xmcbr 
  element   6:m2        6:m3        7:m5        7:m4        7:m1      
  model     0:pmos      0:pmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati    Saturati      Cutoff
-  id         -1.5306m    -1.5306m     6.0250u     6.0250u    -1.0831n
-  ibs        25.4027p    25.4027p   3.651e-25   3.651e-25  -373.1470f
-  ibd       159.2262p   159.2262p  -373.1520f  -373.1520f   3.500e-25
-  vgs      -526.8640m  -526.8640m   373.1360m   373.1360m  -373.1360m
-  vds      -526.8640m  -526.8640m   373.1360m   373.1360m  -373.1360m
-  vbs       100.0000m   100.0000m     0.          0.       -373.1360m
-  vth      -285.0777m  -285.0777m   345.1394m   345.1394m   345.1394m
-  vdsat    -226.8464m  -226.8464m    71.7954m    71.7954m    40.0579m
-  vod      -241.7863m  -241.7863m    27.9967m    27.9967m  -718.2754m
-  beta       54.2570m    54.2570m     3.4737m     3.4737m     2.2591m
+ region      Saturati    Saturati      Cutoff      Cutoff      Cutoff
+  id       -162.8655u  -162.8655u   640.3399n   640.3399n  -864.8504p
+  ibs        25.4027p    25.4027p   2.438e-25   2.438e-25  -258.6610f
+  ibd       112.1057p   112.1057p  -258.6661f  -258.6661f   2.426e-25
+  vgs      -341.3499m  -341.3499m   258.6501m   258.6501m  -258.6501m
+  vds      -341.3499m  -341.3499m   258.6501m   258.6501m  -258.6501m
+  vbs       100.0000m   100.0000m     0.          0.       -258.6501m
+  vth      -300.8585m  -300.8585m   352.9497m   352.9497m   352.9497m
+  vdsat     -94.7243m   -94.7243m    45.3042m    45.3042m    40.1087m
+  vod       -40.4914m   -40.4914m   -94.2996m   -94.2996m  -611.5998m
+  beta       53.3753m    53.3753m     3.4849m     3.4849m     2.2373m
   gam eff   394.0000m   394.0000m   441.0000m   441.0000m   441.0000m
-  gm          9.8738m     9.8738m    88.7030u    88.7030u    27.5902n
-  gds         1.2296m     1.2296m     7.1486u     7.1486u     2.1084n
-  gmb         2.0015m     2.0015m    22.1641u    22.1641u     8.0438n
-  cdtot      36.5472f    36.5472f   209.1533a   209.1533a   165.1462a
-  cgtot      29.7769f    29.7769f   148.7903a   148.7903a    67.7324a
-  cstot      45.0175f    45.0175f   230.1183a   230.1183a   127.3494a
-  cbtot      59.9339f    59.9339f   331.7412a   331.7412a   252.4806a
-  cgs        21.9861f    21.9861f    89.4135a    89.4135a    22.6632a
-  cgd         7.0795f     7.0795f    47.2093a    47.2093a    31.2109a
+  gm          2.7451m     2.7451m    13.3181u    13.3181u    22.0652n
+  gds       287.3943u   287.3943u     1.0661u     1.0661u     1.7221n
+  gmb       525.5028u   525.5028u     3.4004u     3.4004u     6.4649n
+  cdtot      37.8866f    37.8866f   214.4995a   214.4995a   165.1461a
+  cgtot      24.1853f    24.1853f   126.0389a   126.0389a    69.2841a
+  cstot      41.3280f    41.3280f   210.8047a   210.8047a   131.9777a
+  cbtot      61.3137f    61.3137f   337.0153a   337.0153a   255.5571a
+  cgs        14.9057f    14.9057f    58.9084a    58.9084a    24.2151a
+  cgd         7.5389f     7.5389f    48.7264a    48.7264a    31.2107a
 
 
 
  subckt    xi0.xmcbr   xi0.xmcbr   xi0.xmcbr   xi0.xmctb3  xi0.xmctb3
  element   7:m0        7:m2        7:m3        8:m5        8:m4      
  model     0:nmos      0:pmos      0:pmos      0:nmos      0:nmos    
- region        Cutoff    Saturati    Saturati    Saturati    Saturati
-  id         -1.0831n    -6.0261u    -6.0261u   379.6233u   379.6233u
-  ibs      -373.1470f   100.0107f   100.0107f   2.300e-23   2.300e-23
-  ibd       3.500e-25   626.8749f   626.8749f   -23.5091p   -23.5091p
-  vgs      -373.1360m  -526.8640m  -526.8640m   373.1438m   373.1438m
-  vds      -373.1360m  -526.8640m  -526.8640m   373.1438m   373.1438m
-  vbs      -373.1360m   100.0000m   100.0000m     0.          0.     
-  vth       345.1394m  -285.0777m  -285.0777m   345.1388m   345.1388m
-  vdsat      40.0579m  -226.8464m  -226.8464m    71.7982m    71.7982m
-  vod      -718.2754m  -241.7863m  -241.7863m    28.0050m    28.0050m
-  beta        2.2591m   213.6102u   213.6102u   218.8400m   218.8400m
+ region        Cutoff    Saturati    Saturati      Cutoff      Cutoff
+  id       -864.8504p  -641.2027n  -641.2027n    40.3712u    40.3712u
+  ibs      -258.6610f   100.0107f   100.0107f   1.536e-23   1.536e-23
+  ibd       2.426e-25   441.3609f   441.3609f   -16.2980p   -16.2980p
+  vgs      -258.6501m  -341.3499m  -341.3499m   258.6829m   258.6829m
+  vds      -258.6501m  -341.3499m  -341.3499m   258.6829m   258.6829m
+  vbs      -258.6501m   100.0000m   100.0000m     0.          0.     
+  vth       352.9497m  -300.8585m  -300.8585m   352.9475m   352.9475m
+  vdsat      40.1087m   -94.7243m   -94.7243m    45.3076m    45.3076m
+  vod      -611.5998m   -40.4914m   -40.4914m   -94.2645m   -94.2645m
+  beta        2.2373m   210.1391u   210.1391u   219.5508m   219.5508m
   gam eff   441.0000m   394.0000m   394.0000m   441.0000m   441.0000m
-  gm         27.5902n    38.8733u    38.8733u     5.5888m     5.5888m
-  gds         2.1084n     4.8408u     4.8408u   450.4020u   450.4020u
-  gmb         8.0438n     7.8800u     7.8800u     1.3965m     1.3965m
-  cdtot     165.1462a   143.8865a   143.8865a    13.1766f    13.1766f
-  cgtot      67.7324a   117.2321a   117.2321a     9.3740f     9.3740f
-  cstot     127.3494a   177.2341a   177.2341a    14.4976f    14.4976f
-  cbtot     252.4806a   235.9603a   235.9603a    20.8997f    20.8997f
-  cgs        22.6632a    86.5594a    86.5594a     5.6333f     5.6333f
-  cgd        31.2109a    27.8719a    27.8719a     2.9742f     2.9742f
+  gm         22.0652n    10.8076u    10.8076u   839.6128u   839.6128u
+  gds         1.7221n     1.1315u     1.1315u    67.2083u    67.2083u
+  gmb         6.4649n     2.0689u     2.0689u   214.3681u   214.3681u
+  cdtot     165.1461a   149.1600a   149.1600a    13.5134f    13.5134f
+  cgtot      69.2841a    95.2178a    95.2178a     7.9405f     7.9405f
+  cstot     131.9777a   162.7087a   162.7087a    13.2808f    13.2808f
+  cbtot     255.5571a   241.3925a   241.3925a    21.2319f    21.2319f
+  cgs        24.2151a    58.6838a    58.6838a     3.7114f     3.7114f
+  cgd        31.2107a    29.6807a    29.6807a     3.0698f     3.0698f
 
 
 
  subckt    xi0.xmctb3  xi0.xmctb3  xi0.xmctb3  xi0.xmctb3  xi0.xmcmb3
  element   8:m1        8:m0        8:m2        8:m3        9:m5      
  model     0:nmos      0:nmos      0:pmos      0:pmos      0:nmos    
- region        Cutoff      Cutoff    Saturati    Saturati    Saturati
-  id        307.3076f   307.3166f  -379.6230u  -379.6230u    96.4123m
-  ibs       -23.5087p   -23.5087p     6.3007p     6.3007p   5.841e-21
-  ibd       -63.0005p   -63.0014p    39.4926p    39.4926p    -5.9706n
-  vgs      -373.1438m  -373.1438m  -526.8562m  -526.8562m   373.1438m
-  vds       626.8528m   626.8670m  -526.8562m  -526.8562m   373.1438m
-  vbs      -373.1438m  -373.1438m   100.0000m   100.0000m     0.     
-  vth       410.4368m   410.4358m  -285.0783m  -285.0783m   345.1388m
-  vdsat      40.5647m    40.5647m  -226.8407m  -226.8407m    71.7982m
-  vod      -783.5806m  -783.5796m  -241.7779m  -241.7779m    28.0050m
-  beta      131.0828m   131.0830m    13.4575m    13.4575m    55.5784 
+ region        Cutoff      Cutoff    Saturati    Saturati      Cutoff
+  id         11.6199p    11.6204p   -40.3711u   -40.3711u    10.2530m
+  ibs       -16.2977p   -16.2977p     6.3007p     6.3007p   3.901e-21
+  ibd       -44.0984p   -44.0999p    27.8037p    27.8037p    -4.1392n
+  vgs      -258.6829m  -258.6829m  -341.3171m  -341.3171m   258.6829m
+  vds       441.2814m   441.3052m  -341.3171m  -341.3171m   258.6829m
+  vbs      -258.6829m  -258.6829m   100.0000m   100.0000m     0.     
+  vth       399.1875m   399.1859m  -300.8613m  -300.8613m   352.9475m
+  vdsat      40.4987m    40.4987m   -94.7054m   -94.7054m    45.3076m
+  vod      -657.8705m  -657.8689m   -40.4557m   -40.4557m   -94.2645m
+  beta      132.9748m   132.9750m    13.2385m    13.2385m    55.7589 
   gam eff   441.0000m   441.0000m   394.0000m   394.0000m   441.0000m
-  gm          8.4078p     8.4080p     2.4490m     2.4490m     1.4194 
-  gds       629.8423f   629.8603f   304.9617u   304.9617u   114.3878m
-  gmb         2.4231p     2.4232p   496.4316u   496.4316u   354.6569m
-  cdtot       7.9656f     7.9655f     9.0649f     9.0649f     3.3464p
-  cgtot       3.5645f     3.5645f     7.3856f     7.3856f     2.3807p
-  cstot       8.0230f     8.0230f    11.1657f    11.1657f     3.6819p
-  cbtot      14.1702f    14.1702f    14.8655f    14.8655f     5.3079p
-  cgs         1.4278f     1.4278f     5.4532f     5.4532f     1.4307p
-  cgd         1.2636f     1.2636f     1.7559f     1.7559f   755.3460f
+  gm        313.3783p   313.3935p   680.5566u   680.5566u   213.2350m
+  gds        23.7007p    23.7018p    71.2483u    71.2483u    17.0688m
+  gmb        91.4687p    91.4731p   130.2798u   130.2798u    54.4427m
+  cdtot       8.3799f     8.3799f     9.3972f     9.3972f     3.4320p
+  cgtot       3.7048f     3.7047f     5.9982f     5.9982f     2.0166p
+  cstot       8.3145f     8.3145f    10.2503f    10.2503f     3.3729p
+  cbtot      14.7358f    14.7358f    15.2078f    15.2078f     5.3922p
+  cgs         1.5255f     1.5255f     3.6964f     3.6964f   942.5703f
+  cgd         1.3061f     1.3061f     1.8699f     1.8699f   779.6204f
 
 
 
  subckt    xi0.xmcmb3  xi0.xmcmb3  xi0.xmcmb3  xi0.xmcmb3  xi0.xmcmb3
  element   9:m4        9:m1        9:m0        9:m2        9:m3      
  model     0:nmos      0:nmos      0:nmos      0:pmos      0:pmos    
- region      Saturati      Cutoff      Cutoff    Saturati    Saturati
-  id         96.4123m    78.0464p    78.0487p   -96.4122m   -96.4122m
-  ibs       5.841e-21    -5.9705n    -5.9705n     1.6002n     1.6002n
-  ibd        -5.9706n   -16.0001n   -16.0003n    10.0299n    10.0299n
-  vgs       373.1438m  -373.1438m  -373.1438m  -526.8562m  -526.8562m
-  vds       373.1438m   626.8528m   626.8670m  -526.8562m  -526.8562m
-  vbs         0.       -373.1438m  -373.1438m   100.0000m   100.0000m
-  vth       345.1388m   410.4368m   410.4358m  -285.0783m  -285.0783m
-  vdsat      71.7982m    40.5647m    40.5647m  -226.8407m  -226.8407m
-  vod        28.0050m  -783.5806m  -783.5796m  -241.7779m  -241.7779m
-  beta       55.5784     33.2909     33.2909      3.4178      3.4178 
+ region        Cutoff      Cutoff      Cutoff    Saturati    Saturati
+  id         10.2530m     2.9511n     2.9512n   -10.2530m   -10.2530m
+  ibs       3.901e-21    -4.1391n    -4.1391n     1.6002n     1.6002n
+  ibd        -4.1392n   -11.1996n   -11.2000n     7.0612n     7.0612n
+  vgs       258.6829m  -258.6829m  -258.6829m  -341.3171m  -341.3171m
+  vds       258.6829m   441.2814m   441.3052m  -341.3171m  -341.3171m
+  vbs         0.       -258.6829m  -258.6829m   100.0000m   100.0000m
+  vth       352.9475m   399.1875m   399.1859m  -300.8613m  -300.8613m
+  vdsat      45.3076m    40.4987m    40.4987m   -94.7054m   -94.7054m
+  vod       -94.2645m  -657.8705m  -657.8689m   -40.4557m   -40.4557m
+  beta       55.7589     33.7714     33.7714      3.3622      3.3622 
   gam eff   441.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm          1.4194      2.1353n     2.1354n   621.9599m   621.9599m
-  gds       114.3878m   159.9599p   159.9645p    77.4506m    77.4506m
-  gmb       354.6569m   615.3956p   615.4133p   126.0779m   126.0779m
-  cdtot       3.3464p     2.0230p     2.0230p     2.3022p     2.3022p
-  cgtot       2.3807p   905.2766f   905.2762f     1.8757p     1.8757p
-  cstot       3.6819p     2.0376p     2.0376p     2.8357p     2.8357p
-  cbtot       5.3079p     3.5988p     3.5988p     3.7754p     3.7754p
-  cgs         1.4307p   362.6176f   362.6176f     1.3849p     1.3849p
-  cgd       755.3460f   320.9222f   320.9218f   445.9512f   445.9512f
+  gm        213.2350m    79.5881n    79.5920n   172.8398m   172.8398m
+  gds        17.0688m     6.0192n     6.0195n    18.0948m    18.0948m
+  gmb        54.4427m    23.2302n    23.2313n    33.0869m    33.0869m
+  cdtot       3.4320p     2.1282p     2.1282p     2.3866p     2.3866p
+  cgtot       2.0166p   940.8901f   940.8889f     1.5233p     1.5233p
+  cstot       3.3729p     2.1116p     2.1116p     2.6032p     2.6032p
+  cbtot       5.3922p     3.7424p     3.7424p     3.8623p     3.8623p
+  cgs       942.5703f   387.4401f   387.4401f   938.7637f   938.7637f
+  cgd       779.6204f   331.7136f   331.7124f   474.9032f   474.9032f
 
 
 
  subckt    xi0.xmcbb3  xi0.xmcbb3  xi0.xmcbb3  xi0.xmcbb3  xi0.xmcbb3
  element  10:m5       10:m4       10:m1       10:m0       10:m2      
  model     0:nmos      0:nmos      0:nmos      0:nmos      0:pmos    
- region      Saturati    Saturati      Cutoff      Cutoff    Saturati
-  id        379.6233u   379.6233u   307.3076f   307.3166f  -379.6230u
-  ibs       2.300e-23   2.300e-23   -23.5087p   -23.5087p     6.3007p
-  ibd       -23.5091p   -23.5091p   -63.0005p   -63.0014p    39.4926p
-  vgs       373.1438m   373.1438m  -373.1438m  -373.1438m  -526.8562m
-  vds       373.1438m   373.1438m   626.8528m   626.8670m  -526.8562m
-  vbs         0.          0.       -373.1438m  -373.1438m   100.0000m
-  vth       345.1388m   345.1388m   410.4368m   410.4358m  -285.0783m
-  vdsat      71.7982m    71.7982m    40.5647m    40.5647m  -226.8407m
-  vod        28.0050m    28.0050m  -783.5806m  -783.5796m  -241.7779m
-  beta      218.8400m   218.8400m   131.0828m   131.0830m    13.4575m
+ region        Cutoff      Cutoff      Cutoff      Cutoff    Saturati
+  id         40.3712u    40.3712u    11.6199p    11.6204p   -40.3711u
+  ibs       1.536e-23   1.536e-23   -16.2977p   -16.2977p     6.3007p
+  ibd       -16.2980p   -16.2980p   -44.0984p   -44.0999p    27.8037p
+  vgs       258.6829m   258.6829m  -258.6829m  -258.6829m  -341.3171m
+  vds       258.6829m   258.6829m   441.2814m   441.3052m  -341.3171m
+  vbs         0.          0.       -258.6829m  -258.6829m   100.0000m
+  vth       352.9475m   352.9475m   399.1875m   399.1859m  -300.8613m
+  vdsat      45.3076m    45.3076m    40.4987m    40.4987m   -94.7054m
+  vod       -94.2645m   -94.2645m  -657.8705m  -657.8689m   -40.4557m
+  beta      219.5508m   219.5508m   132.9748m   132.9750m    13.2385m
   gam eff   441.0000m   441.0000m   441.0000m   441.0000m   394.0000m
-  gm          5.5888m     5.5888m     8.4078p     8.4080p     2.4490m
-  gds       450.4020u   450.4020u   629.8423f   629.8603f   304.9617u
-  gmb         1.3965m     1.3965m     2.4231p     2.4232p   496.4316u
-  cdtot      13.1766f    13.1766f     7.9656f     7.9655f     9.0649f
-  cgtot       9.3740f     9.3740f     3.5645f     3.5645f     7.3856f
-  cstot      14.4976f    14.4976f     8.0230f     8.0230f    11.1657f
-  cbtot      20.8997f    20.8997f    14.1702f    14.1702f    14.8655f
-  cgs         5.6333f     5.6333f     1.4278f     1.4278f     5.4532f
-  cgd         2.9742f     2.9742f     1.2636f     1.2636f     1.7559f
+  gm        839.6128u   839.6128u   313.3783p   313.3935p   680.5566u
+  gds        67.2083u    67.2083u    23.7007p    23.7018p    71.2483u
+  gmb       214.3681u   214.3681u    91.4687p    91.4731p   130.2798u
+  cdtot      13.5134f    13.5134f     8.3799f     8.3799f     9.3972f
+  cgtot       7.9405f     7.9405f     3.7048f     3.7047f     5.9982f
+  cstot      13.2808f    13.2808f     8.3145f     8.3145f    10.2503f
+  cbtot      21.2319f    21.2319f    14.7358f    14.7358f    15.2078f
+  cgs         3.7114f     3.7114f     1.5255f     1.5255f     3.6964f
+  cgd         3.0698f     3.0698f     1.3061f     1.3061f     1.8699f
 
 
 
  subckt    xi0.xmcbb3  xi0.xmcbb2  xi0.xmcbb2  xi0.xmcbb2  xi0.xmcbb2
  element  10:m3       11:m5       11:m4       11:m1       11:m0      
  model     0:pmos      0:nmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati      Cutoff      Cutoff
-  id       -379.6230u   385.6491u   385.6491u   312.1855f   312.1946f
-  ibs         6.3007p   2.336e-23   2.336e-23   -23.8819p   -23.8819p
-  ibd        39.4926p   -23.8822p   -23.8822p   -64.0005p   -64.0014p
-  vgs      -526.8562m   373.1438m   373.1438m  -373.1438m  -373.1438m
-  vds      -526.8562m   373.1438m   373.1438m   626.8528m   626.8670m
-  vbs       100.0000m     0.          0.       -373.1438m  -373.1438m
-  vth      -285.0783m   345.1388m   345.1388m   410.4368m   410.4358m
-  vdsat    -226.8407m    71.7982m    71.7982m    40.5647m    40.5647m
-  vod      -241.7779m    28.0050m    28.0050m  -783.5806m  -783.5796m
-  beta       13.4575m   222.3137m   222.3137m   133.1635m   133.1637m
+ region      Saturati      Cutoff      Cutoff      Cutoff      Cutoff
+  id        -40.3711u    41.0120u    41.0120u    11.8043p    11.8049p
+  ibs         6.3007p   1.560e-23   1.560e-23   -16.5564p   -16.5564p
+  ibd        27.8037p   -16.5567p   -16.5567p   -44.7984p   -44.7999p
+  vgs      -341.3171m   258.6829m   258.6829m  -258.6829m  -258.6829m
+  vds      -341.3171m   258.6829m   258.6829m   441.2814m   441.3052m
+  vbs       100.0000m     0.          0.       -258.6829m  -258.6829m
+  vth      -300.8613m   352.9475m   352.9475m   399.1875m   399.1859m
+  vdsat     -94.7054m    45.3076m    45.3076m    40.4987m    40.4987m
+  vod       -40.4557m   -94.2645m   -94.2645m  -657.8705m  -657.8689m
+  beta       13.2385m   223.0357m   223.0357m   135.0855m   135.0858m
   gam eff   394.0000m   441.0000m   441.0000m   441.0000m   441.0000m
-  gm          2.4490m     5.6775m     5.6775m     8.5413p     8.5415p
-  gds       304.9617u   457.5512u   457.5512u   639.8398f   639.8581f
-  gmb       496.4316u     1.4186m     1.4186m     2.4616p     2.4617p
-  cdtot       9.0649f    13.3858f    13.3858f     8.0920f     8.0920f
-  cgtot       7.3856f     9.5228f     9.5228f     3.6211f     3.6211f
-  cstot      11.1657f    14.7277f    14.7277f     8.1503f     8.1503f
-  cbtot      14.8655f    21.2314f    21.2314f    14.3952f    14.3951f
-  cgs         5.4532f     5.7227f     5.7227f     1.4505f     1.4505f
-  cgd         1.7559f     3.0214f     3.0214f     1.2837f     1.2837f
+  gm        680.5566u   852.9400u   852.9400u   318.3526p   318.3680p
+  gds        71.2483u    68.2751u    68.2751u    24.0769p    24.0780p
+  gmb       130.2798u   217.7708u   217.7708u    92.9206p    92.9251p
+  cdtot       9.3972f    13.7279f    13.7279f     8.5129f     8.5129f
+  cgtot       5.9982f     8.0666f     8.0666f     3.7636f     3.7636f
+  cstot      10.2503f    13.4916f    13.4916f     8.4465f     8.4465f
+  cbtot      15.2078f    21.5689f    21.5689f    14.9697f    14.9697f
+  cgs         3.6964f     3.7703f     3.7703f     1.5498f     1.5498f
+  cgd         1.8699f     3.1185f     3.1185f     1.3269f     1.3268f
 
 
 
  subckt    xi0.xmcbb2  xi0.xmcbb2  xi0.xmctb2  xi0.xmctb2  xi0.xmctb2
  element  11:m2       11:m3       12:m5       12:m4       12:m1      
  model     0:pmos      0:pmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati    Saturati      Cutoff
-  id       -385.6488u  -385.6488u   385.6491u   385.6491u   312.1855f
-  ibs         6.4007p     6.4007p   2.336e-23   2.336e-23   -23.8819p
-  ibd        40.1195p    40.1195p   -23.8822p   -23.8822p   -64.0005p
-  vgs      -526.8562m  -526.8562m   373.1438m   373.1438m  -373.1438m
-  vds      -526.8562m  -526.8562m   373.1438m   373.1438m   626.8528m
-  vbs       100.0000m   100.0000m     0.          0.       -373.1438m
-  vth      -285.0783m  -285.0783m   345.1388m   345.1388m   410.4368m
-  vdsat    -226.8407m  -226.8407m    71.7982m    71.7982m    40.5647m
-  vod      -241.7779m  -241.7779m    28.0050m    28.0050m  -783.5806m
-  beta       13.6711m    13.6711m   222.3137m   222.3137m   133.1635m
+ region      Saturati    Saturati      Cutoff      Cutoff      Cutoff
+  id        -41.0119u   -41.0119u    41.0120u    41.0120u    11.8043p
+  ibs         6.4007p     6.4007p   1.560e-23   1.560e-23   -16.5564p
+  ibd        28.2450p    28.2450p   -16.5567p   -16.5567p   -44.7984p
+  vgs      -341.3171m  -341.3171m   258.6829m   258.6829m  -258.6829m
+  vds      -341.3171m  -341.3171m   258.6829m   258.6829m   441.2814m
+  vbs       100.0000m   100.0000m     0.          0.       -258.6829m
+  vth      -300.8613m  -300.8613m   352.9475m   352.9475m   399.1875m
+  vdsat     -94.7054m   -94.7054m    45.3076m    45.3076m    40.4987m
+  vod       -40.4557m   -40.4557m   -94.2645m   -94.2645m  -657.8705m
+  beta       13.4487m    13.4487m   223.0357m   223.0357m   135.0855m
   gam eff   394.0000m   394.0000m   441.0000m   441.0000m   441.0000m
-  gm          2.4878m     2.4878m     5.6775m     5.6775m     8.5413p
-  gds       309.8023u   309.8023u   457.5512u   457.5512u   639.8398f
-  gmb       504.3115u   504.3115u     1.4186m     1.4186m     2.4616p
-  cdtot       9.2087f     9.2087f    13.3858f    13.3858f     8.0920f
-  cgtot       7.5028f     7.5028f     9.5228f     9.5228f     3.6211f
-  cstot      11.3430f    11.3430f    14.7277f    14.7277f     8.1503f
-  cbtot      15.1015f    15.1015f    21.2314f    21.2314f    14.3952f
-  cgs         5.5398f     5.5398f     5.7227f     5.7227f     1.4505f
-  cgd         1.7838f     1.7838f     3.0214f     3.0214f     1.2837f
+  gm        691.3591u   691.3591u   852.9400u   852.9400u   318.3526p
+  gds        72.3792u    72.3792u    68.2751u    68.2751u    24.0769p
+  gmb       132.3477u   132.3477u   217.7708u   217.7708u    92.9206p
+  cdtot       9.5463f     9.5463f    13.7279f    13.7279f     8.5129f
+  cgtot       6.0934f     6.0934f     8.0666f     8.0666f     3.7636f
+  cstot      10.4130f    10.4130f    13.4916f    13.4916f     8.4465f
+  cbtot      15.4492f    15.4492f    21.5689f    21.5689f    14.9697f
+  cgs         3.7551f     3.7551f     3.7703f     3.7703f     1.5498f
+  cgd         1.8996f     1.8996f     3.1185f     3.1185f     1.3269f
 
 
 
  subckt    xi0.xmctb2  xi0.xmctb2  xi0.xmctb2  xi0.xmcmb2  xi0.xmcmb2
  element  12:m0       12:m2       12:m3       13:m5       13:m4      
  model     0:nmos      0:pmos      0:pmos      0:nmos      0:nmos    
- region        Cutoff    Saturati    Saturati    Saturati    Saturati
-  id        312.1946f  -385.6488u  -385.6488u    97.9790m    97.9790m
-  ibs       -23.8819p     6.4007p     6.4007p   5.936e-21   5.936e-21
-  ibd       -64.0014p    40.1195p    40.1195p    -6.0676n    -6.0676n
-  vgs      -373.1438m  -526.8562m  -526.8562m   373.1438m   373.1438m
-  vds       626.8670m  -526.8562m  -526.8562m   373.1438m   373.1438m
-  vbs      -373.1438m   100.0000m   100.0000m     0.          0.     
-  vth       410.4358m  -285.0783m  -285.0783m   345.1388m   345.1388m
-  vdsat      40.5647m  -226.8407m  -226.8407m    71.7982m    71.7982m
-  vod      -783.5796m  -241.7779m  -241.7779m    28.0050m    28.0050m
-  beta      133.1637m    13.6711m    13.6711m    56.4816     56.4816 
+ region        Cutoff    Saturati    Saturati      Cutoff      Cutoff
+  id         11.8049p   -41.0119u   -41.0119u    10.4196m    10.4196m
+  ibs       -16.5564p     6.4007p     6.4007p   3.964e-21   3.964e-21
+  ibd       -44.7999p    28.2450p    28.2450p    -4.2064n    -4.2064n
+  vgs      -258.6829m  -341.3171m  -341.3171m   258.6829m   258.6829m
+  vds       441.3052m  -341.3171m  -341.3171m   258.6829m   258.6829m
+  vbs      -258.6829m   100.0000m   100.0000m     0.          0.     
+  vth       399.1859m  -300.8613m  -300.8613m   352.9475m   352.9475m
+  vdsat      40.4987m   -94.7054m   -94.7054m    45.3076m    45.3076m
+  vod      -657.8689m   -40.4557m   -40.4557m   -94.2645m   -94.2645m
+  beta      135.0858m    13.4487m    13.4487m    56.6650     56.6650 
   gam eff   441.0000m   394.0000m   394.0000m   441.0000m   441.0000m
-  gm          8.5415p     2.4878m     2.4878m     1.4424      1.4424 
-  gds       639.8581f   309.8023u   309.8023u   116.2466m   116.2466m
-  gmb         2.4617p   504.3115u   504.3115u   360.4200m   360.4200m
-  cdtot       8.0920f     9.2087f     9.2087f     3.4008p     3.4008p
-  cgtot       3.6211f     7.5028f     7.5028f     2.4194p     2.4194p
-  cstot       8.1503f    11.3430f    11.3430f     3.7418p     3.7418p
-  cbtot      14.3951f    15.1015f    15.1015f     5.3941p     5.3941p
-  cgs         1.4505f     5.5398f     5.5398f     1.4539p     1.4539p
-  cgd         1.2837f     1.7838f     1.7838f   767.6203f   767.6203f
+  gm        318.3680p   691.3591u   691.3591u   216.7001m   216.7001m
+  gds        24.0780p    72.3792u    72.3792u    17.3461m    17.3461m
+  gmb        92.9251p   132.3477u   132.3477u    55.3274m    55.3274m
+  cdtot       8.5129f     9.5463f     9.5463f     3.4877p     3.4877p
+  cgtot       3.7636f     6.0934f     6.0934f     2.0494p     2.0494p
+  cstot       8.4465f    10.4130f    10.4130f     3.4277p     3.4277p
+  cbtot      14.9697f    15.4492f    15.4492f     5.4798p     5.4798p
+  cgs         1.5498f     3.7551f     3.7551f   957.8871f   957.8871f
+  cgd         1.3268f     1.8996f     1.8996f   792.2892f   792.2892f
 
 
 
  subckt    xi0.xmcmb2  xi0.xmcmb2  xi0.xmcmb2  xi0.xmcmb2  xi0.xmctb1
  element  13:m1       13:m0       13:m2       13:m3       14:m5      
  model     0:nmos      0:nmos      0:pmos      0:pmos      0:nmos    
- region        Cutoff      Cutoff    Saturati    Saturati    Saturati
-  id         79.3146p    79.3169p   -97.9789m   -97.9789m   385.6491u
-  ibs        -6.0675n    -6.0675n     1.6262n     1.6262n   2.336e-23
-  ibd       -16.2601n   -16.2604n    10.1929n    10.1929n   -23.8822p
-  vgs      -373.1438m  -373.1438m  -526.8562m  -526.8562m   373.1438m
-  vds       626.8528m   626.8670m  -526.8562m  -526.8562m   373.1438m
-  vbs      -373.1438m  -373.1438m   100.0000m   100.0000m     0.     
-  vth       410.4368m   410.4358m  -285.0783m  -285.0783m   345.1388m
-  vdsat      40.5647m    40.5647m  -226.8407m  -226.8407m    71.7982m
-  vod      -783.5806m  -783.5796m  -241.7779m  -241.7779m    28.0050m
-  beta       33.8319     33.8319      3.4733      3.4733    222.3137m
+ region        Cutoff      Cutoff    Saturati    Saturati      Cutoff
+  id          2.9990n     2.9992n   -10.4196m   -10.4196m    41.0120u
+  ibs        -4.2064n    -4.2064n     1.6262n     1.6262n   1.560e-23
+  ibd       -11.3816n   -11.3820n     7.1760n     7.1760n   -16.5567p
+  vgs      -258.6829m  -258.6829m  -341.3171m  -341.3171m   258.6829m
+  vds       441.2814m   441.3052m  -341.3171m  -341.3171m   258.6829m
+  vbs      -258.6829m  -258.6829m   100.0000m   100.0000m     0.     
+  vth       399.1875m   399.1859m  -300.8613m  -300.8613m   352.9475m
+  vdsat      40.4987m    40.4987m   -94.7054m   -94.7054m    45.3076m
+  vod      -657.8705m  -657.8689m   -40.4557m   -40.4557m   -94.2645m
+  beta       34.3202     34.3202      3.4168      3.4168    223.0357m
   gam eff   441.0000m   441.0000m   394.0000m   394.0000m   441.0000m
-  gm          2.1700n     2.1701n   632.0668m   632.0668m     5.6775m
-  gds       162.5593p   162.5640p    78.7092m    78.7092m   457.5512u
-  gmb       625.3957p   625.4137p   128.1266m   128.1266m     1.4186m
-  cdtot       2.0559p     2.0559p     2.3396p     2.3396p    13.3858f
-  cgtot     919.9873f   919.9869f     1.9062p     1.9062p     9.5228f
-  cstot       2.0707p     2.0707p     2.8818p     2.8818p    14.7277f
-  cbtot       3.6573p     3.6573p     3.8367p     3.8367p    21.2314f
-  cgs       368.5102f   368.5102f     1.4074p     1.4074p     5.7227f
-  cgd       326.1371f   326.1368f   453.1979f   453.1979f     3.0214f
+  gm         80.8814n    80.8854n   175.6484m   175.6484m   852.9400u
+  gds         6.1170n     6.1173n    18.3888m    18.3888m    68.2751u
+  gmb        23.6076n    23.6088n    33.6246m    33.6246m   217.7708u
+  cdtot       2.1628p     2.1628p     2.4254p     2.4254p    13.7279f
+  cgtot     956.1795f   956.1783f     1.5481p     1.5481p     8.0666f
+  cstot       2.1459p     2.1459p     2.6455p     2.6455p    13.4916f
+  cbtot       3.8033p     3.8032p     3.9251p     3.9251p    21.5689f
+  cgs       393.7360f   393.7360f   954.0186f   954.0186f     3.7703f
+  cgd       337.1040f   337.1027f   482.6204f   482.6204f     3.1185f
 
 
 
  subckt    xi0.xmctb1  xi0.xmctb1  xi0.xmctb1  xi0.xmctb1  xi0.xmctb1
  element  14:m4       14:m1       14:m0       14:m2       14:m3      
  model     0:nmos      0:nmos      0:nmos      0:pmos      0:pmos    
- region      Saturati      Cutoff      Cutoff    Saturati    Saturati
-  id        385.6491u   312.1855f   312.1946f  -385.6488u  -385.6488u
-  ibs       2.336e-23   -23.8819p   -23.8819p     6.4007p     6.4007p
-  ibd       -23.8822p   -64.0005p   -64.0014p    40.1195p    40.1195p
-  vgs       373.1438m  -373.1438m  -373.1438m  -526.8562m  -526.8562m
-  vds       373.1438m   626.8528m   626.8670m  -526.8562m  -526.8562m
-  vbs         0.       -373.1438m  -373.1438m   100.0000m   100.0000m
-  vth       345.1388m   410.4368m   410.4358m  -285.0783m  -285.0783m
-  vdsat      71.7982m    40.5647m    40.5647m  -226.8407m  -226.8407m
-  vod        28.0050m  -783.5806m  -783.5796m  -241.7779m  -241.7779m
-  beta      222.3137m   133.1635m   133.1637m    13.6711m    13.6711m
+ region        Cutoff      Cutoff      Cutoff    Saturati    Saturati
+  id         41.0120u    11.8043p    11.8049p   -41.0119u   -41.0119u
+  ibs       1.560e-23   -16.5564p   -16.5564p     6.4007p     6.4007p
+  ibd       -16.5567p   -44.7984p   -44.7999p    28.2450p    28.2450p
+  vgs       258.6829m  -258.6829m  -258.6829m  -341.3171m  -341.3171m
+  vds       258.6829m   441.2814m   441.3052m  -341.3171m  -341.3171m
+  vbs         0.       -258.6829m  -258.6829m   100.0000m   100.0000m
+  vth       352.9475m   399.1875m   399.1859m  -300.8613m  -300.8613m
+  vdsat      45.3076m    40.4987m    40.4987m   -94.7054m   -94.7054m
+  vod       -94.2645m  -657.8705m  -657.8689m   -40.4557m   -40.4557m
+  beta      223.0357m   135.0855m   135.0858m    13.4487m    13.4487m
   gam eff   441.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm          5.6775m     8.5413p     8.5415p     2.4878m     2.4878m
-  gds       457.5512u   639.8398f   639.8581f   309.8023u   309.8023u
-  gmb         1.4186m     2.4616p     2.4617p   504.3115u   504.3115u
-  cdtot      13.3858f     8.0920f     8.0920f     9.2087f     9.2087f
-  cgtot       9.5228f     3.6211f     3.6211f     7.5028f     7.5028f
-  cstot      14.7277f     8.1503f     8.1503f    11.3430f    11.3430f
-  cbtot      21.2314f    14.3952f    14.3951f    15.1015f    15.1015f
-  cgs         5.7227f     1.4505f     1.4505f     5.5398f     5.5398f
-  cgd         3.0214f     1.2837f     1.2837f     1.7838f     1.7838f
+  gm        852.9400u   318.3526p   318.3680p   691.3591u   691.3591u
+  gds        68.2751u    24.0769p    24.0780p    72.3792u    72.3792u
+  gmb       217.7708u    92.9206p    92.9251p   132.3477u   132.3477u
+  cdtot      13.7279f     8.5129f     8.5129f     9.5463f     9.5463f
+  cgtot       8.0666f     3.7636f     3.7636f     6.0934f     6.0934f
+  cstot      13.4916f     8.4465f     8.4465f    10.4130f    10.4130f
+  cbtot      21.5689f    14.9697f    14.9697f    15.4492f    15.4492f
+  cgs         3.7703f     1.5498f     1.5498f     3.7551f     3.7551f
+  cgd         3.1185f     1.3269f     1.3268f     1.8996f     1.8996f
 
 
 
  subckt    xi0.xmcbb0  xi0.xmcbb0  xi0.xmcbb0  xi0.xmcbb0  xi0.xmcbb0
  element  15:m5       15:m4       15:m1       15:m0       15:m2      
  model     0:nmos      0:nmos      0:nmos      0:nmos      0:pmos    
- region      Saturati    Saturati      Cutoff      Cutoff    Saturati
-  id        379.6233u   379.6233u   307.3076f   307.3166f  -379.6230u
-  ibs       2.300e-23   2.300e-23   -23.5087p   -23.5087p     6.3007p
-  ibd       -23.5091p   -23.5091p   -63.0005p   -63.0014p    39.4926p
-  vgs       373.1438m   373.1438m  -373.1438m  -373.1438m  -526.8562m
-  vds       373.1438m   373.1438m   626.8528m   626.8670m  -526.8562m
-  vbs         0.          0.       -373.1438m  -373.1438m   100.0000m
-  vth       345.1388m   345.1388m   410.4368m   410.4358m  -285.0783m
-  vdsat      71.7982m    71.7982m    40.5647m    40.5647m  -226.8407m
-  vod        28.0050m    28.0050m  -783.5806m  -783.5796m  -241.7779m
-  beta      218.8400m   218.8400m   131.0828m   131.0830m    13.4575m
+ region        Cutoff      Cutoff      Cutoff      Cutoff    Saturati
+  id         40.3712u    40.3712u    11.6199p    11.6204p   -40.3711u
+  ibs       1.536e-23   1.536e-23   -16.2977p   -16.2977p     6.3007p
+  ibd       -16.2980p   -16.2980p   -44.0984p   -44.0999p    27.8037p
+  vgs       258.6829m   258.6829m  -258.6829m  -258.6829m  -341.3171m
+  vds       258.6829m   258.6829m   441.2814m   441.3052m  -341.3171m
+  vbs         0.          0.       -258.6829m  -258.6829m   100.0000m
+  vth       352.9475m   352.9475m   399.1875m   399.1859m  -300.8613m
+  vdsat      45.3076m    45.3076m    40.4987m    40.4987m   -94.7054m
+  vod       -94.2645m   -94.2645m  -657.8705m  -657.8689m   -40.4557m
+  beta      219.5508m   219.5508m   132.9748m   132.9750m    13.2385m
   gam eff   441.0000m   441.0000m   441.0000m   441.0000m   394.0000m
-  gm          5.5888m     5.5888m     8.4078p     8.4080p     2.4490m
-  gds       450.4020u   450.4020u   629.8423f   629.8603f   304.9617u
-  gmb         1.3965m     1.3965m     2.4231p     2.4232p   496.4316u
-  cdtot      13.1766f    13.1766f     7.9656f     7.9655f     9.0649f
-  cgtot       9.3740f     9.3740f     3.5645f     3.5645f     7.3856f
-  cstot      14.4976f    14.4976f     8.0230f     8.0230f    11.1657f
-  cbtot      20.8997f    20.8997f    14.1702f    14.1702f    14.8655f
-  cgs         5.6333f     5.6333f     1.4278f     1.4278f     5.4532f
-  cgd         2.9742f     2.9742f     1.2636f     1.2636f     1.7559f
+  gm        839.6128u   839.6128u   313.3783p   313.3935p   680.5566u
+  gds        67.2083u    67.2083u    23.7007p    23.7018p    71.2483u
+  gmb       214.3681u   214.3681u    91.4687p    91.4731p   130.2798u
+  cdtot      13.5134f    13.5134f     8.3799f     8.3799f     9.3972f
+  cgtot       7.9405f     7.9405f     3.7048f     3.7047f     5.9982f
+  cstot      13.2808f    13.2808f     8.3145f     8.3145f    10.2503f
+  cbtot      21.2319f    21.2319f    14.7358f    14.7358f    15.2078f
+  cgs         3.7114f     3.7114f     1.5255f     1.5255f     3.6964f
+  cgd         3.0698f     3.0698f     1.3061f     1.3061f     1.8699f
 
 
 
  subckt    xi0.xmcbb0  xi0.xmcbl   xi0.xmcbl   xi0.xmcbl   xi0.xmcbl 
  element  15:m3       16:m5       16:m4       16:m1       16:m0      
  model     0:pmos      0:nmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati      Cutoff      Cutoff
-  id       -379.6230u     6.0250u     6.0250u    -1.0831n    -1.0831n
-  ibs         6.3007p   3.651e-25   3.651e-25  -373.1470f  -373.1470f
-  ibd        39.4926p  -373.1520f  -373.1520f   3.500e-25   3.500e-25
-  vgs      -526.8562m   373.1360m   373.1360m  -373.1360m  -373.1360m
-  vds      -526.8562m   373.1360m   373.1360m  -373.1360m  -373.1360m
-  vbs       100.0000m     0.          0.       -373.1360m  -373.1360m
-  vth      -285.0783m   345.1394m   345.1394m   345.1394m   345.1394m
-  vdsat    -226.8407m    71.7954m    71.7954m    40.0579m    40.0579m
-  vod      -241.7779m    27.9967m    27.9967m  -718.2754m  -718.2754m
-  beta       13.4575m     3.4737m     3.4737m     2.2591m     2.2591m
+ region      Saturati      Cutoff      Cutoff      Cutoff      Cutoff
+  id        -40.3711u   640.3399n   640.3399n  -864.8504p  -864.8504p
+  ibs         6.3007p   2.438e-25   2.438e-25  -258.6610f  -258.6610f
+  ibd        27.8037p  -258.6661f  -258.6661f   2.426e-25   2.426e-25
+  vgs      -341.3171m   258.6501m   258.6501m  -258.6501m  -258.6501m
+  vds      -341.3171m   258.6501m   258.6501m  -258.6501m  -258.6501m
+  vbs       100.0000m     0.          0.       -258.6501m  -258.6501m
+  vth      -300.8613m   352.9497m   352.9497m   352.9497m   352.9497m
+  vdsat     -94.7054m    45.3042m    45.3042m    40.1087m    40.1087m
+  vod       -40.4557m   -94.2996m   -94.2996m  -611.5998m  -611.5998m
+  beta       13.2385m     3.4849m     3.4849m     2.2373m     2.2373m
   gam eff   394.0000m   441.0000m   441.0000m   441.0000m   441.0000m
-  gm          2.4490m    88.7030u    88.7030u    27.5902n    27.5902n
-  gds       304.9617u     7.1486u     7.1486u     2.1084n     2.1084n
-  gmb       496.4316u    22.1641u    22.1641u     8.0438n     8.0438n
-  cdtot       9.0649f   209.1533a   209.1533a   165.1462a   165.1462a
-  cgtot       7.3856f   148.7903a   148.7903a    67.7324a    67.7324a
-  cstot      11.1657f   230.1183a   230.1183a   127.3494a   127.3494a
-  cbtot      14.8655f   331.7412a   331.7412a   252.4806a   252.4806a
-  cgs         5.4532f    89.4135a    89.4135a    22.6632a    22.6632a
-  cgd         1.7559f    47.2093a    47.2093a    31.2109a    31.2109a
+  gm        680.5566u    13.3181u    13.3181u    22.0652n    22.0652n
+  gds        71.2483u     1.0661u     1.0661u     1.7221n     1.7221n
+  gmb       130.2798u     3.4004u     3.4004u     6.4649n     6.4649n
+  cdtot       9.3972f   214.4995a   214.4995a   165.1461a   165.1461a
+  cgtot       5.9982f   126.0389a   126.0389a    69.2841a    69.2841a
+  cstot      10.2503f   210.8047a   210.8047a   131.9777a   131.9777a
+  cbtot      15.2078f   337.0153a   337.0153a   255.5571a   255.5571a
+  cgs         3.6964f    58.9084a    58.9084a    24.2151a    24.2151a
+  cgd         1.8699f    48.7264a    48.7264a    31.2107a    31.2107a
 
 
 
  subckt    xi0.xmcbl   xi0.xmcbl   xi0.xmcml   xi0.xmcml   xi0.xmcml 
  element  16:m2       16:m3       17:m5       17:m4       17:m1      
  model     0:pmos      0:pmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati    Saturati      Cutoff
-  id         -6.0261u    -6.0261u     1.5304m     1.5304m  -275.1017n
-  ibs       100.0107f   100.0107f   9.273e-23   9.273e-23   -94.7793p
-  ibd       626.8749f   626.8749f   -94.7806p   -94.7806p   8.889e-23
-  vgs      -526.8640m  -526.8640m   373.1360m   373.1360m  -373.1360m
-  vds      -526.8640m  -526.8640m   373.1360m   373.1360m  -373.1360m
-  vbs       100.0000m   100.0000m     0.          0.       -373.1360m
-  vth      -285.0777m  -285.0777m   345.1394m   345.1394m   345.1394m
-  vdsat    -226.8464m  -226.8464m    71.7954m    71.7954m    40.0579m
-  vod      -241.7863m  -241.7863m    27.9967m    27.9967m  -718.2754m
-  beta      213.6102u   213.6102u   882.3076m   882.3076m   573.8218m
+ region      Saturati    Saturati      Cutoff      Cutoff      Cutoff
+  id       -641.2027n  -641.2027n   162.6463u   162.6463u  -219.6720n
+  ibs       100.0107f   100.0107f   6.192e-23   6.192e-23   -65.6999p
+  ibd       441.3609f   441.3609f   -65.7012p   -65.7012p   6.161e-23
+  vgs      -341.3499m  -341.3499m   258.6501m   258.6501m  -258.6501m
+  vds      -341.3499m  -341.3499m   258.6501m   258.6501m  -258.6501m
+  vbs       100.0000m   100.0000m     0.          0.       -258.6501m
+  vth      -300.8585m  -300.8585m   352.9497m   352.9497m   352.9497m
+  vdsat     -94.7243m   -94.7243m    45.3042m    45.3042m    40.1087m
+  vod       -40.4914m   -40.4914m   -94.2996m   -94.2996m  -611.5998m
+  beta      210.1391u   210.1391u   885.1729m   885.1729m   568.2731m
   gam eff   394.0000m   394.0000m   441.0000m   441.0000m   441.0000m
-  gm         38.8733u    38.8733u    22.5306m    22.5306m     7.0079u
-  gds         4.8408u     4.8408u     1.8157m     1.8157m   535.5389n
-  gmb         7.8800u     7.8800u     5.6297m     5.6297m     2.0431u
-  cdtot     143.8865a   143.8865a    53.1249f    53.1249f    41.9471f
-  cgtot     117.2321a   117.2321a    37.7927f    37.7927f    17.2040f
-  cstot     177.2341a   177.2341a    58.4500f    58.4500f    32.3467f
-  cbtot     235.9603a   235.9603a    84.2623f    84.2623f    64.1301f
-  cgs        86.5594a    86.5594a    22.7110f    22.7110f     5.7565f
-  cgd        27.8719a    27.8719a    11.9912f    11.9912f     7.9276f
+  gm         10.8076u    10.8076u     3.3828m     3.3828m     5.6046u
+  gds         1.1315u     1.1315u   270.7837u   270.7837u   437.4086n
+  gmb         2.0689u     2.0689u   863.6996u   863.6996u     1.6421u
+  cdtot     149.1600a   149.1600a    54.4829f    54.4829f    41.9471f
+  cgtot      95.2178a    95.2178a    32.0139f    32.0139f    17.5982f
+  cstot     162.7087a   162.7087a    53.5444f    53.5444f    33.5223f
+  cbtot     241.3925a   241.3925a    85.6019f    85.6019f    64.9115f
+  cgs        58.6838a    58.6838a    14.9627f    14.9627f     6.1506f
+  cgd        29.6807a    29.6807a    12.3765f    12.3765f     7.9275f
 
 
 
  subckt    xi0.xmcml   xi0.xmcml   xi0.xmcml   xi0.xmcmb0  xi0.xmcmb0
  element  17:m0       17:m2       17:m3       18:m5       18:m4      
  model     0:nmos      0:pmos      0:pmos      0:nmos      0:nmos    
- region        Cutoff    Saturati    Saturati    Saturati    Saturati
-  id       -275.1017n    -1.5306m    -1.5306m    96.4123m    96.4123m
-  ibs       -94.7793p    25.4027p    25.4027p   5.841e-21   5.841e-21
-  ibd       8.889e-23   159.2262p   159.2262p    -5.9706n    -5.9706n
-  vgs      -373.1360m  -526.8640m  -526.8640m   373.1438m   373.1438m
-  vds      -373.1360m  -526.8640m  -526.8640m   373.1438m   373.1438m
-  vbs      -373.1360m   100.0000m   100.0000m     0.          0.     
-  vth       345.1394m  -285.0777m  -285.0777m   345.1388m   345.1388m
-  vdsat      40.0579m  -226.8464m  -226.8464m    71.7982m    71.7982m
-  vod      -718.2754m  -241.7863m  -241.7863m    28.0050m    28.0050m
-  beta      573.8218m    54.2570m    54.2570m    55.5784     55.5784 
+ region        Cutoff    Saturati    Saturati      Cutoff      Cutoff
+  id       -219.6720n  -162.8655u  -162.8655u    10.2530m    10.2530m
+  ibs       -65.6999p    25.4027p    25.4027p   3.901e-21   3.901e-21
+  ibd       6.161e-23   112.1057p   112.1057p    -4.1392n    -4.1392n
+  vgs      -258.6501m  -341.3499m  -341.3499m   258.6829m   258.6829m
+  vds      -258.6501m  -341.3499m  -341.3499m   258.6829m   258.6829m
+  vbs      -258.6501m   100.0000m   100.0000m     0.          0.     
+  vth       352.9497m  -300.8585m  -300.8585m   352.9475m   352.9475m
+  vdsat      40.1087m   -94.7243m   -94.7243m    45.3076m    45.3076m
+  vod      -611.5998m   -40.4914m   -40.4914m   -94.2645m   -94.2645m
+  beta      568.2731m    53.3753m    53.3753m    55.7589     55.7589 
   gam eff   441.0000m   394.0000m   394.0000m   441.0000m   441.0000m
-  gm          7.0079u     9.8738m     9.8738m     1.4194      1.4194 
-  gds       535.5389n     1.2296m     1.2296m   114.3878m   114.3878m
-  gmb         2.0431u     2.0015m     2.0015m   354.6569m   354.6569m
-  cdtot      41.9471f    36.5472f    36.5472f     3.3464p     3.3464p
-  cgtot      17.2040f    29.7769f    29.7769f     2.3807p     2.3807p
-  cstot      32.3467f    45.0175f    45.0175f     3.6819p     3.6819p
-  cbtot      64.1301f    59.9339f    59.9339f     5.3079p     5.3079p
-  cgs         5.7565f    21.9861f    21.9861f     1.4307p     1.4307p
-  cgd         7.9276f     7.0795f     7.0795f   755.3460f   755.3460f
+  gm          5.6046u     2.7451m     2.7451m   213.2350m   213.2350m
+  gds       437.4086n   287.3943u   287.3943u    17.0688m    17.0688m
+  gmb         1.6421u   525.5028u   525.5028u    54.4427m    54.4427m
+  cdtot      41.9471f    37.8866f    37.8866f     3.4320p     3.4320p
+  cgtot      17.5982f    24.1853f    24.1853f     2.0166p     2.0166p
+  cstot      33.5223f    41.3280f    41.3280f     3.3729p     3.3729p
+  cbtot      64.9115f    61.3137f    61.3137f     5.3922p     5.3922p
+  cgs         6.1506f    14.9057f    14.9057f   942.5703f   942.5703f
+  cgd         7.9275f     7.5389f     7.5389f   779.6204f   779.6204f
 
 
 
  subckt    xi0.xmcmb0  xi0.xmcmb0  xi0.xmcmb0  xi0.xmcmb0  xi0.xmcmb1
  element  18:m1       18:m0       18:m2       18:m3       19:m5      
  model     0:nmos      0:nmos      0:pmos      0:pmos      0:nmos    
- region        Cutoff      Cutoff    Saturati    Saturati    Saturati
-  id         78.0464p    78.0487p   -96.4122m   -96.4122m    97.9790m
-  ibs        -5.9705n    -5.9705n     1.6002n     1.6002n   5.936e-21
-  ibd       -16.0001n   -16.0003n    10.0299n    10.0299n    -6.0676n
-  vgs      -373.1438m  -373.1438m  -526.8562m  -526.8562m   373.1438m
-  vds       626.8528m   626.8670m  -526.8562m  -526.8562m   373.1438m
-  vbs      -373.1438m  -373.1438m   100.0000m   100.0000m     0.     
-  vth       410.4368m   410.4358m  -285.0783m  -285.0783m   345.1388m
-  vdsat      40.5647m    40.5647m  -226.8407m  -226.8407m    71.7982m
-  vod      -783.5806m  -783.5796m  -241.7779m  -241.7779m    28.0050m
-  beta       33.2909     33.2909      3.4178      3.4178     56.4816 
+ region        Cutoff      Cutoff    Saturati    Saturati      Cutoff
+  id          2.9511n     2.9512n   -10.2530m   -10.2530m    10.4196m
+  ibs        -4.1391n    -4.1391n     1.6002n     1.6002n   3.964e-21
+  ibd       -11.1996n   -11.2000n     7.0612n     7.0612n    -4.2064n
+  vgs      -258.6829m  -258.6829m  -341.3171m  -341.3171m   258.6829m
+  vds       441.2814m   441.3052m  -341.3171m  -341.3171m   258.6829m
+  vbs      -258.6829m  -258.6829m   100.0000m   100.0000m     0.     
+  vth       399.1875m   399.1859m  -300.8613m  -300.8613m   352.9475m
+  vdsat      40.4987m    40.4987m   -94.7054m   -94.7054m    45.3076m
+  vod      -657.8705m  -657.8689m   -40.4557m   -40.4557m   -94.2645m
+  beta       33.7714     33.7714      3.3622      3.3622     56.6650 
   gam eff   441.0000m   441.0000m   394.0000m   394.0000m   441.0000m
-  gm          2.1353n     2.1354n   621.9599m   621.9599m     1.4424 
-  gds       159.9599p   159.9645p    77.4506m    77.4506m   116.2466m
-  gmb       615.3956p   615.4133p   126.0779m   126.0779m   360.4200m
-  cdtot       2.0230p     2.0230p     2.3022p     2.3022p     3.4008p
-  cgtot     905.2766f   905.2762f     1.8757p     1.8757p     2.4194p
-  cstot       2.0376p     2.0376p     2.8357p     2.8357p     3.7418p
-  cbtot       3.5988p     3.5988p     3.7754p     3.7754p     5.3941p
-  cgs       362.6176f   362.6176f     1.3849p     1.3849p     1.4539p
-  cgd       320.9222f   320.9218f   445.9512f   445.9512f   767.6203f
+  gm         79.5881n    79.5920n   172.8398m   172.8398m   216.7001m
+  gds         6.0192n     6.0195n    18.0948m    18.0948m    17.3461m
+  gmb        23.2302n    23.2313n    33.0869m    33.0869m    55.3274m
+  cdtot       2.1282p     2.1282p     2.3866p     2.3866p     3.4877p
+  cgtot     940.8901f   940.8889f     1.5233p     1.5233p     2.0494p
+  cstot       2.1116p     2.1116p     2.6032p     2.6032p     3.4277p
+  cbtot       3.7424p     3.7424p     3.8623p     3.8623p     5.4798p
+  cgs       387.4401f   387.4401f   938.7637f   938.7637f   957.8871f
+  cgd       331.7136f   331.7124f   474.9032f   474.9032f   792.2892f
 
 
 
  subckt    xi0.xmcmb1  xi0.xmcmb1  xi0.xmcmb1  xi0.xmcmb1  xi0.xmcmb1
  element  19:m4       19:m1       19:m0       19:m2       19:m3      
  model     0:nmos      0:nmos      0:nmos      0:pmos      0:pmos    
- region      Saturati      Cutoff      Cutoff    Saturati    Saturati
-  id         97.9790m    79.3146p    79.3169p   -97.9789m   -97.9789m
-  ibs       5.936e-21    -6.0675n    -6.0675n     1.6262n     1.6262n
-  ibd        -6.0676n   -16.2601n   -16.2604n    10.1929n    10.1929n
-  vgs       373.1438m  -373.1438m  -373.1438m  -526.8562m  -526.8562m
-  vds       373.1438m   626.8528m   626.8670m  -526.8562m  -526.8562m
-  vbs         0.       -373.1438m  -373.1438m   100.0000m   100.0000m
-  vth       345.1388m   410.4368m   410.4358m  -285.0783m  -285.0783m
-  vdsat      71.7982m    40.5647m    40.5647m  -226.8407m  -226.8407m
-  vod        28.0050m  -783.5806m  -783.5796m  -241.7779m  -241.7779m
-  beta       56.4816     33.8319     33.8319      3.4733      3.4733 
+ region        Cutoff      Cutoff      Cutoff    Saturati    Saturati
+  id         10.4196m     2.9990n     2.9992n   -10.4196m   -10.4196m
+  ibs       3.964e-21    -4.2064n    -4.2064n     1.6262n     1.6262n
+  ibd        -4.2064n   -11.3816n   -11.3820n     7.1760n     7.1760n
+  vgs       258.6829m  -258.6829m  -258.6829m  -341.3171m  -341.3171m
+  vds       258.6829m   441.2814m   441.3052m  -341.3171m  -341.3171m
+  vbs         0.       -258.6829m  -258.6829m   100.0000m   100.0000m
+  vth       352.9475m   399.1875m   399.1859m  -300.8613m  -300.8613m
+  vdsat      45.3076m    40.4987m    40.4987m   -94.7054m   -94.7054m
+  vod       -94.2645m  -657.8705m  -657.8689m   -40.4557m   -40.4557m
+  beta       56.6650     34.3202     34.3202      3.4168      3.4168 
   gam eff   441.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm          1.4424      2.1700n     2.1701n   632.0668m   632.0668m
-  gds       116.2466m   162.5593p   162.5640p    78.7092m    78.7092m
-  gmb       360.4200m   625.3957p   625.4137p   128.1266m   128.1266m
-  cdtot       3.4008p     2.0559p     2.0559p     2.3396p     2.3396p
-  cgtot       2.4194p   919.9873f   919.9869f     1.9062p     1.9062p
-  cstot       3.7418p     2.0707p     2.0707p     2.8818p     2.8818p
-  cbtot       5.3941p     3.6573p     3.6573p     3.8367p     3.8367p
-  cgs         1.4539p   368.5102f   368.5102f     1.4074p     1.4074p
-  cgd       767.6203f   326.1371f   326.1368f   453.1979f   453.1979f
+  gm        216.7001m    80.8814n    80.8854n   175.6484m   175.6484m
+  gds        17.3461m     6.1170n     6.1173n    18.3888m    18.3888m
+  gmb        55.3274m    23.6076n    23.6088n    33.6246m    33.6246m
+  cdtot       3.4877p     2.1628p     2.1628p     2.4254p     2.4254p
+  cgtot       2.0494p   956.1795f   956.1783f     1.5481p     1.5481p
+  cstot       3.4277p     2.1459p     2.1459p     2.6455p     2.6455p
+  cbtot       5.4798p     3.8033p     3.8032p     3.9251p     3.9251p
+  cgs       957.8871f   393.7360f   393.7360f   954.0186f   954.0186f
+  cgd       792.2892f   337.1040f   337.1027f   482.6204f   482.6204f
 
 
 
  subckt    xi0.xmcbb1  xi0.xmcbb1  xi0.xmcbb1  xi0.xmcbb1  xi0.xmcbb1
  element  20:m5       20:m4       20:m1       20:m0       20:m2      
  model     0:nmos      0:nmos      0:nmos      0:nmos      0:pmos    
- region      Saturati    Saturati      Cutoff      Cutoff    Saturati
-  id        385.6491u   385.6491u   312.1855f   312.1946f  -385.6488u
-  ibs       2.336e-23   2.336e-23   -23.8819p   -23.8819p     6.4007p
-  ibd       -23.8822p   -23.8822p   -64.0005p   -64.0014p    40.1195p
-  vgs       373.1438m   373.1438m  -373.1438m  -373.1438m  -526.8562m
-  vds       373.1438m   373.1438m   626.8528m   626.8670m  -526.8562m
-  vbs         0.          0.       -373.1438m  -373.1438m   100.0000m
-  vth       345.1388m   345.1388m   410.4368m   410.4358m  -285.0783m
-  vdsat      71.7982m    71.7982m    40.5647m    40.5647m  -226.8407m
-  vod        28.0050m    28.0050m  -783.5806m  -783.5796m  -241.7779m
-  beta      222.3137m   222.3137m   133.1635m   133.1637m    13.6711m
+ region        Cutoff      Cutoff      Cutoff      Cutoff    Saturati
+  id         41.0120u    41.0120u    11.8043p    11.8049p   -41.0119u
+  ibs       1.560e-23   1.560e-23   -16.5564p   -16.5564p     6.4007p
+  ibd       -16.5567p   -16.5567p   -44.7984p   -44.7999p    28.2450p
+  vgs       258.6829m   258.6829m  -258.6829m  -258.6829m  -341.3171m
+  vds       258.6829m   258.6829m   441.2814m   441.3052m  -341.3171m
+  vbs         0.          0.       -258.6829m  -258.6829m   100.0000m
+  vth       352.9475m   352.9475m   399.1875m   399.1859m  -300.8613m
+  vdsat      45.3076m    45.3076m    40.4987m    40.4987m   -94.7054m
+  vod       -94.2645m   -94.2645m  -657.8705m  -657.8689m   -40.4557m
+  beta      223.0357m   223.0357m   135.0855m   135.0858m    13.4487m
   gam eff   441.0000m   441.0000m   441.0000m   441.0000m   394.0000m
-  gm          5.6775m     5.6775m     8.5413p     8.5415p     2.4878m
-  gds       457.5512u   457.5512u   639.8398f   639.8581f   309.8023u
-  gmb         1.4186m     1.4186m     2.4616p     2.4617p   504.3115u
-  cdtot      13.3858f    13.3858f     8.0920f     8.0920f     9.2087f
-  cgtot       9.5228f     9.5228f     3.6211f     3.6211f     7.5028f
-  cstot      14.7277f    14.7277f     8.1503f     8.1503f    11.3430f
-  cbtot      21.2314f    21.2314f    14.3952f    14.3951f    15.1015f
-  cgs         5.7227f     5.7227f     1.4505f     1.4505f     5.5398f
-  cgd         3.0214f     3.0214f     1.2837f     1.2837f     1.7838f
+  gm        852.9400u   852.9400u   318.3526p   318.3680p   691.3591u
+  gds        68.2751u    68.2751u    24.0769p    24.0780p    72.3792u
+  gmb       217.7708u   217.7708u    92.9206p    92.9251p   132.3477u
+  cdtot      13.7279f    13.7279f     8.5129f     8.5129f     9.5463f
+  cgtot       8.0666f     8.0666f     3.7636f     3.7636f     6.0934f
+  cstot      13.4916f    13.4916f     8.4465f     8.4465f    10.4130f
+  cbtot      21.5689f    21.5689f    14.9697f    14.9697f    15.4492f
+  cgs         3.7703f     3.7703f     1.5498f     1.5498f     3.7551f
+  cgd         3.1185f     3.1185f     1.3269f     1.3268f     1.8996f
 
 
 
  subckt    xi0.xmcbb1  xi0.xmctb0  xi0.xmctb0  xi0.xmctb0  xi0.xmctb0
  element  20:m3       21:m5       21:m4       21:m1       21:m0      
  model     0:pmos      0:nmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati      Cutoff      Cutoff
-  id       -385.6488u   379.6233u   379.6233u   307.3076f   307.3166f
-  ibs         6.4007p   2.300e-23   2.300e-23   -23.5087p   -23.5087p
-  ibd        40.1195p   -23.5091p   -23.5091p   -63.0005p   -63.0014p
-  vgs      -526.8562m   373.1438m   373.1438m  -373.1438m  -373.1438m
-  vds      -526.8562m   373.1438m   373.1438m   626.8528m   626.8670m
-  vbs       100.0000m     0.          0.       -373.1438m  -373.1438m
-  vth      -285.0783m   345.1388m   345.1388m   410.4368m   410.4358m
-  vdsat    -226.8407m    71.7982m    71.7982m    40.5647m    40.5647m
-  vod      -241.7779m    28.0050m    28.0050m  -783.5806m  -783.5796m
-  beta       13.6711m   218.8400m   218.8400m   131.0828m   131.0830m
+ region      Saturati      Cutoff      Cutoff      Cutoff      Cutoff
+  id        -41.0119u    40.3712u    40.3712u    11.6199p    11.6204p
+  ibs         6.4007p   1.536e-23   1.536e-23   -16.2977p   -16.2977p
+  ibd        28.2450p   -16.2980p   -16.2980p   -44.0984p   -44.0999p
+  vgs      -341.3171m   258.6829m   258.6829m  -258.6829m  -258.6829m
+  vds      -341.3171m   258.6829m   258.6829m   441.2814m   441.3052m
+  vbs       100.0000m     0.          0.       -258.6829m  -258.6829m
+  vth      -300.8613m   352.9475m   352.9475m   399.1875m   399.1859m
+  vdsat     -94.7054m    45.3076m    45.3076m    40.4987m    40.4987m
+  vod       -40.4557m   -94.2645m   -94.2645m  -657.8705m  -657.8689m
+  beta       13.4487m   219.5508m   219.5508m   132.9748m   132.9750m
   gam eff   394.0000m   441.0000m   441.0000m   441.0000m   441.0000m
-  gm          2.4878m     5.5888m     5.5888m     8.4078p     8.4080p
-  gds       309.8023u   450.4020u   450.4020u   629.8423f   629.8603f
-  gmb       504.3115u     1.3965m     1.3965m     2.4231p     2.4232p
-  cdtot       9.2087f    13.1766f    13.1766f     7.9656f     7.9655f
-  cgtot       7.5028f     9.3740f     9.3740f     3.5645f     3.5645f
-  cstot      11.3430f    14.4976f    14.4976f     8.0230f     8.0230f
-  cbtot      15.1015f    20.8997f    20.8997f    14.1702f    14.1702f
-  cgs         5.5398f     5.6333f     5.6333f     1.4278f     1.4278f
-  cgd         1.7838f     2.9742f     2.9742f     1.2636f     1.2636f
+  gm        691.3591u   839.6128u   839.6128u   313.3783p   313.3935p
+  gds        72.3792u    67.2083u    67.2083u    23.7007p    23.7018p
+  gmb       132.3477u   214.3681u   214.3681u    91.4687p    91.4731p
+  cdtot       9.5463f    13.5134f    13.5134f     8.3799f     8.3799f
+  cgtot       6.0934f     7.9405f     7.9405f     3.7048f     3.7047f
+  cstot      10.4130f    13.2808f    13.2808f     8.3145f     8.3145f
+  cbtot      15.4492f    21.2319f    21.2319f    14.7358f    14.7358f
+  cgs         3.7551f     3.7114f     3.7114f     1.5255f     1.5255f
+  cgd         1.8996f     3.0698f     3.0698f     1.3061f     1.3061f
 
 
 
  subckt    xi0.xmctb0  xi0.xmctb0  xi0.xmctl   xi0.xmctl   xi0.xmctl 
  element  21:m2       21:m3       22:m5       22:m4       22:m1      
  model     0:pmos      0:pmos      0:nmos      0:nmos      0:nmos    
- region      Saturati    Saturati    Saturati    Saturati      Cutoff
-  id       -379.6230u  -379.6230u     6.0250u     6.0250u    -1.0831n
-  ibs         6.3007p     6.3007p   3.651e-25   3.651e-25  -373.1470f
-  ibd        39.4926p    39.4926p  -373.1520f  -373.1520f   3.500e-25
-  vgs      -526.8562m  -526.8562m   373.1360m   373.1360m  -373.1360m
-  vds      -526.8562m  -526.8562m   373.1360m   373.1360m  -373.1360m
-  vbs       100.0000m   100.0000m     0.          0.       -373.1360m
-  vth      -285.0783m  -285.0783m   345.1394m   345.1394m   345.1394m
-  vdsat    -226.8407m  -226.8407m    71.7954m    71.7954m    40.0579m
-  vod      -241.7779m  -241.7779m    27.9967m    27.9967m  -718.2754m
-  beta       13.4575m    13.4575m     3.4737m     3.4737m     2.2591m
+ region      Saturati    Saturati      Cutoff      Cutoff      Cutoff
+  id        -40.3711u   -40.3711u   640.3399n   640.3399n  -864.8504p
+  ibs         6.3007p     6.3007p   2.438e-25   2.438e-25  -258.6610f
+  ibd        27.8037p    27.8037p  -258.6661f  -258.6661f   2.426e-25
+  vgs      -341.3171m  -341.3171m   258.6501m   258.6501m  -258.6501m
+  vds      -341.3171m  -341.3171m   258.6501m   258.6501m  -258.6501m
+  vbs       100.0000m   100.0000m     0.          0.       -258.6501m
+  vth      -300.8613m  -300.8613m   352.9497m   352.9497m   352.9497m
+  vdsat     -94.7054m   -94.7054m    45.3042m    45.3042m    40.1087m
+  vod       -40.4557m   -40.4557m   -94.2996m   -94.2996m  -611.5998m
+  beta       13.2385m    13.2385m     3.4849m     3.4849m     2.2373m
   gam eff   394.0000m   394.0000m   441.0000m   441.0000m   441.0000m
-  gm          2.4490m     2.4490m    88.7030u    88.7030u    27.5902n
-  gds       304.9617u   304.9617u     7.1486u     7.1486u     2.1084n
-  gmb       496.4316u   496.4316u    22.1641u    22.1641u     8.0438n
-  cdtot       9.0649f     9.0649f   209.1533a   209.1533a   165.1462a
-  cgtot       7.3856f     7.3856f   148.7903a   148.7903a    67.7324a
-  cstot      11.1657f    11.1657f   230.1183a   230.1183a   127.3494a
-  cbtot      14.8655f    14.8655f   331.7412a   331.7412a   252.4806a
-  cgs         5.4532f     5.4532f    89.4135a    89.4135a    22.6632a
-  cgd         1.7559f     1.7559f    47.2093a    47.2093a    31.2109a
+  gm        680.5566u   680.5566u    13.3181u    13.3181u    22.0652n
+  gds        71.2483u    71.2483u     1.0661u     1.0661u     1.7221n
+  gmb       130.2798u   130.2798u     3.4004u     3.4004u     6.4649n
+  cdtot       9.3972f     9.3972f   214.4995a   214.4995a   165.1461a
+  cgtot       5.9982f     5.9982f   126.0389a   126.0389a    69.2841a
+  cstot      10.2503f    10.2503f   210.8047a   210.8047a   131.9777a
+  cbtot      15.2078f    15.2078f   337.0153a   337.0153a   255.5571a
+  cgs         3.6964f     3.6964f    58.9084a    58.9084a    24.2151a
+  cgd         1.8699f     1.8699f    48.7264a    48.7264a    31.2107a
 
 
 
@@ -3559,26 +3559,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  22:m0       22:m2       22:m3       23:m5       23:m1      
  model     0:nmos      0:pmos      0:pmos      0:pmos      0:pmos    
  region        Cutoff    Saturati    Saturati    Saturati      Cutoff
-  id         -1.0831n    -6.0261u    -6.0261u  -791.1373u     0.     
-  ibs      -373.1470f   100.0107f   100.0107f  -2.694e-23     1.0002p
-  ibd       3.500e-25   626.8749f   626.8749f     1.0002p     1.0002p
-  vgs      -373.1360m  -526.8640m  -526.8640m    -1.0000      0.     
-  vds      -373.1360m  -526.8640m  -526.8640m    -1.0000      0.     
-  vbs      -373.1360m   100.0000m   100.0000m     0.          1.0000 
-  vth       345.1394m  -285.0777m  -285.0777m  -225.6970m  -468.3168m
-  vdsat      40.0579m  -226.8464m  -226.8464m  -541.4266m   -50.0171m
-  vod      -718.2754m  -241.7863m  -241.7863m  -774.3030m   468.3168m
-  beta        2.2591m   213.6102u   213.6102u     4.0820m     3.6053m
+  id       -864.8504p  -641.2027n  -641.2027n  -178.1008u     0.     
+  ibs      -258.6610f   100.0107f   100.0107f  -1.199e-24   700.1016f
+  ibd       2.426e-25   441.3609f   441.3609f   700.1016f   700.1016f
+  vgs      -258.6501m  -341.3499m  -341.3499m  -700.0000m     0.     
+  vds      -258.6501m  -341.3499m  -341.3499m  -700.0000m     0.     
+  vbs      -258.6501m   100.0000m   100.0000m     0.        700.0000m
+  vth       352.9497m  -300.8585m  -300.8585m  -251.2166m  -427.2746m
+  vdsat      40.1087m   -94.7243m   -94.7243m  -354.9854m   -49.0186m
+  vod      -611.5998m   -40.4914m   -40.4914m  -448.7834m   427.2746m
+  beta        2.2373m   210.1391u   210.1391u     2.2910m     1.8896m
   gam eff   441.0000m   394.0000m   394.0000m   394.0000m   394.0000m
-  gm         27.5902n    38.8733u    38.8733u     1.3050m     0.     
-  gds         2.1084n     4.8408u     4.8408u   237.9594u     0.     
-  gmb         8.0438n     7.8800u     7.8800u   312.9865u     0.     
-  cdtot     165.1462a   143.8865a   143.8865a     2.1299f     2.1606f
-  cgtot      67.7324a   117.2321a   117.2321a     2.8070f     1.5701f
-  cstot     127.3494a   177.2341a   177.2341a     3.0591f     1.8806f
-  cbtot     252.4806a   235.9603a   235.9603a     3.1416f     2.8189f
-  cgs        22.6632a    86.5594a    86.5594a     2.1895f   698.0942a
-  cgd        31.2109a    27.8719a    27.8719a   610.7109a   698.0880a
+  gm         22.0652n    10.8076u    10.8076u   566.2984u     0.     
+  gds         1.7221n     1.1315u     1.1315u    85.7545u     0.     
+  gmb         6.4649n     2.0689u     2.0689u   129.3188u     0.     
+  cdtot     165.1461a   149.1600a   149.1600a     1.1232f     1.1375f
+  cgtot      69.2841a    95.2178a    95.2178a     1.3562f   788.8979a
+  cstot     131.9777a   162.7087a   162.7087a     1.5230f   989.7444a
+  cbtot     255.5571a   241.3925a   241.3925a     1.6555f     1.5279f
+  cgs        24.2151a    58.6838a    58.6838a     1.0364f   347.0529a
+  cgd        31.2107a    29.6807a    29.6807a   306.7993a   347.0495a
 
 
 
@@ -3586,26 +3586,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  23:m0       23:m4       23:m3       24:m5       24:m1      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:pmos    
  region      Saturati      Cutoff      Cutoff      Linear      Linear
-  id       -791.1373u    90.4167n     2.4419p     1.4397u     1.8971u
-  ibs      -2.694e-23   9.569e-25     0.       -4.502e-22   217.8509a
-  ibd         1.0002p  -999.8772f    -4.7987a  -685.7659a  -685.7659a
-  vgs        -1.0000      0.          0.         -1.0000   -999.9966m
-  vds        -1.0000    999.6498m     4.7569u    10.8007u    14.2318u
-  vbs         0.          0.          0.          0.          3.4311u
-  vth      -225.6970m   302.4006m   370.5953m  -310.7603m  -310.7601m
-  vdsat    -541.4266m    39.8667m    40.2889m  -504.7804m  -504.7805m
-  vod      -774.3030m  -302.4006m  -370.5953m  -689.2397m  -689.2365m
-  beta        4.0820m    60.1267m    55.2714m   243.1387m   243.1388m
+  id       -178.1008u    51.2631n     1.0888p  -538.3828n     1.0760u
+  ibs      -1.199e-24   6.622e-25     0.       -4.705e-25     2.2581f
+  ibd       700.1016f  -699.9241f    -2.1395a   753.0655a   753.0655a
+  vgs      -700.0000m     0.          0.       -700.0000m  -699.9643m
+  vds      -700.0000m   699.6967m     2.1208u   -11.9067u    23.7967u
+  vbs         0.          0.          0.          0.         35.7034u
+  vth      -251.2166m   322.8619m   370.5955m  -310.7624m  -310.7637m
+  vdsat    -354.9854m    39.9867m    40.2889m  -323.2062m  -323.1983m
+  vod      -448.7834m  -322.8619m  -370.5955m  -389.2376m  -389.2006m
+  beta        2.2910m    58.6477m    55.2714m   137.4946m   137.4951m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm          1.3050m     2.2769u    62.4787p     1.2081u     1.5919u
-  gds       237.9594u   170.1909n   513.3136n   133.2994m   133.2986m
-  gmb       312.9865u   646.0328n    18.6383p   486.3034n   640.7894n
-  cdtot       2.1299f     2.1477f     2.8558f   182.9789f   182.9794f
-  cgtot       2.8070f     1.6269f     1.9085f   194.6817f   194.6817f
-  cstot       3.0591f     2.4599f     2.4598f   229.2385f   229.2378f
-  cbtot       3.1416f     3.6446f     4.0711f   225.9213f   225.9211f
-  cgs         2.1895f   788.3248a   788.2629a    86.1807f    86.1803f
-  cgd       610.7109a   506.5941a   788.2422a   109.5255f   109.5258f
+  gm        566.2984u     1.2990u    27.8567p     1.0512u     2.1009u
+  gds        85.7545u    97.5597n   513.3482n    45.2161m    45.2132m
+  gmb       129.3188u   373.3981n     8.3100p   316.7111n   632.9714n
+  cdtot       1.1232f     2.2560f     2.8558f   121.5126f    93.2379f
+  cgtot       1.3562f     1.6439f     1.9085f    93.6278f    93.6274f
+  cstot       1.5230f     2.4598f     2.4598f    82.1487f   110.4216f
+  cbtot       1.6555f     3.7360f     4.0711f   115.7635f   115.7627f
+  cgs         1.0364f   788.2936a   788.2629a    52.8604f    40.6173f
+  cgd       306.7993a   523.6384a   788.2443a    40.6187f    52.8613f
 
 
 
@@ -3613,26 +3613,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  24:m0       24:m4       24:m3       25:m5       25:m1      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:pmos    
  region        Linear      Cutoff      Cutoff      Linear      Linear
-  id       -457.3700n    -5.6911u  -7.815e-25     1.4637u     1.9272u
-  ibs      -4.501e-22   -63.0141p   -63.0150p  -4.573e-22   220.7688a
-  ibd       217.8509a    -2.9067f   -63.0107p  -697.1911a  -697.1911a
-  vgs        -1.0000   -999.9966m    -1.0000     -1.0000   -999.9966m
-  vds        -3.4311u  -999.9508m   -68.2884u    10.8091u    14.2318u
-  vbs         0.       -999.9966m    -1.0000      0.          3.4228u
-  vth      -310.7631m   302.3911m   568.7864m  -310.7603m  -310.7600m
-  vdsat    -504.7732m    39.8667m    41.2742m  -504.7804m  -504.7805m
-  vod      -689.2369m    -1.3024     -1.5688   -689.2397m  -689.2365m
-  beta      243.1394m     3.7880      2.6971    246.9981m   246.9981m
+  id         -1.6143u    -3.2278u  -3.125e-20  -546.7462n     1.0930u
+  ibs      -4.705e-25   -44.1121p   -44.1136p  -4.708e-25     2.2937f
+  ibd         2.2581f    -1.9537f   -44.1106p   764.7638a   764.7638a
+  vgs      -700.0000m  -699.9643m  -699.9881m  -700.0000m  -699.9643m
+  vds       -35.7034u  -699.9336m   -47.5183u   -11.9027u    23.7967u
+  vbs         0.       -699.9643m  -699.9881m     0.         35.6994u
+  vth      -310.7604m   322.8531m   516.2263m  -310.7624m  -310.7637m
+  vdsat    -323.2074m    39.9867m    41.1729m  -323.2062m  -323.1983m
+  vod      -389.2396m    -1.0228     -1.2162   -389.2376m  -389.2006m
+  beta      137.4948m     3.6948      2.8880    139.6770m   139.6776m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm        383.7873n   143.3192u   2.259e-23     1.2282u     1.6171u
-  gds       133.2996m    10.7124u   1.144e-20   135.4153m   135.4145m
-  gmb       154.4909n    40.6635u   6.143e-24   494.4055n   650.9606n
-  cdtot     251.4154f   179.9144f   135.2969f   185.8834f   185.8838f
-  cgtot     194.6816f   102.4922f    84.7472f   197.7719f   197.7719f
-  cstot     160.8017f   115.4486f   115.4485f   232.8772f   232.8764f
-  cbtot     225.9211f   234.7049f   207.8325f   229.5073f   229.5071f
-  cgs       109.5246f    31.9146f    31.9147f    87.5486f    87.5483f
-  cgd        86.1813f    49.6622f    31.9157f   111.2640f   111.2643f
+  gm          3.1520u    81.7919u   8.831e-19     1.0675u     2.1343u
+  gds        45.2130m     6.1429u   657.2515a    45.9338m    45.9309m
+  gmb       949.6702n    23.5112u   2.500e-19   321.6310n   643.0186n
+  cdtot     121.5076f   179.9144f   142.1235f   123.4413f    94.7179f
+  cgtot      93.6275f   103.5647f    86.8934f    95.1139f    95.1136f
+  cstot      82.1515f   121.1821f   121.1816f    83.4527f   112.1743f
+  cbtot     115.7628f   239.3657f   218.2459f   117.6010f   117.6002f
+  cgs        52.8624f    32.9878f    32.9878f    53.6994f    41.2620f
+  cgd        40.6163f    49.6609f    32.9888f    41.2634f    53.7004f
 
 
 
@@ -3640,26 +3640,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  25:m0       25:m4       25:m3       26:m5       26:m1      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:pmos    
  region        Linear      Cutoff      Cutoff      Linear      Linear
-  id       -463.4961n    -5.7814u  -7.940e-25     1.4637u     1.9272u
-  ibs      -4.572e-22   -64.0143p   -64.0152p  -4.573e-22   220.7688a
-  ibd       220.7688a    -2.9528f   -64.0109p  -697.1911a  -697.1911a
-  vgs        -1.0000   -999.9966m    -1.0000     -1.0000   -999.9966m
-  vds        -3.4228u  -999.9508m   -68.2968u    10.8091u    14.2318u
-  vbs         0.       -999.9966m    -1.0000      0.          3.4228u
-  vth      -310.7631m   302.3911m   568.7864m  -310.7603m  -310.7600m
-  vdsat    -504.7732m    39.8667m    41.2742m  -504.7804m  -504.7805m
-  vod      -689.2369m    -1.3024     -1.5688   -689.2397m  -689.2365m
-  beta      246.9988m     3.8482      2.7399    246.9981m   246.9981m
+  id         -1.6398u    -3.2790u  -3.175e-20  -546.7462n     1.0930u
+  ibs      -4.708e-25   -44.8123p   -44.8138p  -4.708e-25     2.2937f
+  ibd         2.2937f    -1.9847f   -44.8107p   764.7638a   764.7638a
+  vgs      -700.0000m  -699.9643m  -699.9881m  -700.0000m  -699.9643m
+  vds       -35.6994u  -699.9336m   -47.5222u   -11.9027u    23.7967u
+  vbs         0.       -699.9643m  -699.9881m     0.         35.6994u
+  vth      -310.7604m   322.8531m   516.2263m  -310.7624m  -310.7637m
+  vdsat    -323.2074m    39.9867m    41.1729m  -323.2062m  -323.1983m
+  vod      -389.2396m    -1.0228     -1.2162   -389.2376m  -389.2006m
+  beta      139.6773m     3.7535      2.9338    139.6770m   139.6776m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm        388.9278n   145.5941u   2.295e-23     1.2282u     1.6171u
-  gds       135.4154m    10.8825u   1.162e-20   135.4153m   135.4145m
-  gmb       156.5602n    41.3089u   6.242e-24   494.4055n   650.9606n
-  cdtot     255.4061f   182.7702f   137.4444f   185.8834f   185.8838f
-  cgtot     197.7718f   104.1191f    86.0924f   197.7719f   197.7719f
-  cstot     163.3541f   117.2811f   117.2810f   232.8772f   232.8764f
-  cbtot     229.5072f   238.4304f   211.1314f   229.5073f   229.5071f
-  cgs       111.2631f    32.4211f    32.4213f    87.5486f    87.5483f
-  cgd        87.5493f    50.4504f    32.4223f   111.2640f   111.2643f
+  gm          3.2017u    83.0902u   8.972e-19     1.0675u     2.1343u
+  gds        45.9307m     6.2404u   667.6840a    45.9338m    45.9309m
+  gmb       964.6370n    23.8844u   2.540e-19   321.6310n   643.0186n
+  cdtot     123.4363f   182.7702f   144.3794f   123.4413f    94.7179f
+  cgtot      95.1137f   105.2086f    88.2726f    95.1139f    95.1136f
+  cstot      83.4555f   123.1056f   123.1052f    83.4527f   112.1743f
+  cbtot     117.6003f   243.1652f   221.7101f   117.6010f   117.6002f
+  cgs        53.7015f    33.5115f    33.5115f    53.6994f    41.2620f
+  cgd        41.2610f    50.4492f    33.5124f    41.2634f    53.7004f
 
 
 
@@ -3667,26 +3667,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  26:m0       26:m4       26:m3       27:m5       27:m1      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:pmos    
  region        Linear      Cutoff      Cutoff      Linear      Linear
-  id       -463.4961n    -5.7814u  -7.940e-25     1.4397u     1.8971u
-  ibs      -4.572e-22   -64.0143p   -64.0152p  -4.502e-22   217.8509a
-  ibd       220.7688a    -2.9528f   -64.0109p  -685.7659a  -685.7659a
-  vgs        -1.0000   -999.9966m    -1.0000     -1.0000   -999.9966m
-  vds        -3.4228u  -999.9508m   -68.2968u    10.8007u    14.2318u
-  vbs         0.       -999.9966m    -1.0000      0.          3.4311u
-  vth      -310.7631m   302.3911m   568.7864m  -310.7603m  -310.7601m
-  vdsat    -504.7732m    39.8667m    41.2742m  -504.7804m  -504.7805m
-  vod      -689.2369m    -1.3024     -1.5688   -689.2397m  -689.2365m
-  beta      246.9988m     3.8482      2.7399    243.1387m   243.1388m
+  id         -1.6398u    -3.2790u  -3.175e-20  -538.3828n     1.0760u
+  ibs      -4.708e-25   -44.8123p   -44.8138p  -4.705e-25     2.2581f
+  ibd         2.2937f    -1.9847f   -44.8107p   753.0655a   753.0655a
+  vgs      -700.0000m  -699.9643m  -699.9881m  -700.0000m  -699.9643m
+  vds       -35.6994u  -699.9336m   -47.5222u   -11.9067u    23.7967u
+  vbs         0.       -699.9643m  -699.9881m     0.         35.7034u
+  vth      -310.7604m   322.8531m   516.2263m  -310.7624m  -310.7637m
+  vdsat    -323.2074m    39.9867m    41.1729m  -323.2062m  -323.1983m
+  vod      -389.2396m    -1.0228     -1.2162   -389.2376m  -389.2006m
+  beta      139.6773m     3.7535      2.9338    137.4946m   137.4951m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm        388.9278n   145.5941u   2.295e-23     1.2081u     1.5919u
-  gds       135.4154m    10.8825u   1.162e-20   133.2994m   133.2986m
-  gmb       156.5602n    41.3089u   6.242e-24   486.3034n   640.7894n
-  cdtot     255.4061f   182.7702f   137.4444f   182.9789f   182.9794f
-  cgtot     197.7718f   104.1191f    86.0924f   194.6817f   194.6817f
-  cstot     163.3541f   117.2811f   117.2810f   229.2385f   229.2378f
-  cbtot     229.5072f   238.4304f   211.1314f   225.9213f   225.9211f
-  cgs       111.2631f    32.4211f    32.4213f    86.1807f    86.1803f
-  cgd        87.5493f    50.4504f    32.4223f   109.5255f   109.5258f
+  gm          3.2017u    83.0902u   8.972e-19     1.0512u     2.1009u
+  gds        45.9307m     6.2404u   667.6840a    45.2161m    45.2132m
+  gmb       964.6370n    23.8844u   2.540e-19   316.7111n   632.9714n
+  cdtot     123.4363f   182.7702f   144.3794f   121.5126f    93.2379f
+  cgtot      95.1137f   105.2086f    88.2726f    93.6278f    93.6274f
+  cstot      83.4555f   123.1056f   123.1052f    82.1487f   110.4216f
+  cbtot     117.6003f   243.1652f   221.7101f   115.7635f   115.7627f
+  cgs        53.7015f    33.5115f    33.5115f    52.8604f    40.6173f
+  cgd        41.2610f    50.4492f    33.5124f    40.6187f    52.8613f
 
 
 
@@ -3694,26 +3694,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  27:m0       27:m4       27:m3       28:m5       28:m1      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:pmos    
  region        Linear      Cutoff      Cutoff    Saturati      Cutoff
-  id       -457.3700n    -5.6911u  -7.815e-25  -791.1373u     0.     
-  ibs      -4.501e-22   -63.0141p   -63.0150p  -2.694e-23     1.0002p
-  ibd       217.8509a    -2.9067f   -63.0107p     1.0002p     1.0002p
-  vgs        -1.0000   -999.9966m    -1.0000     -1.0000      0.     
-  vds        -3.4311u  -999.9508m   -68.2884u    -1.0000      0.     
-  vbs         0.       -999.9966m    -1.0000      0.          1.0000 
-  vth      -310.7631m   302.3911m   568.7864m  -225.6970m  -468.3168m
-  vdsat    -504.7732m    39.8667m    41.2742m  -541.4266m   -50.0171m
-  vod      -689.2369m    -1.3024     -1.5688   -774.3030m   468.3168m
-  beta      243.1394m     3.7880      2.6971      4.0820m     3.6053m
+  id         -1.6143u    -3.2278u  -3.125e-20  -178.1008u     0.     
+  ibs      -4.705e-25   -44.1121p   -44.1136p  -1.199e-24   700.1016f
+  ibd         2.2581f    -1.9537f   -44.1106p   700.1016f   700.1016f
+  vgs      -700.0000m  -699.9643m  -699.9881m  -700.0000m     0.     
+  vds       -35.7034u  -699.9336m   -47.5183u  -700.0000m     0.     
+  vbs         0.       -699.9643m  -699.9881m     0.        700.0000m
+  vth      -310.7604m   322.8531m   516.2263m  -251.2166m  -427.2746m
+  vdsat    -323.2074m    39.9867m    41.1729m  -354.9854m   -49.0186m
+  vod      -389.2396m    -1.0228     -1.2162   -448.7834m   427.2746m
+  beta      137.4948m     3.6948      2.8880      2.2910m     1.8896m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   394.0000m
-  gm        383.7873n   143.3192u   2.259e-23     1.3050m     0.     
-  gds       133.2996m    10.7124u   1.144e-20   237.9594u     0.     
-  gmb       154.4909n    40.6635u   6.143e-24   312.9865u     0.     
-  cdtot     251.4154f   179.9144f   135.2969f     2.1299f     2.1606f
-  cgtot     194.6816f   102.4922f    84.7472f     2.8070f     1.5701f
-  cstot     160.8017f   115.4486f   115.4485f     3.0591f     1.8806f
-  cbtot     225.9211f   234.7049f   207.8325f     3.1416f     2.8189f
-  cgs       109.5246f    31.9146f    31.9147f     2.1895f   698.0942a
-  cgd        86.1813f    49.6622f    31.9157f   610.7109a   698.0880a
+  gm          3.1520u    81.7919u   8.831e-19   566.2984u     0.     
+  gds        45.2130m     6.1429u   657.2515a    85.7545u     0.     
+  gmb       949.6702n    23.5112u   2.500e-19   129.3188u     0.     
+  cdtot     121.5076f   179.9144f   142.1235f     1.1232f     1.1375f
+  cgtot      93.6275f   103.5647f    86.8934f     1.3562f   788.8979a
+  cstot      82.1515f   121.1821f   121.1816f     1.5230f   989.7444a
+  cbtot     115.7628f   239.3657f   218.2459f     1.6555f     1.5279f
+  cgs        52.8624f    32.9878f    32.9878f     1.0364f   347.0529a
+  cgd        40.6163f    49.6609f    32.9888f   306.7993a   347.0495a
 
 
 
@@ -3721,26 +3721,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  28:m0       28:m4       28:m3       32:m1       32:m2      
  model     0:pmos      0:nmos      0:nmos      0:pmos      0:nmos    
  region      Saturati      Cutoff      Cutoff      Linear      Cutoff
-  id       -791.1373u    90.4167n     2.4419p   -10.3246n     3.5795n
-  ibs      -2.694e-23   9.569e-25     0.       -6.729e-25   9.383e-25
-  ibd         1.0002p  -999.8772f    -4.7987a    50.9825a  -999.9600f
-  vgs        -1.0000      0.          0.         -1.0000      0.     
-  vds        -1.0000    999.6498m     4.7569u   -50.9412u   999.9491m
+  id       -178.1008u    51.2631n     1.0888p    -2.8505n     2.0294n
+  ibs      -1.199e-24   6.622e-25     0.       -1.333e-27   6.565e-25
+  ibd       700.1016f  -699.9241f    -2.1395a    20.7072a  -699.9903f
+  vgs      -700.0000m     0.          0.       -700.0000m     0.     
+  vds      -700.0000m   699.6967m     2.1208u   -20.6904u   699.9793m
   vbs         0.          0.          0.          0.          0.     
-  vth      -225.6970m   302.4006m   370.5953m  -310.7591m   302.3801m
-  vdsat    -541.4266m    39.8667m    40.2889m  -504.0769m    39.7932m
-  vod      -774.3030m  -302.4006m  -370.5953m  -689.2409m  -302.3801m
-  beta        4.0820m    60.1267m    55.2714m   366.0884u     2.3807m
+  vth      -251.2166m   322.8619m   370.5955m  -310.7616m   322.8426m
+  vdsat    -354.9854m    39.9867m    40.2889m  -322.9867m    39.9161m
+  vod      -448.7834m  -322.8619m  -370.5955m  -389.2384m  -322.8426m
+  beta        2.2910m    58.6477m    55.2714m   416.4224u     2.3221m
   gam eff   394.0000m   441.0000m   441.0000m   394.0000m   441.0000m
-  gm          1.3050m     2.2769u    62.4787p     8.7475n    90.1419n
-  gds       237.9594u   170.1909n   513.3136n   202.6674u     6.7375n
-  gmb       312.9865u   646.0328n    18.6383p     3.5217n    25.5750n
-  cdtot       2.1299f     2.1477f     2.8558f   427.6081a   126.4383a
-  cgtot       2.8070f     1.6269f     1.9085f   293.7973a    65.1283a
-  cstot       3.0591f     2.4599f     2.4598f   289.3901a   147.5476a
-  cbtot       3.1416f     3.6446f     4.0711f   437.1730a   236.5753a
-  cgs         2.1895f   788.3248a   788.2629a   164.9143a    31.2129a
-  cgd       610.7109a   506.5941a   788.2422a   129.7533a    20.0576a
+  gm        566.2984u     1.2990u    27.8567p     5.5981n    51.4243n
+  gds        85.7545u    97.5597n   513.3482n   137.7647u     3.8621n
+  gmb       129.3188u   373.3981n     8.3100p     1.6868n    14.7816n
+  cdtot       1.1232f     2.2560f     2.8558f   411.8871a   133.0138a
+  cgtot       1.3562f     1.6439f     1.9085f   284.1657a    65.8017a
+  cstot       1.5230f     2.4598f     2.4598f   291.0586a   147.5467a
+  cbtot       1.6555f     3.7360f     4.0711f   437.3369a   242.4763a
+  cgs         1.0364f   788.2936a   788.2629a   160.0976a    31.2116a
+  cgd       306.7993a   523.6384a   788.2443a   123.0169a    20.7320a
 
 
 
@@ -3748,26 +3748,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  33:m1       33:m2       34:m1       34:m2       35:m1      
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:pmos    
  region        Linear      Cutoff      Cutoff      Linear      Cutoff
-  id       -108.1699n    23.7725n    -7.0225n    10.4857n  -288.7249n
-  ibs      -1.031e-24   9.424e-25  -9.395e-25   3.180e-24  -5.914e-23
-  ibd       350.5900a  -999.7111f     1.0000p    -4.7682a    63.0006p
-  vgs        -1.0000      0.        -50.9412u   999.9491m     0.     
-  vds      -350.1720u   999.6498m  -999.9952m     4.7569u  -999.9892m
+  id        -63.7507n    13.4782n    -3.3715n     3.7967n  -138.7233n
+  ibs      -2.445e-27   6.577e-25  -6.572e-25   9.614e-27  -4.137e-23
+  ibd       303.6631a  -699.7580f   700.0290f    -2.1259a    44.1009p
+  vgs      -700.0000m     0.        -20.6904u   699.9793m     0.     
+  vds      -303.3008u   699.6967m  -699.9979m     2.1208u  -699.9928m
   vbs         0.          0.          0.          0.          0.     
-  vth      -310.7336m   302.4006m  -225.6974m   370.5953m  -225.6979m
-  vdsat    -504.3477m    39.8574m   -46.2013m   339.9150m   -46.2005m
-  vod      -689.2664m  -302.4006m   225.6464m   629.3537m   225.6979m
-  beta      560.1688u    15.8100m   738.3065u    11.2413m    30.3984m
+  vth      -310.7376m   322.8619m  -251.2168m   370.5955m  -251.2172m
+  vdsat    -323.0919m    39.9778m   -46.1538m   207.5467m   -46.1533m
+  vod      -389.2624m  -322.8619m   251.1961m   329.3838m   251.2172m
+  beta      637.1891u    15.4211m   709.1221u    13.0134m    29.1968m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   394.0000m
-  gm         91.3556n   598.6567n   178.1031n     3.9759n     7.3228u
-  gds       308.8043u    44.7468n    17.0805n     2.2043m   702.2719n
-  gmb        36.7658n   169.8559n    40.0027n     2.0921n     1.6448u
-  cdtot     625.3877a   596.4941a   314.1381a     1.2264f    13.8751f
-  cgtot     449.1450a   428.3339a   204.2473a   885.3447a     8.4255f
-  cstot     415.2088a   685.2928a   362.3710a   780.9015a    16.0596f
-  cbtot     612.0660a     1.0292f   548.0164a     1.1501f    24.6607f
-  cgs       252.4006a   207.2854a   101.3780a   483.4897a     4.1738f
-  cgd       198.4681a   133.2060a    65.0041a   410.0386a     2.6764f
+  gm        124.9445n   341.5316n    86.7169n     4.7412n     3.5680u
+  gds       210.0978u    25.6505n     8.3067n     1.7902m   341.7872n
+  gmb        37.6379n    98.1742n    19.7847n     1.6999n   814.0677n
+  cdtot     601.2168a   626.7439a   330.1822a     1.1702f    14.5877f
+  cgtot     434.3990a   432.8091a   206.4210a   865.8318a     8.5151f
+  cstot     417.8257a   685.2871a   362.3491a   794.1987a    16.0588f
+  cbtot     612.3159a     1.0549f   561.8632a     1.1506f    25.2828f
+  cgs       245.0787a   207.2772a   101.3488a   480.3271a     4.1728f
+  cgd       188.1026a   137.6877a    67.2017a   385.9857a     2.7669f
 
 
 
@@ -3775,26 +3775,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  35:m2       36:m1       36:m2       37:m1       37:m2      
  model     0:nmos      0:pmos      0:nmos      0:pmos      0:nmos    
  region        Linear      Cutoff      Linear      Linear      Cutoff
-  id        241.7476n  -441.8036n     6.3513u    -1.1191u     1.4989u
-  ibs       3.014e-23  -5.917e-23   2.006e-22  -6.490e-23   5.939e-23
-  ibd      -682.0805a    62.9991p    -2.8882f     3.6261f   -63.0002p
-  vgs         1.0000      0.          1.0000   -999.9892m    10.8221u
-  vds        10.8221u  -999.9543m    45.7362u   -57.4877u   999.9425m
+  id        129.5813n  -212.2787n     3.4669u  -787.1675n   849.6747n
+  ibs       9.147e-26  -4.138e-23   6.076e-25  -1.331e-25   4.145e-23
+  ibd      -455.6048a    44.1000p    -1.9413f     3.7483f   -44.1001p
+  vgs       700.0000m     0.        700.0000m  -699.9928m     7.2288u
+  vds         7.2288u  -699.9693m    30.7415u   -59.4249u   699.9406m
   vbs         0.          0.          0.          0.          0.     
-  vth       370.5949m  -225.7009m   370.5926m  -310.7585m   302.3806m
-  vdsat     332.6919m   -46.2009m   339.9380m  -504.3301m    39.8573m
-  vod       629.4051m   225.7009m   629.4074m  -689.2307m  -302.3698m
-  beta      106.6380m    46.5130m   708.1868m    35.2902m   996.0519m
+  vth       370.5952m  -251.2192m   370.5936m  -310.7583m   322.8452m
+  vdsat     204.3083m   -46.1538m   207.5569m  -323.0758m    39.9777m
+  vod       329.4048m   251.2192m   329.4064m  -389.2344m  -322.8380m
+  beta      123.4504m    44.6745m   819.8385m    40.1423m   971.5473m
   gam eff   441.0000m   394.0000m   441.0000m   394.0000m   441.0000m
-  gm         97.4596n    11.2053u     2.4083u   944.7839n    37.7460u
-  gds        22.3380m     1.0746u   138.8605m    19.4651m     2.8213u
-  gmb        51.4115n     2.5168u     1.2672u   380.3341n    10.7094u
-  cdtot      14.5360f    19.7908f    77.2625f    39.4093f    37.5775f
-  cgtot       8.4386f    12.8673f    55.7767f    28.2965f    26.9850f
-  cstot      10.2025f    22.8290f    49.1987f    26.1526f    43.1736f
-  cbtot      16.6457f    34.5252f    72.4531f    38.5628f    64.8351f
-  cgs         4.5866f     6.3865f    30.4612f    15.8974f    13.0591f
-  cgd         3.8898f     4.0953f    25.8311f    12.5078f     8.3918f
+  gm        170.2052n     5.4599u     4.3295u     1.5423u    21.5303u
+  gds        17.9255m   523.0145n   112.7700m    13.2453m     1.6170u
+  gmb        61.0983n     1.2457u     1.5523u   464.6835n     6.1888u
+  cdtot      14.0022f    20.8016f    73.7162f    37.8917f    39.4831f
+  cgtot       8.2534f    13.0044f    54.5473f    27.3679f    27.2667f
+  cstot      10.3287f    22.8279f    50.0370f    26.3147f    43.1732f
+  cbtot      16.6504f    35.3975f    72.4842f    38.5782f    66.4584f
+  cgs         4.5567f     6.3848f    30.2625f    15.4340f    13.0586f
+  cgd         3.6616f     4.2337f    24.3151f    11.8574f     8.6740f
 
 
 
@@ -3802,26 +3802,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  38:m1       38:m2       39:m1       39:m2       40:m1      
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:pmos    
  region        Cutoff      Linear      Cutoff      Linear      Linear
-  id       -293.3078n   245.5849n  -448.8163n     6.4521u    -1.1368u
-  ibs      -6.008e-23   3.062e-23  -6.012e-23   2.037e-22  -6.592e-23
-  ibd        64.0007p  -692.9071a    63.9991p    -2.9340f     3.6836f
-  vgs         0.          1.0000      0.          1.0000   -999.9892m
-  vds      -999.9892m    10.8221u  -999.9543m    45.7362u   -57.4877u
+  id       -140.9253n   131.6381n  -215.6482n     3.5220u  -799.6622n
+  ibs      -4.203e-23   9.292e-26  -4.205e-23   6.173e-25  -1.352e-25
+  ibd        44.8009p  -462.8366a    44.8000p    -1.9721f     3.8078f
+  vgs         0.        700.0000m     0.        700.0000m  -699.9928m
+  vds      -699.9928m     7.2288u  -699.9693m    30.7415u   -59.4249u
   vbs         0.          0.          0.          0.          0.     
-  vth      -225.6979m   370.5949m  -225.7009m   370.5926m  -310.7585m
-  vdsat     -46.2005m   332.6919m   -46.2009m   339.9380m  -504.3301m
-  vod       225.6979m   629.4051m   225.7009m   629.4074m  -689.2307m
-  beta       30.8809m   108.3306m    47.2513m   719.4279m    35.8504m
+  vth      -251.2172m   370.5952m  -251.2192m   370.5936m  -310.7583m
+  vdsat     -46.1533m   204.3083m   -46.1538m   207.5569m  -323.0758m
+  vod       251.2172m   329.4048m   251.2192m   329.4064m  -389.2344m
+  beta       29.6603m   125.4099m    45.3836m   832.8518m    40.7795m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   394.0000m
-  gm          7.4390u    99.0065n    11.3831u     2.4465u   959.7805n
-  gds       713.4190n    22.6926m     1.0917u   141.0646m    19.7741m
-  gmb         1.6709u    52.2275n     2.5568u     1.2873u   386.3711n
-  cdtot      14.0954f    14.7668f    20.1049f    78.4889f    40.0349f
-  cgtot       8.5593f     8.5725f    13.0716f    56.6620f    28.7457f
-  cstot      16.3145f    10.3645f    23.1914f    49.9796f    26.5677f
-  cbtot      25.0521f    16.9099f    35.0732f    73.6031f    39.1749f
-  cgs         4.2401f     4.6595f     6.4879f    30.9447f    16.1498f
-  cgd         2.7189f     3.9516f     4.1603f    26.2411f    12.7063f
+  gm          3.6247u   172.9069n     5.5466u     4.3982u     1.5668u
+  gds       347.2124n    18.2100m   531.3164n   114.5600m    13.4555m
+  gmb       826.9894n    62.0681n     1.2655u     1.5769u   472.0594n
+  cdtot      14.8192f    14.2245f    21.1318f    74.8863f    38.4931f
+  cgtot       8.6503f     8.3845f    13.2108f    55.4132f    27.8023f
+  cstot      16.3137f    10.4926f    23.1902f    50.8313f    26.7323f
+  cbtot      25.6841f    16.9147f    35.9594f    73.6347f    39.1906f
+  cgs         4.2390f     4.6290f     6.4862f    30.7428f    15.6789f
+  cgd         2.8108f     3.7197f     4.3009f    24.7011f    12.0456f
 
 
 
@@ -3829,26 +3829,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  40:m2       41:m1       41:m2       42:m1       42:m2      
  model     0:nmos      0:pmos      0:nmos      0:pmos      0:nmos    
  region        Cutoff      Cutoff      Linear      Cutoff      Linear
-  id          1.5227u  -293.3078n   245.5849n  -448.8163n     6.4521u
-  ibs       6.033e-23  -6.008e-23   3.062e-23  -6.012e-23   2.037e-22
-  ibd       -64.0002p    64.0007p  -692.9071a    63.9991p    -2.9340f
-  vgs        10.8221u     0.          1.0000      0.          1.0000 
-  vds       999.9425m  -999.9892m    10.8221u  -999.9543m    45.7362u
+  id        863.1616n  -140.9253n   131.6381n  -215.6482n     3.5220u
+  ibs       4.210e-23  -4.203e-23   9.292e-26  -4.205e-23   6.173e-25
+  ibd       -44.8001p    44.8009p  -462.8366a    44.8000p    -1.9721f
+  vgs         7.2288u     0.        700.0000m     0.        700.0000m
+  vds       699.9406m  -699.9928m     7.2288u  -699.9693m    30.7415u
   vbs         0.          0.          0.          0.          0.     
-  vth       302.3806m  -225.6979m   370.5949m  -225.7009m   370.5926m
-  vdsat      39.8573m   -46.2005m   332.6919m   -46.2009m   339.9380m
-  vod      -302.3698m   225.6979m   629.4051m   225.7009m   629.4074m
-  beta        1.0119     30.8809m   108.3306m    47.2513m   719.4279m
+  vth       322.8452m  -251.2172m   370.5952m  -251.2192m   370.5936m
+  vdsat      39.9777m   -46.1533m   204.3083m   -46.1538m   207.5569m
+  vod      -322.8380m   251.2172m   329.4048m   251.2192m   329.4064m
+  beta      986.9687m    29.6603m   125.4099m    45.3836m   832.8518m
   gam eff   441.0000m   394.0000m   441.0000m   394.0000m   441.0000m
-  gm         38.3452u     7.4390u    99.0065n    11.3831u     2.4465u
-  gds         2.8661u   713.4190n    22.6926m     1.0917u   141.0646m
-  gmb        10.8794u     1.6709u    52.2275n     2.5568u     1.2873u
-  cdtot      38.1740f    14.0954f    14.7668f    20.1049f    78.4889f
-  cgtot      27.4133f     8.5593f     8.5725f    13.0716f    56.6620f
-  cstot      43.8589f    16.3145f    10.3645f    23.1914f    49.9796f
-  cbtot      65.8642f    25.0521f    16.9099f    35.0732f    73.6031f
-  cgs        13.2664f     4.2401f     4.6595f     6.4879f    30.9447f
-  cgd         8.5250f     2.7189f     3.9516f     4.1603f    26.2411f
+  gm         21.8720u     3.6247u   172.9069n     5.5466u     4.3982u
+  gds         1.6427u   347.2124n    18.2100m   531.3164n   114.5600m
+  gmb         6.2871u   826.9894n    62.0681n     1.2655u     1.5769u
+  cdtot      40.1098f    14.8192f    14.2245f    21.1318f    74.8863f
+  cgtot      27.6995f     8.6503f     8.3845f    13.2108f    55.4132f
+  cstot      43.8585f    16.3137f    10.4926f    23.1902f    50.8313f
+  cbtot      67.5133f    25.6841f    16.9147f    35.9594f    73.6347f
+  cgs        13.2658f     4.2390f     4.6290f     6.4862f    30.7428f
+  cgd         8.8117f     2.8108f     3.7197f     4.3009f    24.7011f
 
 
 
@@ -3856,26 +3856,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  43:m1       43:m2       44:m1       44:m2       45:m1      
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:pmos    
  region        Linear      Cutoff      Cutoff      Linear      Cutoff
-  id         -1.1368u     1.5227u  -288.7249n   241.7476n  -441.8036n
-  ibs      -6.592e-23   6.033e-23  -5.914e-23   3.014e-23  -5.917e-23
-  ibd         3.6836f   -64.0002p    63.0006p  -682.0805a    62.9991p
-  vgs      -999.9892m    10.8221u     0.          1.0000      0.     
-  vds       -57.4877u   999.9425m  -999.9892m    10.8221u  -999.9543m
+  id       -799.6622n   863.1616n  -138.7233n   129.5813n  -212.2787n
+  ibs      -1.352e-25   4.210e-23  -4.137e-23   9.147e-26  -4.138e-23
+  ibd         3.8078f   -44.8001p    44.1009p  -455.6048a    44.1000p
+  vgs      -699.9928m     7.2288u     0.        700.0000m     0.     
+  vds       -59.4249u   699.9406m  -699.9928m     7.2288u  -699.9693m
   vbs         0.          0.          0.          0.          0.     
-  vth      -310.7585m   302.3806m  -225.6979m   370.5949m  -225.7009m
-  vdsat    -504.3301m    39.8573m   -46.2005m   332.6919m   -46.2009m
-  vod      -689.2307m  -302.3698m   225.6979m   629.4051m   225.7009m
-  beta       35.8504m     1.0119     30.3984m   106.6380m    46.5130m
+  vth      -310.7583m   322.8452m  -251.2172m   370.5952m  -251.2192m
+  vdsat    -323.0758m    39.9777m   -46.1533m   204.3083m   -46.1538m
+  vod      -389.2344m  -322.8380m   251.2172m   329.4048m   251.2192m
+  beta       40.7795m   986.9687m    29.1968m   123.4504m    44.6745m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   394.0000m
-  gm        959.7805n    38.3452u     7.3228u    97.4596n    11.2053u
-  gds        19.7741m     2.8661u   702.2719n    22.3380m     1.0746u
-  gmb       386.3711n    10.8794u     1.6448u    51.4115n     2.5168u
-  cdtot      40.0349f    38.1740f    13.8751f    14.5360f    19.7908f
-  cgtot      28.7457f    27.4133f     8.4255f     8.4386f    12.8673f
-  cstot      26.5677f    43.8589f    16.0596f    10.2025f    22.8290f
-  cbtot      39.1749f    65.8642f    24.6607f    16.6457f    34.5252f
-  cgs        16.1498f    13.2664f     4.1738f     4.5866f     6.3865f
-  cgd        12.7063f     8.5250f     2.6764f     3.8898f     4.0953f
+  gm          1.5668u    21.8720u     3.5680u   170.2052n     5.4599u
+  gds        13.4555m     1.6427u   341.7872n    17.9255m   523.0145n
+  gmb       472.0594n     6.2871u   814.0677n    61.0983n     1.2457u
+  cdtot      38.4931f    40.1098f    14.5877f    14.0022f    20.8016f
+  cgtot      27.8023f    27.6995f     8.5151f     8.2534f    13.0044f
+  cstot      26.7323f    43.8585f    16.0588f    10.3287f    22.8279f
+  cbtot      39.1906f    67.5133f    25.2828f    16.6504f    35.3975f
+  cgs        15.6789f    13.2658f     4.1728f     4.5567f     6.3848f
+  cgd        12.0456f     8.8117f     2.7669f     3.6616f     4.2337f
 
 
 
@@ -3883,26 +3883,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  45:m2       46:m1       46:m2       47:m1       47:m2      
  model     0:nmos      0:pmos      0:nmos      0:pmos      0:nmos    
  region        Linear      Linear      Cutoff      Linear      Cutoff
-  id          6.3513u    -1.1191u     1.4989u   -10.3246n     3.5795n
-  ibs       2.006e-22  -6.490e-23   5.939e-23  -6.729e-25   9.383e-25
-  ibd        -2.8882f     3.6261f   -63.0002p    50.9825a  -999.9600f
-  vgs         1.0000   -999.9892m    10.8221u    -1.0000      0.     
-  vds        45.7362u   -57.4877u   999.9425m   -50.9412u   999.9491m
+  id          3.4669u  -787.1675n   849.6747n    -2.8505n     2.0294n
+  ibs       6.076e-25  -1.331e-25   4.145e-23  -1.333e-27   6.565e-25
+  ibd        -1.9413f     3.7483f   -44.1001p    20.7072a  -699.9903f
+  vgs       700.0000m  -699.9928m     7.2288u  -700.0000m     0.     
+  vds        30.7415u   -59.4249u   699.9406m   -20.6904u   699.9793m
   vbs         0.          0.          0.          0.          0.     
-  vth       370.5926m  -310.7585m   302.3806m  -310.7591m   302.3801m
-  vdsat     339.9380m  -504.3301m    39.8573m  -504.0769m    39.7932m
-  vod       629.4074m  -689.2307m  -302.3698m  -689.2409m  -302.3801m
-  beta      708.1868m    35.2902m   996.0519m   366.0884u     2.3807m
+  vth       370.5936m  -310.7583m   322.8452m  -310.7616m   322.8426m
+  vdsat     207.5569m  -323.0758m    39.9777m  -322.9867m    39.9161m
+  vod       329.4064m  -389.2344m  -322.8380m  -389.2384m  -322.8426m
+  beta      819.8385m    40.1423m   971.5473m   416.4224u     2.3221m
   gam eff   441.0000m   394.0000m   441.0000m   394.0000m   441.0000m
-  gm          2.4083u   944.7839n    37.7460u     8.7475n    90.1419n
-  gds       138.8605m    19.4651m     2.8213u   202.6674u     6.7375n
-  gmb         1.2672u   380.3341n    10.7094u     3.5217n    25.5750n
-  cdtot      77.2625f    39.4093f    37.5775f   427.6081a   126.4383a
-  cgtot      55.7767f    28.2965f    26.9850f   293.7973a    65.1283a
-  cstot      49.1987f    26.1526f    43.1736f   289.3901a   147.5476a
-  cbtot      72.4531f    38.5628f    64.8351f   437.1730a   236.5753a
-  cgs        30.4612f    15.8974f    13.0591f   164.9143a    31.2129a
-  cgd        25.8311f    12.5078f     8.3918f   129.7533a    20.0576a
+  gm          4.3295u     1.5423u    21.5303u     5.5981n    51.4243n
+  gds       112.7700m    13.2453m     1.6170u   137.7647u     3.8621n
+  gmb         1.5523u   464.6835n     6.1888u     1.6868n    14.7816n
+  cdtot      73.7162f    37.8917f    39.4831f   411.8871a   133.0138a
+  cgtot      54.5473f    27.3679f    27.2667f   284.1657a    65.8017a
+  cstot      50.0370f    26.3147f    43.1732f   291.0586a   147.5467a
+  cbtot      72.4842f    38.5782f    66.4584f   437.3369a   242.4763a
+  cgs        30.2625f    15.4340f    13.0586f   160.0976a    31.2116a
+  cgd        24.3151f    11.8574f     8.6740f   123.0169a    20.7320a
 
 
 
@@ -3910,26 +3910,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  48:m1       48:m2       49:m1       49:m2       53:m_0     
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:nmos    
  region        Linear      Cutoff      Cutoff      Linear      Cutoff
-  id       -108.1699n    23.7725n    -7.0225n    10.4857n     7.6210n
-  ibs      -1.031e-24   9.424e-25  -9.395e-25   3.180e-24   9.392e-25
-  ibd       350.5900a  -999.7111f     1.0000p    -4.7682a  -999.9954f
-  vgs        -1.0000      0.        -50.9412u   999.9491m     0.     
-  vds      -350.1720u   999.6498m  -999.9952m     4.7569u   999.9744m
+  id        -63.7507n    13.4782n    -3.3715n     3.7967n     4.3206n
+  ibs      -2.445e-27   6.577e-25  -6.572e-25   9.614e-27   6.568e-25
+  ibd       303.6631a  -699.7580f   700.0290f    -2.1259a  -700.0085f
+  vgs      -700.0000m     0.        -20.6904u   699.9793m     0.     
+  vds      -303.3008u   699.6967m  -699.9979m     2.1208u   699.9875m
   vbs         0.          0.          0.          0.          0.     
-  vth      -310.7336m   302.4006m  -225.6974m   370.5953m   302.3784m
-  vdsat    -504.3477m    39.8574m   -46.2013m   339.9150m    39.8318m
-  vod      -689.2664m  -302.4006m   225.6464m   629.3537m  -302.3784m
-  beta      560.1688u    15.8100m   738.3065u    11.2413m     5.0666m
+  vth      -310.7376m   322.8619m  -251.2168m   370.5955m   322.8420m
+  vdsat    -323.0919m    39.9778m   -46.1538m   207.5467m    39.9532m
+  vod      -389.2624m  -322.8619m   251.1961m   329.3838m  -322.8420m
+  beta      637.1891u    15.4211m   709.1221u    13.0134m     4.9420m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   441.0000m
-  gm         91.3556n   598.6567n   178.1031n     3.9759n   191.9183n
-  gds       308.8043u    44.7468n    17.0805n     2.2043m    14.3449n
-  gmb        36.7658n   169.8559n    40.0027n     2.0921n    54.4515n
-  cdtot     625.3877a   596.4941a   314.1381a     1.2264f   220.4434a
-  cgtot     449.1450a   428.3339a   204.2473a   885.3447a   137.7687a
-  cstot     415.2088a   685.2928a   362.3710a   780.9015a   255.0966a
-  cbtot     612.0660a     1.0292f   548.0164a     1.1501f   395.0850a
-  cgs       252.4006a   207.2854a   101.3780a   483.4897a    66.4274a
-  cgd       198.4681a   133.2060a    65.0041a   410.0386a    42.6865a
+  gm        124.9445n   341.5316n    86.7169n     4.7412n   109.4825n
+  gds       210.0978u    25.6505n     8.3067n     1.7902m     8.2225n
+  gmb        37.6379n    98.1742n    19.7847n     1.6999n    31.4704n
+  cdtot     601.2168a   626.7439a   330.1822a     1.1702f   231.7528a
+  cgtot     434.3990a   432.8091a   206.4210a   865.8318a   139.2019a
+  cstot     417.8257a   685.2871a   362.3491a   794.1987a   255.0948a
+  cbtot     612.3159a     1.0549f   561.8632a     1.1506f   404.9591a
+  cgs       245.0787a   207.2772a   101.3488a   480.3271a    66.4247a
+  cgd       188.1026a   137.6877a    67.2017a   385.9857a    44.1218a
 
 
 
@@ -3937,26 +3937,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  53:m_1      54:m_0      54:m_1      55:m_0      55:m_1     
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:pmos    
  region        Linear      Linear      Cutoff      Cutoff      Linear
-  id        -16.0612n    54.8624n   -57.2547n   121.9947n  -257.0380n
-  ibs      -2.103e-24   4.072e-24  -3.765e-24   1.503e-23  -3.364e-23
-  ibd        25.6407a   -75.7425a     4.0002p   -15.9999p   410.3531a
-  vgs        -1.0000    999.9744m   -25.5802u    18.9202u  -999.9811m
-  vds       -25.5802u    18.9202u  -999.9811m   999.9744m   -25.5865u
+  id         -5.3360n    26.8934n   -27.5003n    69.1500n   -85.3960n
+  ibs      -4.340e-27   1.235e-26  -2.631e-24   1.051e-23  -6.944e-26
+  ibd        12.5037a   -45.9297a     2.8002p   -11.2001p   200.1111a
+  vgs      -700.0000m   699.9875m   -12.4742u    11.4731u  -699.9885m
+  vds       -12.4742u    11.4731u  -699.9885m   699.9875m   -12.4774u
   vbs         0.          0.          0.          0.          0.     
-  vth      -310.7612m   370.5944m  -225.6986m   302.3784m  -310.7612m
-  vdsat    -504.5937m   337.0862m   -46.2016m    39.8318m  -504.5826m
-  vod      -689.2388m   629.3800m   225.6730m  -302.3595m  -689.2199m
-  beta        1.1424m    14.4096m     6.0227m    81.0664m    18.2781m
+  vth      -310.7623m   370.5949m  -251.2176m   322.8420m  -310.7623m
+  vdsat    -323.1697m   206.2743m   -46.1542m    39.9532m  -323.1624m
+  vod      -389.2377m   329.3926m   251.2051m  -322.8306m  -389.2262m
+  beta        1.2994m    16.6812m     5.7846m    79.0721m    20.7911m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   394.0000m
-  gm         13.5110n    21.3085n     1.4521u     3.0721u   216.2348n
-  gds       627.8611u     2.8996m   139.2593n   229.6257n    10.0456m
-  gmb         5.4389n    11.2233n   326.1537n   871.6237n    87.0444n
-  cdtot       1.2194f     1.7195f     2.3833f     3.5271f    19.5104f
-  cgtot     915.2162a     1.1369f     1.6630f     2.2043f    14.6434f
-  cstot     792.2893a     1.1430f     2.7389f     4.0816f    12.6766f
-  cbtot       1.1369f     1.7655f     4.0710f     6.3214f    18.1907f
-  cgs       514.6013a   619.7720a   826.9676a     1.0629f     8.2336f
-  cgd       404.9048a   525.6006a   530.2694a   682.9857a     6.4785f
+  gm         10.4284n    34.2589n   707.3202n     1.7522u   166.9007n
+  gds       427.7557u     2.3440m    67.7552n   131.5983n     6.8439m
+  gmb         3.1421n    12.2890n   161.3779n   503.6685n    50.2863n
+  cdtot       1.1703f     1.6473f     2.5043f     3.7080f    18.7252f
+  cgtot     885.1605a     1.1119f     1.6808f     2.2272f    14.1625f
+  cstot     797.5023a     1.1600f     2.7387f     4.0815f    12.7600f
+  cbtot       1.1374f     1.7662f     4.1741f     6.4793f    18.1988f
+  cgs       499.5751a   615.7214a   826.7441a     1.0628f     7.9932f
+  cgd       383.8795a   494.7642a   548.1969a   705.9508a     6.1421f
 
 
 
@@ -3964,26 +3964,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  56:m_0      56:m_1      57:m_0      57:m_1      58:m_0     
  model     0:nmos      0:pmos      0:nmos      0:pmos      0:nmos    
  region        Linear      Cutoff      Cutoff      Linear      Linear
-  id        986.5605n  -916.0696n     7.6210n   -16.0612n    54.8624n
-  ibs       6.516e-23  -6.024e-23   9.392e-25  -2.103e-24   4.072e-24
-  ibd        -1.3620f    64.0026p  -999.9954f    25.6407a   -75.7425a
-  vgs       999.9744m   -25.5865u     0.         -1.0000    999.9744m
-  vds        21.2646u  -999.9787m   999.9744m   -25.5802u    18.9202u
+  id        448.6321n  -440.0050n     4.3206n    -5.3360n    26.8934n
+  ibs       1.976e-25  -4.210e-23   6.568e-25  -4.340e-27   1.235e-26
+  ibd      -766.1937a    44.8032p  -700.0085f    12.5037a   -45.9297a
+  vgs       699.9875m   -12.4774u     0.       -700.0000m   699.9875m
+  vds        11.9621u  -699.9880m   699.9875m   -12.4742u    11.4731u
   vbs         0.          0.          0.          0.          0.     
-  vth       370.5942m  -225.6988m   302.3784m  -310.7612m   370.5944m
-  vdsat     337.0863m   -46.2016m    39.8318m  -504.5937m   337.0862m
-  vod       629.3802m   225.6732m  -302.3784m  -689.2388m   629.3800m
-  beta      230.5529m    96.3633m     5.0666m     1.1424m    14.4096m
+  vth       370.5949m  -251.2176m   322.8420m  -310.7623m   370.5949m
+  vdsat     206.2743m   -46.1542m    39.9532m  -323.1697m   206.2743m
+  vod       329.3927m   251.2051m  -322.8420m  -389.2377m   329.3926m
+  beta      266.8997m    92.5543m     4.9420m     1.2994m    16.6812m
   gam eff   441.0000m   394.0000m   441.0000m   394.0000m   441.0000m
-  gm        383.1837n    23.2334u   191.9183n    13.5110n    21.3085n
-  gds        46.3934m     2.2281u    14.3449n   627.8611u     2.8996m
-  gmb       201.8231n     5.2184u    54.4515n     5.4389n    11.2233n
-  cdtot      27.5114f    38.1333f   220.4434a     1.2194f     1.7195f
-  cgtot      18.1904f    26.6086f   137.7687a   915.2162a     1.1369f
-  cstot      18.2873f    43.8225f   255.0966a   792.2893a     1.1430f
-  cbtot      28.2486f    65.1361f   395.0850a     1.1369f     1.7655f
-  cgs         9.9164f    13.2315f    66.4274a   514.6013a   619.7720a
-  cgd         8.4096f     8.4843f    42.6865a   404.9048a   525.6006a
+  gm        571.5023n    11.3171u   109.4825n    10.4284n    34.2589n
+  gds        37.5037m     1.0841u     8.2225n   427.7557u     2.3440m
+  gmb       205.0027n     2.5820u    31.4704n     3.1421n    12.2890n
+  cdtot      26.3573f    40.0690f   231.7528a     1.1703f     1.6473f
+  cgtot      17.7902f    26.8925f   139.2019a   885.1605a     1.1119f
+  cstot      18.5601f    43.8199f   255.0948a   797.5023a     1.1600f
+  cbtot      28.2587f    66.7850f   404.9591a     1.1374f     1.7662f
+  cgs         9.8516f    13.2279f    66.4247a   499.5751a   615.7214a
+  cgd         7.9162f     8.7712f    44.1218a   383.8795a   494.7642a
 
 
 
@@ -3991,26 +3991,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  58:m_1      59:m_0      59:m_1      60:m_0      60:m_1     
  model     0:pmos      0:nmos      0:pmos      0:nmos      0:pmos    
  region        Cutoff      Cutoff      Linear      Linear      Cutoff
-  id        -57.2547n   121.9947n  -257.0380n   986.5605n  -916.0696n
-  ibs      -3.765e-24   1.503e-23  -3.364e-23   6.516e-23  -6.024e-23
-  ibd         4.0002p   -15.9999p   410.3531a    -1.3620f    64.0026p
-  vgs       -25.5802u    18.9202u  -999.9811m   999.9744m   -25.5865u
-  vds      -999.9811m   999.9744m   -25.5865u    21.2646u  -999.9787m
+  id        -27.5003n    69.1500n   -85.3960n   448.6321n  -440.0050n
+  ibs      -2.631e-24   1.051e-23  -6.944e-26   1.976e-25  -4.210e-23
+  ibd         2.8002p   -11.2001p   200.1111a  -766.1937a    44.8032p
+  vgs       -12.4742u    11.4731u  -699.9885m   699.9875m   -12.4774u
+  vds      -699.9885m   699.9875m   -12.4774u    11.9621u  -699.9880m
   vbs         0.          0.          0.          0.          0.     
-  vth      -225.6986m   302.3784m  -310.7612m   370.5942m  -225.6988m
-  vdsat     -46.2016m    39.8318m  -504.5826m   337.0863m   -46.2016m
-  vod       225.6730m  -302.3595m  -689.2199m   629.3802m   225.6732m
-  beta        6.0227m    81.0664m    18.2781m   230.5529m    96.3633m
+  vth      -251.2176m   322.8420m  -310.7623m   370.5949m  -251.2176m
+  vdsat     -46.1542m    39.9532m  -323.1624m   206.2743m   -46.1542m
+  vod       251.2051m  -322.8306m  -389.2262m   329.3927m   251.2051m
+  beta        5.7846m    79.0721m    20.7911m   266.8997m    92.5543m
   gam eff   394.0000m   441.0000m   394.0000m   441.0000m   394.0000m
-  gm          1.4521u     3.0721u   216.2348n   383.1837n    23.2334u
-  gds       139.2593n   229.6257n    10.0456m    46.3934m     2.2281u
-  gmb       326.1537n   871.6237n    87.0444n   201.8231n     5.2184u
-  cdtot       2.3833f     3.5271f    19.5104f    27.5114f    38.1333f
-  cgtot       1.6630f     2.2043f    14.6434f    18.1904f    26.6086f
-  cstot       2.7389f     4.0816f    12.6766f    18.2873f    43.8225f
-  cbtot       4.0710f     6.3214f    18.1907f    28.2486f    65.1361f
-  cgs       826.9676a     1.0629f     8.2336f     9.9164f    13.2315f
-  cgd       530.2694a   682.9857a     6.4785f     8.4096f     8.4843f
+  gm        707.3202n     1.7522u   166.9007n   571.5023n    11.3171u
+  gds        67.7552n   131.5983n     6.8439m    37.5037m     1.0841u
+  gmb       161.3779n   503.6685n    50.2863n   205.0027n     2.5820u
+  cdtot       2.5043f     3.7080f    18.7252f    26.3573f    40.0690f
+  cgtot       1.6808f     2.2272f    14.1625f    17.7902f    26.8925f
+  cstot       2.7387f     4.0815f    12.7600f    18.5601f    43.8199f
+  cbtot       4.1741f     6.4793f    18.1988f    28.2587f    66.7850f
+  cgs       826.7441a     1.0628f     7.9932f     9.8516f    13.2279f
+  cgd       548.1969a   705.9508a     6.1421f     7.9162f     8.7712f
 
 
 
@@ -4018,26 +4018,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  61:m_0      61:m_1      62:m_0      62:m_1      63:m_0     
  model     0:nmos      0:pmos      0:nmos      0:pmos      0:nmos    
  region        Cutoff      Linear      Linear      Cutoff      Cutoff
-  id          7.6210n   -16.0612n    54.8624n   -57.2547n   121.9947n
-  ibs       9.392e-25  -2.103e-24   4.072e-24  -3.765e-24   1.503e-23
-  ibd      -999.9954f    25.6407a   -75.7425a     4.0002p   -15.9999p
-  vgs         0.         -1.0000    999.9744m   -25.5802u    18.9202u
-  vds       999.9744m   -25.5802u    18.9202u  -999.9811m   999.9744m
+  id          4.3206n    -5.3360n    26.8934n   -27.5003n    69.1500n
+  ibs       6.568e-25  -4.340e-27   1.235e-26  -2.631e-24   1.051e-23
+  ibd      -700.0085f    12.5037a   -45.9297a     2.8002p   -11.2001p
+  vgs         0.       -700.0000m   699.9875m   -12.4742u    11.4731u
+  vds       699.9875m   -12.4742u    11.4731u  -699.9885m   699.9875m
   vbs         0.          0.          0.          0.          0.     
-  vth       302.3784m  -310.7612m   370.5944m  -225.6986m   302.3784m
-  vdsat      39.8318m  -504.5937m   337.0862m   -46.2016m    39.8318m
-  vod      -302.3784m  -689.2388m   629.3800m   225.6730m  -302.3595m
-  beta        5.0666m     1.1424m    14.4096m     6.0227m    81.0664m
+  vth       322.8420m  -310.7623m   370.5949m  -251.2176m   322.8420m
+  vdsat      39.9532m  -323.1697m   206.2743m   -46.1542m    39.9532m
+  vod      -322.8420m  -389.2377m   329.3926m   251.2051m  -322.8306m
+  beta        4.9420m     1.2994m    16.6812m     5.7846m    79.0721m
   gam eff   441.0000m   394.0000m   441.0000m   394.0000m   441.0000m
-  gm        191.9183n    13.5110n    21.3085n     1.4521u     3.0721u
-  gds        14.3449n   627.8611u     2.8996m   139.2593n   229.6257n
-  gmb        54.4515n     5.4389n    11.2233n   326.1537n   871.6237n
-  cdtot     220.4434a     1.2194f     1.7195f     2.3833f     3.5271f
-  cgtot     137.7687a   915.2162a     1.1369f     1.6630f     2.2043f
-  cstot     255.0966a   792.2893a     1.1430f     2.7389f     4.0816f
-  cbtot     395.0850a     1.1369f     1.7655f     4.0710f     6.3214f
-  cgs        66.4274a   514.6013a   619.7720a   826.9676a     1.0629f
-  cgd        42.6865a   404.9048a   525.6006a   530.2694a   682.9857a
+  gm        109.4825n    10.4284n    34.2589n   707.3202n     1.7522u
+  gds         8.2225n   427.7557u     2.3440m    67.7552n   131.5983n
+  gmb        31.4704n     3.1421n    12.2890n   161.3779n   503.6685n
+  cdtot     231.7528a     1.1703f     1.6473f     2.5043f     3.7080f
+  cgtot     139.2019a   885.1605a     1.1119f     1.6808f     2.2272f
+  cstot     255.0948a   797.5023a     1.1600f     2.7387f     4.0815f
+  cbtot     404.9591a     1.1374f     1.7662f     4.1741f     6.4793f
+  cgs        66.4247a   499.5751a   615.7214a   826.7441a     1.0628f
+  cgd        44.1218a   383.8795a   494.7642a   548.1969a   705.9508a
 
 
 
@@ -4045,26 +4045,26 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  element  63:m_1      64:m_0      64:m_1     
  model     0:pmos      0:nmos      0:pmos    
  region        Linear      Linear      Cutoff
-  id       -257.0380n   986.5605n  -916.0696n
-  ibs      -3.364e-23   6.516e-23  -6.024e-23
-  ibd       410.3531a    -1.3620f    64.0026p
-  vgs      -999.9811m   999.9744m   -25.5865u
-  vds       -25.5865u    21.2646u  -999.9787m
+  id        -85.3960n   448.6321n  -440.0050n
+  ibs      -6.944e-26   1.976e-25  -4.210e-23
+  ibd       200.1111a  -766.1937a    44.8032p
+  vgs      -699.9885m   699.9875m   -12.4774u
+  vds       -12.4774u    11.9621u  -699.9880m
   vbs         0.          0.          0.     
-  vth      -310.7612m   370.5942m  -225.6988m
-  vdsat    -504.5826m   337.0863m   -46.2016m
-  vod      -689.2199m   629.3802m   225.6732m
-  beta       18.2781m   230.5529m    96.3633m
+  vth      -310.7623m   370.5949m  -251.2176m
+  vdsat    -323.1624m   206.2743m   -46.1542m
+  vod      -389.2262m   329.3927m   251.2051m
+  beta       20.7911m   266.8997m    92.5543m
   gam eff   394.0000m   441.0000m   394.0000m
-  gm        216.2348n   383.1837n    23.2334u
-  gds        10.0456m    46.3934m     2.2281u
-  gmb        87.0444n   201.8231n     5.2184u
-  cdtot      19.5104f    27.5114f    38.1333f
-  cgtot      14.6434f    18.1904f    26.6086f
-  cstot      12.6766f    18.2873f    43.8225f
-  cbtot      18.1907f    28.2486f    65.1361f
-  cgs         8.2336f     9.9164f    13.2315f
-  cgd         6.4785f     8.4096f     8.4843f
+  gm        166.9007n   571.5023n    11.3171u
+  gds         6.8439m    37.5037m     1.0841u
+  gmb        50.2863n   205.0027n     2.5820u
+  cdtot      18.7252f    26.3573f    40.0690f
+  cgtot      14.1625f    17.7902f    26.8925f
+  cstot      12.7600f    18.5601f    43.8199f
+  cbtot      18.1988f    28.2587f    66.7850f
+  cgs         7.9932f     9.8516f    13.2279f
+  cgd         6.1421f     7.9162f     8.7712f
 
 
 
@@ -4072,9 +4072,9 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  part 2
 
   ******  transient analysis tnom=  25.000 temp=  27.000 *****
- write_core_power=  -1.0000u  from=   2.0000n     to=   3.0000n
- vcell_power=-407.8642u  from=   2.0000n     to=   3.0000n
- mem_core_power=-408.8642u
+ write_core_power=-700.0000n  from=   2.0000n     to=   3.0000n
+ vcell_power=-204.5909u  from=   2.0000n     to=   3.0000n
+ mem_core_power=-205.2909u
 
           ***** job concluded
 1****** HSPICE -- F-2011.09-SP2 32-BIT (Feb 27 2012) linux ******               
@@ -4087,7 +4087,7 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
  ******  Machine Information  ******
  CPU:
  model name	: Intel(R) Core(TM)2 Duo CPU     E8500  @ 3.16GHz
- cpu MHz	: 3158.603
+ cpu MHz	: 3158.761
   
  OS:
  Linux version 3.2.0-30-generic (buildd@batsu) (gcc version 4.6.3 (Ubuntu/Linaro
@@ -4116,19 +4116,19 @@ Using: /usr/class/ee/synopsys/hspice/F-2011.09-SP2/hspice/linux/hspice array_lea
   ******  Runtime Statistics (seconds)  ******
 
   analysis           time    # points   tot. iter  conv.iter
-  op point           0.02           1           7
-  transient          3.60       60001       12152        3313 rev=       503
-  readin             0.00
-  errchk             0.06
-  setup              0.00
+  op point           0.00           1           7
+  transient          3.14       60001       10660        2766 rev=       379
+  readin             0.02
+  errchk             0.02
+  setup              0.02
   output             0.00
 
 
            peak memory used         90.71 megabytes
-           total cpu time            3.70 seconds
-           total elapsed time        3.99 seconds
-           job started at     13:11:48 03/14/2013
-           job ended   at     13:11:52 03/14/2013
+           total cpu time            3.20 seconds
+           total elapsed time        3.53 seconds
+           job started at     12:51:42 03/15/2013
+           job ended   at     12:51:46 03/15/2013
 
 
  lic: Release hspice token(s) 

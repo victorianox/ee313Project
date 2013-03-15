@@ -1,0 +1,17 @@
+* "simulator" "HSPICE" 
+* "version" "F-2011.09-SP2 32-BIT"
+* "format" "HSP"
+* "rundate" "12:52:04 03/15/2013 "
+* "netlist" "idsat_tb.hsp "
+* "runtitle" "part 2"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bl = 910.0000m       
++ vdd = 910.0000m       
++ vdd! = 910.0000m       
++ wl = 910.0000m       
+***   END: Saved Operating Point ***                     

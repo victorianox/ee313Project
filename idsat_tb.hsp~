@@ -1,0 +1,31 @@
+Part 2
+***************************************************************
+*GLOBAL INCLUDES
+***************************************************************
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+.include '~/ee313/netlist/projectPart2.idsat_tb.ckt'
+***************************************************************
+*PARAMETERS
+***************************************************************
+
+*Defined parameters for stimulus
+.param supply = 0.7v
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+Vwl wl Gnd dc='Supply'
+Vbl  bl  Gnd dc='Supply'
+
+.probe idsat=par('i(m0)')
+
+***************************************************************
+*ANALYSIS
+***************************************************************
+
+*actually run the simulation
+.trans 0.3ps 5ns
+
+.end

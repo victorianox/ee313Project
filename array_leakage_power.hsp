@@ -10,12 +10,13 @@ Part 2
 ***************************************************************
 *PARAMETERS
 ***************************************************************
-
+.param supply=0.91v
 *Defined parameters for stimulus
 .param tcyc = 1ns *1Ghz clock
 .param trf = 50ps *50ps rise/fall time
+.param supply = 0.7v
 
-.param blpcwidth=80
+.param blpcwidth=40
 
 *Setup wordline voltage mux widths
 .param wrenpwvdd=48

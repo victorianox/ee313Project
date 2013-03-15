@@ -12,7 +12,7 @@ Part 2
 ***************************************************************
 
 *Defined parameters for stimulus
-.param supply = 0.7v
+.param supply=0.91v
 .param tcyc = 1ns *1Ghz clock
 .param trf = 50ps *50ps rise/fall time
 
@@ -35,15 +35,14 @@ Part 2
 .param dss8nw = 7
 .param bds9pw = 27
 .param bds9nw = 13
-.param bds10pw = 50
+.param bds10pw = 18
 .param bds10nw = 7
 
-.param blpcwidth=80
+.param blpcwidth=40
 
 *Setup wordline voltage mux widths
-.param wrenpwvdd=100
-.param wrenpwwl=100
-.param vdd_wr_value='Supply*0.8'
+.param wrenpwvdd=48
+.param wrenpwwl=48
 
 ***************************************************************
 *INITIAL CONDITIONS
@@ -62,11 +61,6 @@ Part 2
 .ic v(xarray.xmcbl.bit) = 0
 .ic v(xarray.xmcbl.bit_b) = 'Supply'
 
-.ic v(bl0) = 'Supply'
-.ic v(bl_b0) = 'Supply'
-.ic v(bl63) = 'Supply'
-.ic v(bl_b63) = 'Supply'
-
 ***************************************************************
 *SOURCES AND STIMULI
 ***************************************************************
@@ -76,15 +70,8 @@ Part 2
 
 *Ideal sources for sense amp and bitline precharge
 *          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
-*Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.45ns    50ps   50ps     450ps         1ns
-*Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.45ns      50ps   50ps     450ps         1ns
-
-*Always read 0 and 63
-*Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    1.1ns    50ps   50ps     450ps         1ns
-*Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    1.1ns    50ps   50ps     450ps         1ns
-
-*SAE signal
-*Vsae sae Gnd         pulse 0    'Supply'    1.16ns    50ps   50ps     450ps         1ns
+*Vblpc_b blpc_b Gnd pulse 'Supply'     0       0.185ns    50ps   50ps     450ps         1ns
+*Vsapc_b sapc_b Gnd pulse 'Supply'     0       0.3ns      50ps   50ps     450ps         1ns
 
 *Don't write any data
 *Vwren wren Gnd dc=0
@@ -93,8 +80,15 @@ Vwrdata0 wrdata0 Gnd dc=0
 Vwrdata255 wrdata255 Gnd dc='Supply'
 
 *Add in vdd_wr and Vcell
-Vvdd_wr vdd_wr Gnd dc='Supply*0.8'
-Vvcell  Vcell  Gnd dc='Supply*0.9'
+Vvdd_wr vdd_wr Gnd dc='Supply-0.2'
+Vvcell  Vcell  Gnd dc='Supply-0.1'
+
+*Always read 0 and 63
+*Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+*Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.8ns    50ps   50ps     450ps         1ns
+
+*SAE signal
+*Vsae sae Gnd         pulse 0    'Supply'    0.9ns    50ps   50ps     450ps         1ns
 
 *Blocked Wordline Control Signals 
 Vblock0 block0 Gnd   pulse 0     'Supply'    0.5ns    50ps   50ps     2ns         4ns
@@ -103,17 +97,14 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 *********************************
 * MEASURE JUNK
 *********************************
-*for perl read script
-.meas tran max_bit_b max v(xarray.xmctl.bit_b)
-
 
 .meas wl0_rise 
 + TRIG v(ck) 	val=supply/2	RISE=1 
 + TARG v(b0wl0) val=supply/2 	RISE =1
 
 .meas wl0_width
-+TRIG v(b0wl0_sw) val=vdd_wr_value/2 RISE=1
-+TARG v(b0wl0_sw) val=vdd_wr_value/2 FALL=1
++TRIG v(b0wl0) val=supply/2 RISE=1
++TARG v(b0wl0) val=supply/2 FALL=1
 
 .meas wl0_fall 
 + TRIG v(ck) 	val=supply/2	FALL=1 
@@ -154,11 +145,6 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 + TRIG v(out0) val=supply/2 RISE=1
 + TARG v(out0) val=supply/2 FALL=1
 
-.probe idsat=par('i(xarray.xmctl.m0)')
-
-.meas TRAN idsat_avg
-+ AVG i (xarray.xmctl.m0) FROM='2*tcyc' TO='3*tcyc'
-
 .meas TRAN write_core_power
 + AVG i (V_supply) FROM='2*tcyc' TO='3*tcyc'
 
@@ -166,6 +152,7 @@ Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns       
 + AVG i (Vvcell) FROM='2*tcyc' TO='3*tcyc'
 
 .MEASURE mem_core_power param='write_core_power+vcell_power'
+
 
 
 ***************************************************************
