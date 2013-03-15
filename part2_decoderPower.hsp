@@ -1,0 +1,107 @@
+Part 2
+
+*Standard include
+.include '/usr/class/ee313/ee313_spice_header.h'
+
+*Specific include
+*.include '~/ee313/netlist/projectPart2.testrig_block_decoder_power.ckt'
+.include '~/ee313/netlist/projectPart2.testrig_decoderPower.ckt'
+
+*********************************
+*********************************
+* PROJECT SPECIFIED SETUPS
+*********************************
+*********************************
+
+*Stimulus
+*.include './stimulus.sp'
+
+*Defined parameters for stimulus
+.param tcyc = 1ns *1Ghz clock
+.param trf = 50ps *50ps rise/fall time
+
+.param wrenpwvdd=100
+.param wrenpwwl=100
+
+*sense amp and bitline precharge
+*          	pulse v_initial v_final  t_delay t_rise t_fall t_pulse_width t_period
+Vck 	ck Gnd pulse 'Supply'     0       2ns    50ps   50ps     450ps         1ns
+Va0 	a0 Gnd pulse 'Supply'     0       2ns    50ps   50ps     450ps         1ns
+Va255 a255 Gnd	0
+Vblock0 block0 gnd supply
+Vvdd_wr vdd_wr Gnd dc='Supply*0.8'
+Vvcell  Vcell  Gnd dc='Supply*0.9'
+*Vpredec predec Gnd pulse supply    0    2ns    50ps   50ps     450ps        1ns
+
+**Vck 	ck 		gnd 0
+**Va0	 	a0 		gnd 0
+**Va255 a255	gnd 0
+**Vblock0 block0 gnd 0
+**Vvdd_wr vdd_wr Gnd 0
+**Vvcell  Vcell  Gnd	0
+*Vpredec predec gnd 0
+
+*********************************
+*********************************
+* Our Setup
+*********************************
+*********************************
+
+*Don't write any data
+Vwren wren Gnd dc=0
+*Vwrdata0 wrdata0 Gnd dc=0
+*Vwrdata255 wrdata255 Gnd dc=0
+
+*Always read 0 and 63
+*Vsel_b0 sel_b0 Gnd   pulse 'Supply'     0    0.8ns    50ps   50ps     450ps        1ns
+*Vsel_b63 sel_b63 Gnd pulse 'Supply'     0    0.8ns    50ps   50ps     450ps        1ns
+
+*SAE signal
+*Vsae sae Gnd         pulse 0    'Supply'    1.25ns    50ps   50ps     450ps        1ns
+
+*Blocked Wordline Control Signals 
+*Vblock0 block0 Gnd   pulse 0     'Supply'    0.5ns    50ps   50ps     2ns         4ns
+*Vblock3 block3 Gnd   pulse 'Supply'    0    0.5ns     50ps   50ps     2ns         4ns
+
+*sizing
+
+.param pd24s1pw = 7
+.param pd24s1nw = 5
+
+.param pd24s2pw = 13
+.param pd24s2nw = 5
+
+.param pd416s3pw = 9
+.param pd416s3nw = 5
+
+.param pd416s4pw = 12
+.param pd416s4nw = 5
+
+.param pd416s5pw = 12
+.param pd416s5nw = 5
+
+.param pd416s6pw = 30
+.param pd416s6nw = 10
+
+.param dss7pw = 9
+.param dss7nw = 5
+
+.param dss8pw = 18
+.param dss8nw = 7
+
+.param bds9pw = 27
+.param bds9nw = 13
+
+.param bds10pw = 18
+.param bds10nw = 7
+
+.meas TRAN supply_power
++ AVG i(V_supply1) FROM='2*tcyc' TO='3*tcyc'
+
+**.meas TRAN ck_power
+**+ AVG i(Xclk_gen.Xgen.V_monitor) FROM='2*tcyc' TO='3*tcyc'
+
+*actually run the simulation
+.trans 0.3ps 10ns
+
+.end

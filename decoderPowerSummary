@@ -1,0 +1,17 @@
+Decode
+1. Leakage Power: 391 nA
+2. Dynamic Power: 12.604 uA - 391 na = 12.207 uA
+
+Mux Power (power read - power write):
+1. Write power (dynamic): 38.481 uA - 391 nA = 38.090 uA
+
+Decode+Predecode
+1. Leak
+2. Dynamic
+
+Predecode
+1. Leak
+2. Dynamic
+
+Clock power
+

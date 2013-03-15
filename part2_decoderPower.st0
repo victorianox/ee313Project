@@ -1,0 +1,72 @@
+***** HSPICE -- F-2011.09-SP2 32-BIT (Feb 27 2012) linux ******
+ Input File: part2_decoderPower.hsp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   ajdupree             HOSTNAME: myth7
+ lic: HOSTID: 001ec92fa3af         PID:      21903
+ lic: Using FLEXlm license file:
+ lic: 27000@cadlic0.stanford.edu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 16-nov-2013/2013.03
+ lic: 3(in_use)/100(total) FLOATING license(s) on SERVER cadlic0.stanford.edu
+ lic:
+ init: begin read circuit files,  cpu clock=  4.00E-02
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/ad
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/ad
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/behave
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/bjt
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/burr_brn
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/comlinear
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/dio
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/fet
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/lin_tech
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/pci
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/signet
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/ti
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/tline
+       option search   = /afs/ir.stanford.edu/class/ee/synopsys/hspice/F-
+                         2011.09-SP2/hspice/parts/xilinx
+       option runlvl
+       option scale    =    2.200E-08
+       option accura
+       option post
+       option dcic     =     0.00
+       option parhie   = local
+       option list
+ init: end read circuit files,  cpu clock=  4.00E-02 memory=    293 kb
+ init: begin check errors,  cpu clock=  4.00E-02
+ init: end check errors,  cpu clock=  8.00E-02 memory=    842 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  8.00E-02
+       establish matrix -- done,  cpu clock=  8.00E-02 memory=   1107 kb
+       re-order matrix -- done,  cpu clock=  8.00E-02 memory=   1141 kb
+ init: end setup matrix,  cpu clock=  8.00E-02 memory=   1347 kb
+ dcop: begin dcop,  cpu clock=  8.00E-02
+ dcop: end dcop,  cpu clock=  1.00E-01 memory=   1347 kb  tot_iter=      15
+ output: part2_decoderPower.mt0
+ sweep: tran tran0    begin, stop_t=  1.00E-08 #sweeps=**** cpu clock=  1.00E-01
+ tran: time= 1.4886E-09 tot_iter=      16 conv_iter=       8 cpu clock= 1.00E-01
+ tran: time= 2.0000E-09 tot_iter=      18 conv_iter=       9 cpu clock= 1.00E-01
+ tran: time= 3.0000E-09 tot_iter=     834 conv_iter=     235 cpu clock= 3.60E-01
+ tran: time= 4.0000E-09 tot_iter=    1668 conv_iter=     468 cpu clock= 6.20E-01
+ tran: time= 5.0000E-09 tot_iter=    2466 conv_iter=     689 cpu clock= 8.60E-01
+ tran: time= 6.0000E-09 tot_iter=    3250 conv_iter=     916 cpu clock= 1.12E+00
+ tran: time= 7.0000E-09 tot_iter=    4063 conv_iter=    1137 cpu clock= 1.38E+00
+ tran: time= 8.0000E-09 tot_iter=    4867 conv_iter=    1361 cpu clock= 1.62E+00
+ tran: time= 9.0000E-09 tot_iter=    5700 conv_iter=    1592 cpu clock= 1.88E+00
+ tran: time= 1.0000E-08 tot_iter=    6498 conv_iter=    1819 cpu clock= 2.14E+00
+ sweep: tran tran0    end,  cpu clock=  2.14E+00 memory=   1354 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)
